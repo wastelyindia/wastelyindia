@@ -1,0 +1,43 @@
+
+.AquaSwiper .swiper {
+    width: 100%;
+    height: 100%;
+    background: #000;
+  }
+  
+  .AquaSwiper .swiper-slide {
+    font-size: 18px;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 40px 60px;
+  }
+  
+  .AquaSwiper .parallax-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+  }
+  .AquaSwiper .swiper-slide{
+    flex-direction: column;
+  }
+  .AquaSwiper .swiper-slide .title {
+    font-size: 41px;
+    font-weight: 300;
+  }
+  
+  .AquaSwiper .swiper-slide .subtitle {
+    font-size: 21px;
+  }
+  
+  .AquaSwiper .swiper-slide .text {
+    font-size: 14px;
+    max-width: 400px;
+    line-height: 1.3;
+  }
+  

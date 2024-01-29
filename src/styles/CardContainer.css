@@ -1,0 +1,150 @@
+
+:root {
+  --primary: #6a59ff;
+  --white: #ffffff;
+  --bg: #f5f5f5;
+}
+
+.Card_Value_Swiper {
+  height: 35rem;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.Card_Value_Swiper .swiper-slide {
+  width: 27rem;
+  height: 32rem;
+  position: relative;
+}
+
+
+@media (max-width: 500px) {
+  .Card_Value_Swiper {
+    height: 35rem;
+  }
+  .Card_Value_Swiper .swiper-slide {
+    width: 25rem !important;
+    height: 30rem !important;
+  }
+  .Card_Value_Swiper .swiper-slide img {
+    width: 25rem !important;
+    height: 30rem !important;
+  }
+}
+@media (max-width : 450px) {
+  .Card_Value_Swiper{
+    padding: 0;
+  }
+  .Card_Value_Swiper .swiper-slide img{
+    width: 100%;
+  }
+}
+
+.Card_Value_Swiper .swiper-slide img {
+  width: 27rem;
+  height: 30rem;
+  border-radius: 2rem;
+  object-fit: cover;
+}
+
+.Card_Value_Swiper .swiper-slide-shadow-left,
+.Card_Value_Swiper .swiper-slide-shadow-right {
+  display: none;
+}
+
+.Card_Value_Swiper .slider-controler {
+  position: relative;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Card_Value_Swiper .slider-controler .swiper-button-next {
+  left: 58% !important;
+  transform: translateX(-58%) !important;
+}
+
+@media (max-width: 990px) {
+  .Card_Value_Swiper .slider-controler .swiper-button-next {
+    left: 70% !important;
+    transform: translateX(-70%) !important;
+  }
+}
+
+@media (min-width: 991px) and (max-width : 1279px) {
+    .Card_Value_Swiper .slider-controler .swiper-button-next {
+    left: 70% !important;
+    transform: translateX(-70%) !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .Card_Value_Swiper .slider-controler .swiper-button-next {
+    display: none;
+  }
+}
+
+@media (min-width: 991px) and (max-width : 1279px) {
+  .Card_Value_Swiper .slider-controler .swiper-button-prev {
+  left: 30% !important;
+  transform: translateX(-30%) !important;
+}
+}
+@media (max-width: 990px) {
+  .Card_Value_Swiper .slider-controler .swiper-button-prev {
+    left: 30% !important;
+    transform: translateX(-30%) !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .Card_Value_Swiper .slider-controler .swiper-button-prev {
+    display: none;
+  }
+}
+
+.Card_Value_Swiper .slider-controler .slider-arrow {
+  background: var(--white);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  left: 42%;
+  transform: translateX(-42%);
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+
+.Card_Value_Swiper .slider-controler .slider-arrow ion-icon {
+  font-size: 2rem;
+  color: #222224;
+}
+
+.Card_Value_Swiper .slider-controler .slider-arrow::after {
+  content: '';
+}
+
+.Card_Value_Swiper .swiper-pagination {
+  position: relative;
+  width: 15rem !important;
+  bottom: 1rem;
+  color: wheat;
+}
+
+.Card_Value_Swiper .swiper-pagination .swiper-pagination-bullet {
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+
+.Card_Value_Swiper .swiper-pagination .swiper-pagination-bullet-active {
+  background: var(--primary);
+}
+
+.Card_Value_Swiper .swiper-button-prev,.Card_Value_Swiper .swiper-button-next{
+  backdrop-filter: brightness(0.5);
+    color: white;
+}
+
+@media (max-width: 1023px) {
+  .Card_Value_Swiper .swiper-button-prev,.Card_Value_Swiper .swiper-button-next{
+    display: none;
+  }
+}
