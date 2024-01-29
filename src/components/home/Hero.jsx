@@ -2,7 +2,7 @@ import { useState } from 'react'
 // import { Dialog } from '@headlessui/react'
 // import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import video from '../../assets/video/wastely_water.mp4'
-import w_video from '../../assets/video/wastely water.mp4'
+//import w_video from '../../assets/video/wastely water.mp4'
 
 // const navigation = [
 //   { name: 'Product', href: '#' },

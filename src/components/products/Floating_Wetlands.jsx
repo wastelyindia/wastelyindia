@@ -1,7 +1,7 @@
 import React from 'react'
 import floating from '../../assets/images/Floating-Wetlands.png'
-import floating1 from '../../assets/images/Floating-Wetland.JPG'
-import floating2 from '../../assets/images/Floating-Wetland.jpeg'
+import floating1 from '../../assets/images/Floating-wetland.jpg'
+import floating2 from '../../assets/images/Floating-wetland.jpeg'
 
 const Floating_Wetlands = () => {
     return (

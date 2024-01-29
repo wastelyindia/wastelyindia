@@ -4,7 +4,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation, Zoom, EffectFade } from 'swiper/modules';
 import '../../styles/Water_Treatment.css';
-import Waterdropbg from '../../assets/images/Waterdropbg.jpg'
+import Waterdropbg from '../../assets/images/waterdropbg.jpg'
 import waterTreat1 from '../../assets/images/Wastely_Water_Treatment1.jpg'
 import waterTreat2 from '../../assets/images/Wastely_Water_Treatment2.jpg'
 import waterTreat3 from '../../assets/images/Wastely_Water_Treatment3.jpg'
