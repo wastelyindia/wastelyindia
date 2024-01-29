@@ -1,4 +1,4 @@
-import contactImg from '../../assets/images/contact.AVIF'
+import contactImg from '../../assets/images/contact.jpg'
 import * as Yup from 'yup';
 // import PhoneNumber from './PhoneNumber';
 import { useFormik } from 'formik';

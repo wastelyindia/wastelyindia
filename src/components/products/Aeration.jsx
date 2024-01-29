@@ -1,6 +1,6 @@
 import React from 'react'
 // import AerationVideo from '../../assets/video/Aeration.mp4'
-import AerationImg from '../../assets/images/Aeration.avif'
+import AerationImg from '../../assets/images/Aeration.jpg'
 import oxygination from '../../assets/images/oxygination.jpeg'
 
 const Aeration = () => {
