@@ -1,5 +1,5 @@
 import React from 'react'
-import packageImg from '../../assets/images/packageTreatment.WEBP'
+import packageImg from '../../assets/images/packageTreatment.webp'
 import packageImage from '../../assets/images/packageTreatment.jpg'
 import packageImage1 from '../../assets/images/package-treatment.jpg'
 const PackageTratment = () => {
