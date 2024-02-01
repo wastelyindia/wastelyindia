@@ -28,7 +28,7 @@ const NavBar = () => {
           </li>
           <NavLinks />
           <li>
-            <a href="/contact" className="py-7 px-3 inline-block">
+            <a href="contact" className="py-7 px-3 inline-block">
               Contact
             </a>
           </li>
