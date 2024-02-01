@@ -29,12 +29,12 @@ const CardHome = () => {
                                 We transform wastewater into a valuable resource, promoting sustainability and water security.
                             </p>
                             <div className="mt-8">
-                                {/* <a up for our newsletter
-                                    href="#"
+                                {/* <Link up for our newsletter
+                                    to="#"
                                     className="inline-block w-full text-center text-lg font-medium text-gray-100 bg-blue-600 border-solid border-2 border-gray-600 py-4 px-10 hover:bg-blue-800 hover:shadow-md md:w-48"
                                 >
                                     Learn More
-                                </a> */}
+                                </Link> */}
                             </div>
                         </div>
                     </div>

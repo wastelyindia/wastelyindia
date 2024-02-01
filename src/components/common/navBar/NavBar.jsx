@@ -17,20 +17,20 @@ const NavBar = () => {
         </div>
         <ul className="md:flex hidden uppercase items-center gap-8 font-[Poppins]">
           <li>
-            <a href="/" className="py-7 px-3 inline-block">
+            <Link to="/" className="py-7 px-3 inline-block">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/about" className="py-7 px-3 inline-block">
+            <Link to="/about" className="py-7 px-3 inline-block">
               About
-            </a>
+            </Link>
           </li>
           <NavLinks />
           <li>
-            <a href="contact" className="py-7 px-3 inline-block">
+            <Link to="contact" className="py-7 px-3 inline-block">
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
         <div className="md:block hidden">
@@ -45,18 +45,18 @@ const NavBar = () => {
         `}
         >
           <li>
-            <Link href="/" className="py-7 px-3 inline-block">
+            <Link to="/" className="py-7 px-3 inline-block">
               Home
             </Link>
           </li>
           <li>
-            <Link href="/about" className="py-7 px-3 inline-block">
+            <Link to="/about" className="py-7 px-3 inline-block">
               About
             </Link>
           </li>
           <NavLinks />
           <li>
-            <Link href="/contact" className="py-7 px-3 inline-block">
+            <Link to="/contact" className="py-7 px-3 inline-block">
               Contact
             </Link>
           </li>

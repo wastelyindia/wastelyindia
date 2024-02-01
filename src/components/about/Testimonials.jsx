@@ -253,9 +253,9 @@ function Testimonials() {
             <div key={caseStudy.title} className="bg-white rounded-2xl p-6 shadow">
               <h3 className="font-semibold text-gray-800 mb-4">{caseStudy.title}</h3>
               <p className="text-lg text-gray-500 mb-4">{caseStudy.description}</p>
-              <a href="#" className="text-indigo-600 hover:underline">
+              <Link to="#" className="text-indigo-600 hover:underline">
                 Read more &rarr;
-              </a>
+              </Link>
             </div>
           ))}
         </div>

@@ -6,7 +6,7 @@ import cardImg1 from "../../assets/images/Wastely_hero_9.jpeg";
 import CardContainer from './CradContainer';
 import Testimonials from './Testimonials';
 import { FaGlobe, FaUserCircle, FaLeaf, FaCog, FaWater, FaEye, FaHandshake, FaTree } from 'react-icons/fa';
-
+import { Link } from "react-router-dom";
 
 const About = () => {
 
@@ -46,9 +46,9 @@ const About = () => {
                 The world can't clean itself. But together we can. We're there when the world needs us. Innovative and cutting-edge technology, paired with personalized service, drives everything we do in wastewater restoration, recycling, and reuse.
               </p>
               <div className="flex flex-col md:flex-row justify-center items-center md:justify-between gap-4 mt-8">
-                <a href="#Mission" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md">OUR MISSION</a>
-                <a href="#Vision" className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md">OUR VISION</a>
-                <a href="#Values" className="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md">WASTELY VALUES</a>
+                <Link to="#Mission" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md">OUR MISSION</Link>
+                <Link to="#Vision" className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md">OUR VISION</Link>
+                <Link to="#Values" className="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md">WASTELY VALUES</Link>
               </div>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import HeroCard from '../common/HeroCard'
 import WasteWater from '../../assets/images/wasteWaterSolution.jpg';
+import { Link } from 'react-router-dom';
 
 const WasteWaterTreatment = () => {
     return (
@@ -240,7 +241,7 @@ const WasteWaterTreatment = () => {
                         </ul>
                         <p className="text-lg mt-6">
                             Not sure where to start? Our experts are here to guide you through the selection process and ensure the best solution for your specific needs.
-                            <a href="/contact" className="text-blue-600 font-semibold">Contact us today for a free consultation.</a>
+                            <Link to="/contact" className="text-blue-600 font-semibold">Contact us today for a free consultation.</Link>
                         </p>
                     </section>
                 </section>
