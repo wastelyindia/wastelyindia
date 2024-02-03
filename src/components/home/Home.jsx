@@ -6,6 +6,7 @@ import ApplicationCard from "./ApplicationCard";
 import Tilt from 'react-parallax-tilt';
 import { FaChartLine, FaGlobe, FaHandshake, FaLeaf, FaRocket, FaUser } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Home = () => {
 
