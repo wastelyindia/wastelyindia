@@ -83,7 +83,7 @@ const Footer = () => {
                   <ul role="list" className="mt-4 space-y-4">
 
                     <li>
-                      <Link to="/application/service/technology_Process" className="text-base text-gray-500 hover:text-gray-900">Tech procss</Link>
+                      <Link to="/application/service/technology_Process" className="text-base text-gray-500 hover:text-gray-900">Tech Process</Link>
                     </li>
 
                     <li>

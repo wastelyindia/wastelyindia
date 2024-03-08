@@ -1,12 +1,11 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import bgImage from "../../assets/images/Wastely_hero_1.jpeg";
 import cardImg from "../../assets/images/Wastely_hero_6.jpeg";
 import cardImg1 from "../../assets/images/Wastely_hero_9.jpeg";
 
 import CardContainer from './CradContainer';
 import Testimonials from './Testimonials';
-import { FaGlobe, FaUserCircle, FaLeaf, FaCog, FaWater, FaEye, FaHandshake, FaTree } from 'react-icons/fa';
-import { Link } from "react-router-dom";
+import { FaGlobe, FaUserCircle, FaLeaf, FaCog, FaWater, FaEye, FaHandshake, FaTree, FaBullseye, FaExclamationTriangle} from 'react-icons/fa';
 
 const About = () => {
 
@@ -36,7 +35,7 @@ const About = () => {
   return (
     <>
 
-      <div className=" ">
+      {/* <div className=" ">
         <div className="  flex items-center justify-center bg-gray-100">
           <div className=" bg-cover lg:bg-[55%] bg-left bg-no-repeat p-0 py-24 sm:py-[100px] px-5 sm:px-10 lg:p-[80px] xl:py-[100px] xl:p-0 overflow-hidden bg-[#fdfdfd] bg-fixed sm:bg-scroll"
             style={{ backgroundImage: `url(${bgImage})` }}>
@@ -53,7 +52,33 @@ const About = () => {
             </div>
           </div>
         </div>
+      </div> */}
+
+
+<div className=" ">
+  <div className="flex items-center justify-center bg-gray-100">
+    <div className="bg-cover lg:bg-[55%] bg-left bg-no-repeat p-0 py-24 sm:py-[100px] px-5 sm:px-10 lg:p-[80px] xl:py-[100px] xl:p-0 overflow-hidden bg-[#fdfdfd] bg-fixed sm:bg-scroll"
+      style={{ backgroundImage: `url(${bgImage})` }}>
+      <div className="w-[100%] lg:w-[55%] float-right p-0 px-5 sm:p-20 xl:p-[150px] rounded bg-[#f5f5f5]">
+        <h1 className="text-4xl font-bold mb-8 text-gray-900">About Us</h1>
+        <p className="text-lg text-gray-600 leading-relaxed mb-10">
+          The world can't clean itself. But together we can. We're there when the world needs us. Innovative and cutting-edge technology, paired with personalized service, drives everything we do in wastewater restoration, recycling, and reuse.
+        </p>
+        <div className="flex flex-col md:flex-row justify-center items-center md:justify-between gap-4 mt-8">
+          <Link to="#Mission" className="flex items-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md text-sm">
+            <FaBullseye className="w-6 h-6 mr-2" /> OUR MISSION
+          </Link>
+          <Link to="#Vision" className="flex items-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md text-sm">
+            <FaEye className="w-6 h-6 mr-2" /> OUR VISION
+          </Link>
+          <Link to="#Values" className="flex items-center bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md text-sm">
+            <FaExclamationTriangle className="w-6 h-6 mr-2" /> WASTELY VALUES
+          </Link>
+        </div>
       </div>
+    </div>
+  </div>
+</div>
 
 
 
