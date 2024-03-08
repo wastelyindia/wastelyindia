@@ -39,7 +39,7 @@ const About = () => {
         <div className="  flex items-center justify-center bg-gray-100">
           <div className=" bg-cover lg:bg-[55%] bg-left bg-no-repeat p-0 py-24 sm:py-[100px] px-5 sm:px-10 lg:p-[80px] xl:py-[100px] xl:p-0 overflow-hidden bg-[#fdfdfd] bg-fixed sm:bg-scroll"
             style={{ backgroundImage: `url(${bgImage})` }}>
-            <div className=" w-[100%] lg:w-[55%] float-right p-0 px-5 sm:p-20 xl:p-[150px] rounded bg-[#f5f5f5]">
+            <div className=" w-[100%] lg:w-[55%] float-right p-0 py-1 px-5 sm:p-20 xl:p-[150px] rounded bg-[#f5f5f5]">
               <h1 className="text-4xl font-bold mb-8 text-gray-900">About Us</h1>
               <p className="text-lg text-gray-600 leading-relaxed mb-10">
                 The world can't clean itself. But together we can. We're there when the world needs us. Innovative and cutting-edge technology, paired with personalized service, drives everything we do in wastewater restoration, recycling, and reuse.
