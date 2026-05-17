@@ -1,253 +1,569 @@
-import HeroCard from '../common/HeroCard'
-import WasteWater from '../../assets/images/wasteWaterSolution.jpg';
-import { Link } from 'react-router-dom';
+
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
+import {
+  ArrowRight,
+  BadgeCheck,
+  BrainCircuit,
+  Building2,
+  Droplets,
+  Factory,
+  FlaskConical,
+  Gauge,
+  Leaf,
+  ShieldCheck,
+  Sparkles,
+  Waves,
+} from "lucide-react";
+
+import WasteWater from "../../assets/images/wasteWaterSolution.png";
+
+const solutions = [
+  {
+    title: "Industrial Wastewater",
+    description:
+      "High-efficiency treatment systems engineered for complex industrial discharge and compliance.",
+    icon: Factory,
+  },
+  {
+    title: "Municipal Sewage",
+    description:
+      "Scalable smart infrastructure for urban wastewater management and water recovery.",
+    icon: Building2,
+  },
+  {
+    title: "Resource Recovery",
+    description:
+      "Transform wastewater into reusable water, energy, and sustainable by-products.",
+    icon: Leaf,
+  },
+];
+
+const technologies = [
+  "SBR • CYCLOPUR®",
+  "MBR • MARAPUR®",
+  "BIOPUR® Biofiltration",
+  "MBBR & IFAS",
+  "Nereda® Technology",
+  "Advanced Oxidation",
+];
+
+const stats = [
+  {
+    value: "30M+",
+    label: "Liters Treated Daily",
+  },
+  {
+    value: "99%",
+    label: "Compliance Efficiency",
+  },
+  {
+    value: "24/7",
+    label: "Monitoring Systems",
+  },
+  {
+    value: "Smart",
+    label: "Automation Ready",
+  },
+];
 
 const WasteWaterTreatment = () => {
-    return (
-        <>
-            <div className="container !pt-0">
-                <HeroCard />
+  return (
+    <div className="relative overflow-hidden bg-[#081219] text-white">
+      {/* Ambient Background */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute left-[-100px] top-[-120px] h-[450px] w-[450px] rounded-full bg-cyan-500/10 blur-[140px]" />
+        <div className="absolute bottom-[-180px] right-[-100px] h-[500px] w-[500px] rounded-full bg-emerald-500/10 blur-[150px]" />
+      </div>
 
-                <section className="mx-auto py-8 bg-white p-6 rounded shadow-md">
-                    <h1 className="text-4xl text-[#00539b] font-bold mb-6">Wastewater Treatment</h1>
-                    <p className="mb-6">
-                        Managing wastewater in rapidly growing cities is a critical challenge impacting public health and overall productivity. WASTELY AQUA addresses this concern by championing sustainable wastewater treatment solutions, ensuring environmentally friendly discharge or reuse of treated wastewater.
+      {/* HERO */}
+      <section className="relative flex min-h-[100svh] items-center pt-28 pb-20 md:pt-32 md:pb-28">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
+            {/* LEFT CONTENT */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9 }}
+              viewport={{ once: true }}
+            >
+              {/* Label */}
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-[11px] uppercase tracking-[0.25em] text-cyan-300 backdrop-blur-xl">
+                <Sparkles size={14} />
+                Sustainable Water Solutions
+              </div>
+
+              {/* Heading */}
+              <h1 className="mt-8 text-[2.9rem] sm:text-6xl md:text-7xl xl:text-[6rem] font-black leading-[0.9] tracking-[-0.04em]">
+                Advanced
+                <span className="block bg-gradient-to-r from-cyan-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">
+                  Wastewater
+                </span>
+                Treatment Systems
+              </h1>
+
+              <p className="mt-7 max-w-2xl text-[15px] sm:text-lg md:text-xl leading-relaxed text-slate-400">
+                Intelligent wastewater infrastructure engineered for
+                sustainability, compliance, and resource recovery using
+                next-generation treatment technologies.
+              </p>
+
+              {/* CTA */}
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link
+                  to="/contact"
+                  className="
+                    group
+                    inline-flex items-center justify-center gap-3
+                    rounded-full
+                    bg-gradient-to-r
+                    from-cyan-400
+                    to-emerald-400
+                    px-8 md:px-9
+                    py-4
+                    text-sm md:text-base
+                    font-semibold
+                    text-black
+                    transition-all duration-500
+                    hover:-translate-y-1
+                    hover:scale-[1.03]
+                    shadow-[0_10px_40px_-12px_rgba(34,211,238,0.45)]
+                    hover:shadow-[0_20px_70px_-18px_rgba(34,211,238,0.55)]
+                  "
+                >
+                  Request Consultation
+                </Link>
+
+                <Link
+                  to="/technologies"
+                  className="
+                    rounded-full
+                    border border-white/10
+                    bg-white/5
+                    px-8
+                    py-4
+                    backdrop-blur-xl
+                    transition-all duration-500
+                    hover:-translate-y-1
+                    hover:border-cyan-400/30
+                    hover:bg-white/[0.08]
+                  "
+                >
+                  Explore Technologies
+                </Link>
+              </div>
+
+              {/* TRUST STATS */}
+              <div className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-4">
+                {stats.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.08 }}
+                    viewport={{ once: true }}
+                    className="
+                      group
+                      rounded-[28px]
+                      border border-white/10
+                      bg-white/[0.04]
+                      p-5 md:p-6
+                      backdrop-blur-2xl
+                      transition-all duration-500
+                      hover:-translate-y-1
+                      hover:border-cyan-400/20
+                      hover:bg-white/[0.06]
+                    "
+                  >
+                    <h3 className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-3xl font-black text-transparent">
+                      {item.value}
+                    </h3>
+
+                    <p className="mt-2 text-sm text-slate-400">
+                      {item.label}
                     </p>
-                    <p className="mb-6">
-                        Wastewater treatment is a crucial process, converting wastewater into an effluent suitable for return to the water cycle or direct reuse with minimal environmental impact. It involves the removal of contaminants and pollutants from domestic, industrial, and agricultural sewage.
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* RIGHT VISUAL */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.9 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              {/* Glow */}
+              <div className="absolute inset-0 rounded-[40px] bg-gradient-to-br from-cyan-500/20 to-emerald-500/20 blur-3xl" />
+
+              {/* Image */}
+              <div className="relative overflow-hidden rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-[0_0_80px_-20px_rgba(14,165,233,0.25)]">
+                <img
+                  src={WasteWater}
+                  alt="Wastewater Treatment Plant"
+                  loading="lazy"
+                  className="
+                    h-[420px]
+                    sm:h-[520px]
+                    md:h-[640px]
+                    xl:h-[760px]
+                    w-full
+                    object-cover
+                  "
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-[#081219] via-[#081219]/20 to-transparent" />
+              </div>
+
+              {/* Floating Panel */}
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="
+                  absolute
+                  bottom-6
+                  left-6
+                  hidden
+                  rounded-[28px]
+                  border border-white/10
+                  bg-[#0b1620]/80
+                  p-6
+                  backdrop-blur-2xl
+                  shadow-[0_0_50px_-12px_rgba(16,185,129,0.35)]
+                  md:block
+                  lg:-left-8
+                "
+              >
+                <div className="flex items-center gap-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300">
+                    <Gauge size={28} />
+                  </div>
+
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] text-cyan-300">
+                      Efficiency
                     </p>
-                    <p className="mb-6">
-                        WASTELY AQUA advocates a comprehensive wastewater treatment model, emphasizing resource recovery through innovative technologies. Our solutions range from highly effective pre-treatment to complete nutrient removal. Key technologies include single and dual-stage activated sludge processes, granular activated sludge with Nereda® technology, SBR (CYCLOPUR®) membrane bioreactor technology (MARAPUR®), biofiltration (BIOPUR®), and moving bed biological reactor and IFAS (FLUOPUR®).
-                    </p>
-                    <p className="mb-6">
-                        With global references ensuring the treatment of around 30 million m3 of wastewater daily, WASTELY AQUA plays a crucial role in protecting both people and the environment.
-                    </p>
-                    <p className="mb-6">
-                        Furthermore, WASTELY AQUA has been at the forefront of R&D efforts aimed at eliminating micro-pollutants for over a decade. We offer a comprehensive suite of technologies, including ozonation (BIOZONE®) and activated carbon adsorption (CARBOPUR®, PACOUR®), as well as their combination for effective results.
-                    </p>
-                    <p className="mb-6">
-                        As a pioneer and market leader in Switzerland, WASTELY AQUA has successfully commissioned 7 WWTPs with a cumulative capacity of 150,000 m3/d. Currently, we have 11 WWTPs under construction, focused on the advanced removal of micro-pollutants.
-                    </p>
-                </section>
 
-                <section className="container mx-auto px-4">
-                    <div className="text-center mb-8">
-                        <h1 className="text-4xl font-bold mb-6 text-[#00539b]">Wastewater Treatment Solutions for a Sustainable Future</h1>
-                        <p className="text-lg max-w-md mx-auto">
-                            Ensuring cleaner water, healthier communities, and a more secure water future for all.
-                        </p>
-                    </div>
+                    <h3 className="mt-1 text-3xl font-black">
+                      High Performance
+                    </h3>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="bg-white rounded-lg shadow-md p-8">
-                            <h2 className="text-2xl font-semibold mb-4">Tackling Wastewater Challenges Head-On</h2>
-                            <p className="mb-6">
-                                As cities grow and populations surge, the effective management of wastewater becomes increasingly critical for safeguarding public health and promoting environmental sustainability. At Wastely Aqua, we're committed to providing innovative and sustainable wastewater treatment solutions that transform wastewater into a valuable resource.
-                            </p>
-                            <p className="mb-6">
-                                Our comprehensive approach encompasses:
-                                <ul className="pl-4 list-disc">
-                                    <li>Resource recovery technologies to extract valuable resources from wastewater</li>
-                                    <li>Advanced treatment processes for effective contaminant removal</li>
-                                    <li>Expert consultation and support to guide optimal solution selection</li>
-                                    <li>Customizable solutions tailored to diverse industries and needs</li>
-                                </ul>
-                            </p>
-                        </div>
+      {/* CLIENT-FOCUSED SOLUTIONS */}
+      <section className="relative py-24 md:py-28">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Heading */}
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-3xl">
+              <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-2 text-[11px] uppercase tracking-[0.25em] text-emerald-300 backdrop-blur-xl">
+                Industry Solutions
+              </div>
 
-                        <div className="bg-white rounded-lg shadow-md p-8">
-                            <h2 className="text-2xl font-semibold mb-4">Our Technology Portfolio</h2>
-                            <p className="mb-6">
-                                We offer a diverse range of cutting-edge technologies to address various wastewater treatment challenges:
-                            </p>
-                            <ul className="pl-4 list-disc">
-                                <li>Advanced Activated Sludge Processes</li>
-                                <li>Granular Activated Sludge with Nereda® Technology</li>
-                                <li>SBR (Sequential Batch Reactor) - CYCLOPUR®</li>
-                                <li>Membrane Bioreactor Technology (MARAPUR®)</li>
-                                <li>Biofiltration - BIOPUR®</li>
-                                <li>Moving Bed Biological Reactor and IFAS (FLUOPUR®)</li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </section>
-
-                <section className="grid grid-cols-1 md:grid-cols-2 mt-5 gap-4">
-                    <div className="bg-white p-6 rounded shadow-md">
-                        <p className="mb-6">
-                            <strong className='text-[#00539b] font-bold mb-6'>Wastewater Treatment Solutions
-                            </strong > Facing challenges with wastewater management? Wastely Aqua provides innovative and sustainable solutions to ensure environmentally friendly discharge or reuse of treated wastewater, promoting a healthier environment and a more secure water future.
-                        </p>
-                        <p className="mb-6">
-                            Our comprehensive approach includes:
-                            <ul className="pl-4 list-disc">
-                                <li>Effective wastewater treatment processes</li>
-                                <li>Resource recovery technologies</li>
-                                <li>Micro-pollutant removal expertise</li>
-                                <li>Customized solutions for diverse industries</li>
-                                <li>Expert consultation and support</li>
-                            </ul>
-                        </p>
-                        {/* Additional content suggestions here */}
-                    </div>
-                    <div className="bg-white p-6 rounded shadow-md">
-                        <img src={WasteWater} alt="Wastewater Treatment Plant" className="w-full h-64 object-cover" />
-                    </div>
-
-                </section>
-
-                <section className="mt-8">
-                    <h3 className="text-3xl font-semibold mb-6 text-[#00539b]">Emerging Technologies</h3>
-                    <p className="mb-4">
-                        The future of wastewater treatment holds promise with innovative methods beyond traditional approaches. Here are two key examples:
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="bg-white rounded shadow-md p-6">
-                            <h4 className="text-lg font-semibold mb-4">Algae-based Treatment</h4>
-                            <p>
-                                This method harnesses the power of algae to absorb nutrients and other contaminants from wastewater. The harvested algae can then be repurposed for biofuel production, animal feed, or even fertilizer, adding a valuable economic loop to the process.
-                            </p>
-                            {/* Add image component with "object-cover" class for responsive scaling */}
-                        </div>
-                        <div className="bg-white rounded shadow-md p-6">
-                            <h4 className="text-lg font-semibold mb-4">Electrochemical Treatment</h4>
-                            <p>
-                                Electricity takes center stage in this emerging technology, directly breaking down contaminants in wastewater through controlled oxidation or reduction processes. This holds promise for efficient treatment of industrial wastewater, offering potential for reduced discharge of harmful pollutants.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="container mx-auto px-4">
-                    <h2 className="text-3xl font-semibold mb-8 text-[#00539b]">Wastewater Treatment Methods</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="bg-white rounded shadow-md p-6">
-                            <h3 className="text-xl font-semibold mb-4">Traditional Methods</h3>
-                            <ul className="list-disc space-y-4">
-                                <li>
-                                    <span className="font-bold">Physical:</span> Removes debris and solids through screening, sedimentation, and flotation.
-                                </li>
-                                <li>
-                                    <span className="font-bold">Chemical:</span> Neutralizes or removes contaminants using chemicals like coagulation, flocculation, and precipitation.
-                                </li>
-                                <li>
-                                    <span className="font-bold">Biological:</span> Utilizes microorganisms to break down organic contaminants (most common for municipal wastewater).
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="bg-white rounded shadow-md p-6">
-                            <h3 className="text-xl font-semibold mb-4">Advanced Methods</h3>
-                            <ul className="list-disc space-y-4">
-                                <li>
-                                    <span className="font-bold">Membrane Filtration:</span> Employs membranes to remove various contaminants, including bacteria, viruses, and pharmaceuticals.
-                                </li>
-                                <li>
-                                    <span className="font-bold">Reverse Osmosis:</span> Applies pressure to purify water through a semipermeable membrane, leaving contaminants behind. Often used for producing high-quality drinking water from wastewater.
-                                </li>
-                                <li>
-                                    <span className="font-bold">Ultraviolet Disinfection:</span> Kills bacteria and viruses using ultraviolet light.
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="container mx-auto px-4">
-                    <section className="mt-8 bg-white rounded-lg shadow-md p-8">
-                        <h2 className="text-3xl font-bold mb-6">Choosing the Right Solution for Your Wastewater Needs</h2>
-                        <p className="text-lg mb-8">
-                            Finding the optimal wastewater treatment solution isn&apos;t a one-size-fits-all process. It requires careful evaluation of several key factors to ensure long-term effectiveness and sustainability. Let's explore these factors together.
-                        </p>
-                        <ul className="list-disc pl-8 space-y-6">
-                            <li className="flex items-start">
-                                <svg
-                                    className="w-6 h-6 mr-4 text-blue-500"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a.5.5 0 10.707.708l-3 3a.5.5 0 000 .708l3 3a.5.5 0 00.707-.708l-.707-.707z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                                <span className="text-lg">Contamination type and volume</span>
-                            </li>
-                            <li className="flex items-start">
-                                <svg
-                                    className="w-6 h-6 mr-4 text-blue-500"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                                <span className="text-lg">Desired treatment level and discharge standards</span>
-                            </li>
-
-                            <li className="flex items-start">
-                                <svg
-                                    className="w-6 h-6 mr-4 text-blue-500"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                                <span className="text-lg">Available budget and potential economic benefits</span>
-                            </li>
-
-                            <li className="flex items-start">
-                                <svg
-                                    className="w-6 h-6 mr-4 text-blue-500"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                                <span className="text-lg">Energy efficiency and environmental impact</span>
-                            </li>
-                            <li className="flex items-start">
-                                <svg
-                                    className="w-6 h-6 mr-4 text-blue-500"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M10 20a10 10 0 110-20 10 10 0 010 20zm0-6a8 8 0 1116 0 8 8 0 01-16 0zM7 9a1 1 0 012 0v6a1 1 0 11-2 0V9z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                                <span className="text-lg">Sustainability considerations</span>
-                            </li>
-                        </ul>
-                        <p className="text-lg mt-6">
-                            Not sure where to start? Our experts are here to guide you through the selection process and ensure the best solution for your specific needs.
-                            <Link to="/contact" className="text-blue-600 font-semibold">Contact us today for a free consultation.</Link>
-                        </p>
-                    </section>
-                </section>
+              <h2 className="mt-8 text-4xl font-black leading-tight md:text-6xl">
+                Engineered for
+                <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+                  {" "}
+                  Industrial & Municipal Needs
+                </span>
+              </h2>
             </div>
-        </>
-    )
-}
 
-export default WasteWaterTreatment
+            <p className="max-w-xl text-base leading-relaxed text-slate-400 md:text-lg">
+              Customized wastewater treatment systems designed for
+              sustainability, operational reliability, and environmental
+              compliance.
+            </p>
+          </div>
+
+          {/* Cards */}
+          <div className="mt-20 grid gap-6 lg:grid-cols-3">
+            {solutions.map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.08 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10 }}
+                  className="
+                    group
+                    relative
+                    overflow-hidden
+                    rounded-[36px]
+                    border border-white/10
+                    bg-white/5
+                    p-8 md:p-10
+                    backdrop-blur-2xl
+                    transition-all duration-500
+                    hover:border-cyan-400/20
+                    hover:bg-white/[0.07]
+
+                    before:absolute
+                    before:inset-0
+                    before:bg-gradient-to-br
+                    before:from-cyan-400/[0.03]
+                    before:to-emerald-400/[0.02]
+                    before:opacity-0
+                    before:transition-all
+                    before:duration-700
+                    hover:before:opacity-100
+                  "
+                >
+                  {/* Glow */}
+                  <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-cyan-400/10 blur-3xl transition-all duration-500 group-hover:bg-cyan-400/20" />
+
+                  <div className="relative z-10">
+                    <div className="flex h-20 w-20 items-center justify-center rounded-3xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300">
+                      <Icon size={36} />
+                    </div>
+
+                    <h3 className="mt-10 text-3xl font-black">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-5 leading-relaxed text-slate-400">
+                      {item.description}
+                    </p>
+
+                    <button className="mt-10 inline-flex items-center gap-2 text-cyan-300 transition-all duration-300 group-hover:gap-3">
+                      Discover Solution
+                      <ArrowRight size={18} />
+                    </button>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* TECHNOLOGY STRIP */}
+      <section className="relative overflow-hidden border-y border-white/10 bg-white/[0.03] py-10 backdrop-blur-xl">
+        <motion.div
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="flex gap-6 whitespace-nowrap will-change-transform"
+        >
+          {[...technologies, ...technologies].map((tech, index) => (
+            <div
+              key={index}
+              className="flex items-center gap-4 rounded-full border border-white/10 bg-white/5 px-6 py-4 backdrop-blur-xl"
+            >
+              <BadgeCheck className="text-cyan-300" size={18} />
+
+              <span className="text-lg font-medium text-slate-200">
+                {tech}
+              </span>
+            </div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* FEATURE SECTION */}
+      <section className="relative py-24 md:py-28">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid items-center gap-16 lg:grid-cols-[0.95fr_1.05fr]">
+            {/* LEFT PANEL */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="relative overflow-hidden rounded-[40px] border border-white/10 bg-white/5 p-7 sm:p-8 md:p-10 backdrop-blur-2xl"
+            >
+              <div className="absolute right-0 top-0 h-52 w-52 rounded-full bg-cyan-400/10 blur-3xl" />
+
+              <div className="relative z-10">
+                <div className="flex h-20 w-20 items-center justify-center rounded-3xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300">
+                  <BrainCircuit size={38} />
+                </div>
+
+                <h3 className="mt-10 text-4xl font-black leading-tight">
+                  Smart Water Recovery & Resource Optimization
+                </h3>
+
+                <p className="mt-6 leading-relaxed text-slate-400">
+                  Wastely Aqua integrates automation, advanced membrane
+                  systems, and intelligent monitoring to maximize treatment
+                  efficiency while minimizing environmental impact.
+                </p>
+
+                <div className="mt-10 space-y-5">
+                  {[
+                    "AI-assisted operational monitoring",
+                    "Advanced membrane filtration",
+                    "Micro-pollutant elimination",
+                    "Energy-efficient treatment systems",
+                  ].map((item, index) => (
+                    <div
+                      key={index}
+                      className="
+                        flex items-start gap-4
+                        rounded-[24px]
+                        border border-white/10
+                        bg-[#0b1620]/70
+                        p-5
+                        transition-all duration-500
+                        hover:border-cyan-400/20
+                        hover:bg-[#0f1b26]/80
+                      "
+                    >
+                      <div className="mt-1 h-3 w-3 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400" />
+
+                      <p className="text-slate-300">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* RIGHT CONTENT */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-2 text-[11px] uppercase tracking-[0.25em] text-cyan-300 backdrop-blur-xl">
+                Why Wastely Aqua
+              </div>
+
+              <h2 className="mt-8 text-4xl font-black leading-tight md:text-6xl">
+                Modern Infrastructure.
+                <span className="block bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+                  Sustainable Results.
+                </span>
+              </h2>
+
+              <p className="mt-8 text-base leading-relaxed text-slate-400 md:text-lg">
+                Our solutions are built to help industries and municipalities
+                achieve regulatory compliance, operational stability, and
+                long-term water sustainability through innovative engineering.
+              </p>
+
+              <div className="mt-12 grid gap-5 sm:grid-cols-2">
+                {[
+                  {
+                    icon: ShieldCheck,
+                    title: "Environmental Compliance",
+                  },
+                  {
+                    icon: FlaskConical,
+                    title: "Advanced Treatment Systems",
+                  },
+                  {
+                    icon: Droplets,
+                    title: "Water Reuse & Recovery",
+                  },
+                  {
+                    icon: Waves,
+                    title: "Scalable Infrastructure",
+                  },
+                ].map((item, index) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <div
+                      key={index}
+                      className="
+                        rounded-[28px]
+                        border border-white/10
+                        bg-white/5
+                        p-6
+                        backdrop-blur-xl
+                        transition-all duration-500
+                        hover:-translate-y-1
+                        hover:border-cyan-400/20
+                      "
+                    >
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300">
+                        <Icon size={26} />
+                      </div>
+
+                      <h3 className="mt-5 text-lg font-semibold">
+                        {item.title}
+                      </h3>
+                    </div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="relative pb-24 md:pb-28">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-[40px] border border-white/10 bg-white/5 px-6 sm:px-8 py-16 md:px-20 md:py-20 text-center backdrop-blur-2xl shadow-[0_0_80px_-20px_rgba(14,165,233,0.25)]">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-emerald-500/10" />
+
+            <div className="relative z-10 mx-auto max-w-4xl">
+              <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-2 text-[11px] uppercase tracking-[0.25em] text-cyan-300 backdrop-blur-xl">
+                Wastely Aqua
+              </div>
+
+              <h2 className="mt-8 text-4xl font-black leading-tight md:text-6xl">
+                Let’s Build Smarter
+                <span className="block bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+                  Wastewater Infrastructure
+                </span>
+              </h2>
+
+              <p className="mt-6 text-base leading-relaxed text-slate-400 md:text-lg">
+                Future-ready wastewater solutions designed for performance,
+                sustainability, and long-term operational excellence.
+              </p>
+
+              <div className="mt-10 flex flex-wrap justify-center gap-4">
+                <Link
+                  to="/contact"
+                  className="
+                    inline-flex items-center justify-center
+                    rounded-full
+                    bg-gradient-to-r
+                    from-cyan-400
+                    to-emerald-400
+                    px-8
+                    py-4
+                    font-semibold
+                    text-black
+                    transition-all duration-500
+                    hover:-translate-y-1
+                    hover:scale-[1.03]
+                    shadow-[0_10px_40px_-12px_rgba(34,211,238,0.45)]
+                    hover:shadow-[0_20px_70px_-18px_rgba(34,211,238,0.55)]
+                  "
+                >
+                  Talk to Experts
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default WasteWaterTreatment;

@@ -1,299 +1,115 @@
-import CardHome from "./CardHome"
-import Hero from "./Hero"
-import bgImage from "../../assets/images/Wastely_hero_1.jpeg";
-import WaterBgImage from "../../assets/images/water.jpg";
+import Hero from "./Hero";
+import ImpactSection from "./ImpactSection";
 import ApplicationCard from "./ApplicationCard";
-import Tilt from 'react-parallax-tilt';
-import { FaChartLine, FaGlobe, FaHandshake, FaLeaf, FaRocket, FaUser } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import CardHome from "./CardHome";
+import Industries from "./Industries";
+import ProcessSection from "./ProcessSection";
+import CTASection from "./CTASection";
+import IntegratedEcosystem from "./IntegratedEcosystem";
+import FeaturedTechnologies from "./FeaturedTechnologies";
+import ImpactMetrics from "./ImpactMetrics";
+import BeforeAfterShowcase from "./BeforeAfterShowcase";
+import SmartMonitoring from "./SmartMonitoring";
+import CaseStudyMarquee from "./CaseStudyMarquee";
+import SectionTransition from "./SectionTransition";
 
 const Home = () => {
-
-
-  const navigate = useNavigate()
-
   return (
-    <>
+    <main
+      className="
+        relative
+        isolate
+        overflow-x-hidden
+        bg-[#081219]
+        text-white
+        antialiased
+      "
+    >
+      {/* GLOBAL ATMOSPHERIC OVERLAYS */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        
+        <div
+          className="
+            absolute
+            left-[-10%]
+            top-[5%]
+            h-[420px]
+            w-[420px]
+            rounded-full
+            bg-cyan-500/10
+            blur-[140px]
+          "
+        />
 
-      <Hero />
+        <div
+          className="
+            absolute
+            right-[-10%]
+            top-[35%]
+            h-[500px]
+            w-[500px]
+            rounded-full
+            bg-emerald-500/10
+            blur-[160px]
+          "
+        />
 
-<div className="container">
-        <section className="  min-h-screen  px-6 py-16 md:px-12 lg:px-20 flex flex-col items-center justify-center  bg-cover bg-center bg-no-repeat bg-none"
-      style={{ backgroundImage: `url(${WaterBgImage})` }}
-      >
-        <h2 className="text-3xl font-bold mb-8 leading-snug text-shadow">WASTELY AQUA: Transforming Wastewater Management</h2>
-        <p className="text-xl tracking-wide mb-8">
-          We pioneer transformative wastewater management, driven by cutting-edge technology and a deep commitment to sustainability. Our aim is to accelerate success for our customers, people, and the planet, building a cleaner, more sustainable future together.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
-          <div className="rounded-lg bg-white shadow-md p-4 flex flex-col items-center">
-            <FaGlobe className="text-4xl mb-4 text-teal-400" />
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Global Impact</h3>
-            <p className="text-gray-700 text-sm">Building a cleaner future for all nations.</p>
-          </div>
-          <div className="rounded-lg bg-white shadow-md p-4 flex flex-col items-center">
-            <FaRocket className="text-4xl mb-4 text-teal-400" />
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Cutting-Edge Tech</h3>
-            <p className="text-gray-700 text-sm">Innovative solutions for optimal results.</p>
-          </div>
-          <div className="rounded-lg bg-white shadow-md p-4 flex flex-col items-center">
-            <FaLeaf className="text-4xl mb-4 text-teal-400" />
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Sustainable Future</h3>
-            <p className="text-gray-700 text-sm">Preserving our planet for generations to come.</p>
-          </div>
-          <div className="rounded-lg bg-white shadow-md p-4 flex flex-col items-center">
-            <FaHandshake className="text-4xl mb-4 text-teal-400" />
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Partnerships</h3>
-            <p className="text-gray-700 text-sm">Accelerating success together.</p>
-          </div>
-          <div className="rounded-lg bg-white shadow-md p-4 flex flex-col items-center">
-            <FaUser className="text-4xl mb-4 text-teal-400" />
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Empowering People</h3>
-            <p className="text-gray-700 text-sm">Creating an inspiring workplace for all.</p>
-          </div>
-          <div className="rounded-lg bg-white shadow-md p-4 flex flex-col items-center">
-            <FaChartLine className="text-4xl mb-4 text-teal-400" />
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Growth & Sustainability</h3>
-            <p className="text-gray-700 text-sm">Balancing progress with environmental responsibility.</p>
-          </div>
-        </div>
-        <button className="mt-12 px-6 py-4 bg-gradient-to-r from-teal-400 to-blue-500 text-white font-bold rounded-md hover:from-blue-500 hover:to-teal-400 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-400"
-          onClick={()=> navigate('/contact')}
-          >
-          Join the Clean Water Movement
-        </button>
-      </section>
+        <div
+          className="
+            absolute
+            bottom-[5%]
+            left-[30%]
+            h-[380px]
+            w-[380px]
+            rounded-full
+            bg-cyan-400/5
+            blur-[140px]
+          "
+        />
       </div>
 
-      <section className="container bg-gray-500 min-h-screen my-10">
-        <div className="homeCard">
-          <div className="shadow-lg rounded-lg bg-white pt-12 pb-6 px-4 md:px-6 lg:px-8 flex flex-col items-center gap-y-4 md:gap-y-8">
-            <h2 className="text-2xl font-bold text-gray-900 text-center mb-6">
-              Wastewater Treatment Solutions
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg: w-full">
-              {/* Biological Treatment */}
-              <Tilt className="rounded-lg px-4 py-6 flex flex-col shadow-lg items-center">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-12 h-12 mb-4 text-blue-500"
-                >
-                  <path d="M12 12l3 3l-3 3l-3-3l3-3z" />
-                  <circle cx="12" cy="12" r="10" />
-                </svg>
-                
-                <h3 className="text-xl font-semibold text-gray-900 text-center">
-                  Biological Treatment
-                </h3>
-                <p className="text-base text-gray-600 mt-2 text-center">
-                  Embark on a transformative journey with our biological treatment solutions, where nature-inspired processes harness the power of microorganisms to efficiently break down pollutants, ensuring the purity of water.
-                </p>
-              </Tilt>
-              {/* Rejuvenation of Water Bodies */}
-              <Tilt className="rounded-lg px-4 py-6 flex flex-col shadow-lg items-center">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-12 h-12 mb-4 text-green-500"
-                >
-                  <path d="M14.714 5.646a3.5 3.5 0 0 0-5.656 6.196L8.646 13.392a3.5 3.5 0 0 0 4.95 3.588l6.878-6.878a3.5 3.5 0 0 0 0-5.144z" />
-                  <path d="M16.888 8.588a7 7 0 0 1-2.032-6.548L8.032 2.032a7 7 0 0 1 9.856 1.736l2.296 5.792a7 7 0 0 1-2.032 6.548z" />
-                </svg>
-                <h3 className="text-xl font-semibold text-gray-900 text-center">
-                  Rejuvenation of Water Bodies
-                </h3>
-                <p className="text-base text-gray-600 mt-2 text-center">
-                  Revitalize and breathe life back into water bodies with our comprehensive rejuvenation approach. From nutrient removal to enhancing ecological balance, our solutions contribute to the restoration and sustainability of aquatic ecosystems.
-                </p>
-              </Tilt>
+      {/* PAGE CONTENT */}
+      <div className="relative z-10">
+        <Hero />
 
-              <Tilt className="rounded-lg px-4 py-6 flex flex-col shadow-lg items-center">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-12 h-12 mb-4 text-yellow-500"
-                >
-                  <path d="M15 3H9a6 6 0 0 0-6 6v6h12V9a6 6 0 0 0-6-6zM21 15v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2zM9 17H5v-2h4v2zm4 0h-4v-2h4v2zm4 0h-4v-2h4v2z" />
-                </svg>
+        <SectionTransition />
 
-                <h3 className="text-xl font-semibold text-gray-900 text-center">
-                  Complete Sludge Management System
-                </h3>
-                <p className="text-base text-gray-600 mt-2 text-center">
-                  Experience the epitome of efficiency with our integrated sludge management system. From anaerobic digestion to responsible disposal, we ensure a comprehensive and sustainable solution for handling solid residues generated during the treatment process.
-                </p>
-              </Tilt>
+        <IntegratedEcosystem />
 
-              {/* Bio Enzyme */}
-              <Tilt className="rounded-lg px-4 py-6 flex flex-col shadow-lg items-center">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-12 h-12 mb-4 text-purple-500"
-                >
-                  <path d="M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM9 14a6 6 0 1 1-12 0 6 6 0 0 1 12 0z" />
-                </svg>
-                <h3 className="text-xl font-semibold text-gray-900 text-center">
-                  Bio Remediation
-                </h3>
-                <p className="text-base text-gray-600 mt-2 text-center">
-                  Unlock the potential of bio enzymes in wastewater treatment. Our innovative formulations catalyze organic matter breakdown, promoting a more efficient and eco-friendly approach to wastewater management.
-                </p>
-              </Tilt>
+        <SectionTransition flip />
 
-              <Tilt className="rounded-lg px-4 py-6 flex flex-col shadow-lg items-center">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-12 h-12 mb-4 text-red-500"
-                >
-                  <path d="M17 4v16M5 20h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2z" />
-                  <polyline points="17 4 12 9 7 4" />
-                </svg>
-                <h3 className="text-xl font-semibold text-gray-900 text-center">
-                  Innovative Design, Technology & Reliability
-                </h3>
-                <p className="text-base text-gray-600 mt-2 text-center">
-                  Explore a trifecta of excellence with our wastewater management solutions—innovative design, cutting-edge technology, and unwavering reliability. We bring a harmonious blend that ensures optimal performance and sustainable outcomes for the communities we serve.
-                </p>
-              </Tilt>
-              <Tilt className="rounded-lg px-4 py-6 flex flex-col shadow-lg items-center">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-12 h-12 mb-4 text-yellow-500"
-                >
-                  <path d="M18 18l3-3l-3-3l-3 3l3 3zM9 12l3 3l-3 3l-3-3l3-3z" />
-                  <path d="M12 6a12 12 0 0 0-6 12H3a12 12 0 0 0 12-12v-5" />
-                </svg>
-                <h3 className="text-xl font-semibold text-gray-900 text-center">
-                  Aeration/Oxigenation Technology
-                </h3>
-                <p className="text-base text-gray-600 mt-2 text-center">
-                  Step into a realm where air meets water, as our aeration/oxigenation technology breathes life into wastewater treatment. With precision and innovation, we enhance oxygen levels, fostering an environment where microorganisms thrive, contributing to effective pollutant breakdown and water purification.
-                </p>
-              </Tilt>
+        <ImpactMetrics />
 
-            </div>
-          </div>
+        <SectionTransition />
 
+        <FeaturedTechnologies />
 
-        </div>
-      </section>
+        <SectionTransition flip />
 
-      <div className="container">
-        <div className="z-30 relative items-center justify-center w-full h-full overflow-auto">
-          <div className="inset-0 h-screen bg-cover bg-center" style={{ backgroundImage: `url(${bgImage})` }}></div>
-          <div className="absolute inset-0 z-20 flex items-center justify-center h-screen w-full bg-gray-900 bg-opacity-75"></div>
-          <div className="absolute inset-0 z-30 flex flex-col items-center justify-center">
-            <div className="shadow-2xl rounded-lg w-4/5 h-96 bg-cover bg-center" style={{ backgroundImage: `url(${bgImage})` }}>
-              <div className="grid grid-cols-12 gap-1">
-                <div className="relative my-6 px-8 col-span-12 sm:col-span-12 md:col-span-7 lg:col-span-7 xxl:col-span-7">
-                  <div className="border-l-4 border-gray-400 py-20 px-5 mx-2 absolute left-0">
-                    <p className="italic text-white text-xl md:text-4xl lg:text-6xl uppercase text-center font-semibold ">
-                      The Mysteries Of The Water
-                    </p>
-                  </div>
-                  <div className="text-gray-400 font-semibold text-xl mb-4">07</div>
-                  <div className="absolute border-gray-400 border-t-4 bottom-0 py-1 px-4 w-4/5"></div>
-                </div>
-                <div className="col-span-12 sm:col-span-12 md:col-span-5 lg:col-span-5 xxl:col-span-5">
-                  <div className="relative bg-pink-900 h-full md:h-96 w-full bg-opacity-50 rounded-tr-lg rounded-br-lg">
-                    <div className="p-8">
-                      <p className="text-white text-xs md:text-sm lg:text-xl mb-4">
-                        The mysteries of water unfold in the work of Wastely Aqua, a wastewater treatment company committed to unraveling the complexities of water restoration, recycling, and reuse. Like a journey through a forest reveals its wonders, Wastely Aqua navigates the intricacies of wastewater, transforming challenges into sustainable solutions for a cleaner, more vibrant future.
-                      </p>
-                      <div className="bottom-0 absolute p-2 right-0">
-                        {/* <button className="opacity-75 bg-gray-100 hover:bg-pink-900 hover:text-white text-sm font-bold py-2 px-4 rounded inline-flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span>LEARN MORE</span>
-                      </button> */}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <BeforeAfterShowcase />
+
+        <SectionTransition />
+
+        <SmartMonitoring />
+
+        <SectionTransition flip />
+
+        <Industries />
+
+        <SectionTransition />
+
+        <ProcessSection />
+
+        <SectionTransition flip />
+
+        <CaseStudyMarquee />
+
+        <SectionTransition />
+
+        <CTASection />
       </div>
-      <ApplicationCard />
+    </main>
+  );
+};
 
-      <CardHome />
-
-      <div className="container">
-        <div className="p-5 rounded-lg bg-[#1a1a1a] lg:flex lg:justify-around lg:items-center lg:p-10">
-          <div>
-            {/* <h1 className="text-3xl font-bold text-center text-white md:text-4xl lg:text-left">Sign up for our newsletter</h1> */}
-            <h1 className="text-3xl font-bold text-center text-white md:text-4xl lg:text-left">Visit our contact page to subscribe to our newsletter.
-            </h1>
-            <form className="mt-5 sm:mx-auto sm:flex sm:max-w-lg lg:mx-0">
-              {/* <input className="block w-full px-5 py-3 outline-none border rounded shadow-sm text-gray-300 border-[#3c3c3c] bg-[#121212] focus:border-white focus:ring-1 focus:ring-white" type="email" placeholder="Your e-mail" required="" /> */}
-              <button
-              onClick={()=> navigate('/contact')}
-              className="w-full mt-2.5 px-5 py-3 rounded shadow-sm focus:outline-none font-medium text-white bg-blue-600 sm:flex-shrink-0 sm:w-auto sm:mt-0 sm:ml-5">Subscribe</button>
-            </form>
-          </div>
-          <div className="w-full mt-5 sm:w-auto lg:mt-0 lg:ml-5">
-            <div className="flex justify-center space-x-2.5 lg:justify-start">
-              <Link to="" className="p-2.5 rounded-full border-2 border-white transition-colors hover:bg-blue-600" target="_blank">
-                <svg className="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-                </svg>
-              </Link>
-              <Link to="#" className="p-2.5 rounded-full border-2 border-white transition-colors hover:bg-blue-600" target="_blank">
-                <svg className="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-                </svg>
-              </Link>
-              <Link to="#" className="p-2.5 rounded-full border-2 border-white transition-colors hover:bg-blue-600" target="_blank">
-                <svg className="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
-                </svg>
-              </Link>
-              <Link to="#" className="p-2.5 rounded-full border-2 border-white transition-colors hover:bg-blue-600" target="_blank">
-                <svg className="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      {/* </div> */}
-
-    </>
-  )
-}
-
-export default Home
+export default Home;
