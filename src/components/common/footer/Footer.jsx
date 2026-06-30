@@ -946,7 +946,7 @@ const Footer = () => {
                   </p>
 
                   <a
-                    href="tel:+918853043647"
+                    href="tel:+919136069130"
                     className="
                       text-white
 
@@ -955,7 +955,7 @@ const Footer = () => {
                       transition-all duration-300
                     "
                   >
-                    +91 88530 43647
+                    +91 91360 69130
                   </a>
                 </div>
               </div>
