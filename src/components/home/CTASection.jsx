@@ -1266,7 +1266,7 @@ const CTASection = () => {
                         text-white
                       "
                     >
-                      +91 88530 43647
+                      +91 91360 69130
                     </h4>
                   </div>
                 </div>
