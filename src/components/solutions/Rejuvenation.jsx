@@ -1,23 +1,15 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import {
   ArrowRight,
   Activity,
   Droplets,
   Fish,
-  Gauge,
+  Flower2,
+  FlaskConical,
   Leaf,
-  Sparkles,
-  Trees,
+  Radar,
   Waves,
   Wind,
-  ShieldCheck,
-  Atom,
-  Radar,
-  Flower2,
-  TrendingUp,
-  FlaskConical,
-  CheckCircle2,
 } from "lucide-react";
 
 import Pollution from "../../assets/images/Rejuvenation_Pollution.png";
@@ -34,126 +26,88 @@ import NingthemAfter from "../../assets/images/ningthem-after.png";
 import ArunBefore from "../../assets/images/arun-before.png";
 import ArunAfter from "../../assets/images/arun-after.png";
 
-const problemData = [
+const challenges = [
   {
-    title: "Eutrophication",
+    title: "Pollution",
     description:
-      "Excess nitrogen and phosphorous causing uncontrolled algae growth and ecological imbalance.",
-    icon: Atom,
+      "Sewage inflow, runoff and nutrient loading can progressively degrade water quality and aquatic conditions.",
+    image: Pollution,
+    icon: Droplets,
   },
   {
-    title: "Algae Bloom",
+    title: "Sedimentation",
     description:
-      "Rapid algae formation reducing sunlight penetration and oxygen levels inside water bodies.",
-    icon: Leaf,
-  },
-  {
-    title: "Low Dissolved Oxygen",
-    description:
-      "Poor oxygen transfer causing unhealthy aquatic ecosystems and fish stress.",
-    icon: Activity,
-  },
-  {
-    title: "Black Water & Odor",
-    description:
-      "Anaerobic decomposition generating foul smell, black water and toxic conditions.",
-    icon: Wind,
-  },
-  {
-    title: "Sludge Accumulation",
-    description:
-      "Organic sludge build-up reducing depth and deteriorating overall water quality.",
+      "Accumulated organic matter and sediment can reduce water depth and affect the condition of the water body.",
+    image: Sedimentation,
     icon: Waves,
   },
   {
-    title: "Fish Mortality",
+    title: "Invasive Growth",
     description:
-      "Oxygen depletion and polluted water creating severe stress on aquatic biodiversity.",
+      "Excess algae and unwanted vegetation can interfere with ecological balance and water quality.",
+    image: Invasive,
+    icon: Leaf,
+  },
+  {
+    title: "Habitat Stress",
+    description:
+      "Low dissolved oxygen and degraded water conditions can place additional stress on aquatic life.",
+    image: Habitat,
     icon: Fish,
   },
 ];
 
-const technologies = [
+const restorationMethods = [
   {
-    title: "Advanced Bioremediation",
+    number: "01",
+    title: "Bioremediation",
     description:
-      "Natural microbial remediation systems for reducing BOD, COD, sludge and nutrient load.",
+      "Biological treatment approaches can help address organic loading, nutrient accumulation and degraded water conditions.",
     icon: FlaskConical,
   },
   {
-    title: "Nano Bubble Aeration",
+    number: "02",
+    title: "Aeration & Oxygenation",
     description:
-      "High-efficiency oxygen transfer technology improving DO and restoring biological balance.",
-    icon: Droplets,
+      "Aeration systems support oxygen transfer and help improve dissolved oxygen conditions within the water body.",
+    icon: Wind,
   },
   {
+    number: "03",
     title: "Floating Wetlands",
     description:
-      "Engineered ecological islands supporting nutrient absorption and habitat restoration.",
+      "Engineered floating vegetation systems can support nutrient uptake while adding ecological structure to the water body.",
     icon: Flower2,
   },
   {
-    title: "Ultrasonic Algae Control",
+    number: "04",
+    title: "Algae Management",
     description:
-      "Chemical-free algae suppression technology preventing bloom formation sustainably.",
+      "Algae-control approaches can be incorporated where excessive growth is contributing to poor water quality.",
     icon: Radar,
   },
-  {
-    title: "Decorative Oxygenation",
-    description:
-      "Aesthetic fountain systems combining visual enhancement with active oxygenation.",
-    icon: Sparkles,
-  },
 ];
 
-const projectScale = [
+const restorationStages = [
   {
-    amount: "₹20 Cr",
-    title: "Bioremediation Project",
-    subtitle: "SITC + 3 Year DLP",
+    number: "01",
+    title: "Assess",
+    text: "Understand the water body, inflows, pollution sources and existing ecological conditions.",
   },
   {
-    amount: "₹10 Cr",
-    title: "Nano Bubble Aeration",
-    subtitle: "Integrated Oxygenation System",
+    number: "02",
+    title: "Characterize",
+    text: "Identify the key water-quality and physical challenges affecting the lake or pond.",
   },
   {
-    amount: "₹3 Cr",
-    title: "Floating Wetlands",
-    subtitle: "Lily Jet Fountain + Luminaries",
-  },
-];
-
-const metrics = [
-  {
-    title: "BOD Reduction",
-    value: "89%",
-    detail: "Reduction achieved in restoration programs",
-    icon: TrendingUp,
+    number: "03",
+    title: "Restore",
+    text: "Combine suitable treatment, oxygenation and ecological interventions for the site.",
   },
   {
-    title: "COD Reduction",
-    value: "67%",
-    detail: "Organic pollution reduction",
-    icon: Gauge,
-  },
-  {
-    title: "DO Improvement",
-    value: "2x+",
-    detail: "Dissolved oxygen enhancement",
-    icon: Activity,
-  },
-  {
-    title: "Water Clarity",
-    value: "4ft+",
-    detail: "Visibility restoration improvement",
-    icon: Sparkles,
-  },
-  {
-    title: "Algae Reduction",
-    value: "Major",
-    detail: "Bloom suppression & ecosystem balancing",
-    icon: Leaf,
+    number: "04",
+    title: "Stabilize",
+    text: "Support long-term water-quality improvement and healthier aquatic conditions.",
   },
 ];
 
@@ -175,593 +129,550 @@ const beforeAfter = [
   },
 ];
 
-const challenges = [
-  {
-    title: "Pollution",
-    description:
-      "Industrial runoff, sewage inflow and nutrient loading damaging aquatic ecosystems.",
-    image: Pollution,
-    icon: Droplets,
-  },
-  {
-    title: "Sedimentation",
-    description:
-      "Heavy sludge accumulation reducing storage capacity and water quality.",
-    image: Sedimentation,
-    icon: Waves,
-  },
-  {
-    title: "Invasive Growth",
-    description:
-      "Excess algae and unwanted vegetation disrupting ecological equilibrium.",
-    image: Invasive,
-    icon: Fish,
-  },
-  {
-    title: "Habitat Collapse",
-    description:
-      "Urbanization and oxygen depletion affecting biodiversity and aquatic life.",
-    image: Habitat,
-    icon: Trees,
-  },
-];
-
 const Rejuvenation = () => {
   return (
-    <div className="relative overflow-hidden bg-[#081219] text-white">
-      {/* Ambient Background */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute top-[-140px] left-[-140px] h-[520px] w-[520px] rounded-full bg-cyan-500/10 blur-[160px]" />
+    <main className="overflow-hidden bg-white text-wastely-ink">
 
-        <div className="absolute right-[-120px] top-[35%] h-[400px] w-[400px] rounded-full bg-emerald-500/10 blur-[140px]" />
+      {/* =========================================================
+          HERO — EDITORIAL / FIELD RESTORATION STYLE
+      ========================================================= */}
+      <section className="relative bg-wastely-bg-soft pt-20 lg:pt-24">
+        <div className="wastely-container">
 
-        <div className="absolute bottom-[-200px] left-[30%] h-[500px] w-[500px] rounded-full bg-cyan-400/5 blur-[170px]" />
-      </div>
+          <div className="grid min-h-[720px] items-center gap-12 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:py-20">
 
-      {/* HERO */}
-      <section className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-20 md:pt-32 md:pb-28">
-  <div className="absolute inset-0">
-    <img
-      src={Habitat}
-      alt="Lake Restoration"
-      loading="lazy"
-      className="h-full w-full object-cover opacity-20"
-    />
-
-    <div className="absolute inset-0 bg-gradient-to-b from-[#081219]/30 via-[#081219]/80 to-[#081219]" />
-  </div>
-
-  <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="max-w-7xl mx-auto">
-      <motion.div
-        initial={{ opacity: 0, y: 35 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9 }}
-        className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-[11px] uppercase tracking-[0.25em] text-cyan-300 backdrop-blur-xl"
-      >
-        <Sparkles size={14} />
-        Integrated Lake Restoration Systems
-      </motion.div>
-
-      <motion.h1
-        initial={{ opacity: 0, y: 35 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.15, duration: 0.9 }}
-        className="mt-10 max-w-6xl text-[2.9rem] sm:text-6xl md:text-7xl xl:text-[88px] font-black leading-[0.9] tracking-[-0.04em]"
-      >
-        Integrated Lake Restoration &
-        <span className="block bg-gradient-to-r from-cyan-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">
-          Ecological Rejuvenation
-        </span>
-      </motion.h1>
-
-      <motion.p
-        initial={{ opacity: 0, y: 35 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.9 }}
-        className="mt-8 max-w-4xl text-[15px] sm:text-lg md:text-xl leading-relaxed text-slate-400"
-      >
-        Advanced bioremediation, nanobubble aeration, floating wetlands,
-        algae control and real-time monitoring solutions for polluted
-        lakes, ponds and urban water bodies.
-      </motion.p>
-
-      {/* CTA */}
-      <motion.div
-        initial={{ opacity: 0, y: 35 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.45, duration: 0.9 }}
-        className="mt-12 flex flex-wrap gap-4"
-      >
-        <Link
-          to="/contact"
-          className="
-            group
-            inline-flex items-center justify-center gap-3
-            rounded-full
-            bg-gradient-to-r
-            from-cyan-400
-            to-emerald-400
-            px-8 md:px-9
-            py-4
-            text-sm md:text-base
-            font-semibold
-            text-black
-            transition-all duration-500
-            hover:-translate-y-1
-            hover:scale-[1.03]
-            shadow-[0_10px_40px_-12px_rgba(34,211,238,0.45)]
-            hover:shadow-[0_20px_70px_-18px_rgba(34,211,238,0.55)]
-          "
-        >
-          Start Restoration
-
-          <ArrowRight
-            size={18}
-            className="transition-transform duration-300 group-hover:translate-x-1"
-          />
-        </Link>
-
-        <Link
-          to="/technologies"
-          className="
-            rounded-full
-            border border-white/10
-            bg-white/5
-            px-8
-            py-4
-            backdrop-blur-xl
-            transition-all duration-500
-            hover:-translate-y-1
-            hover:border-cyan-400/30
-            hover:bg-white/[0.08]
-          "
-        >
-          Explore Technologies
-        </Link>
-      </motion.div>
-
-      {/* STATS */}
-      <div className="mt-16 grid gap-5 md:grid-cols-3">
-        {projectScale.map((item, index) => (
-          <motion.div
-            key={index}
-            whileHover={{ y: -6 }}
-            transition={{ duration: 0.4 }}
-            className="
-              relative
-              overflow-hidden
-              rounded-[32px]
-              border border-white/10
-              bg-white/[0.04]
-              p-6 md:p-8
-              backdrop-blur-2xl
-              transition-all duration-500
-              hover:border-cyan-400/20
-              hover:bg-white/[0.06]
-            "
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-emerald-500/5" />
-
+            {/* LEFT */}
             <div className="relative z-10">
-              <div className="bg-gradient-to-r from-cyan-300 to-emerald-400 bg-clip-text text-4xl md:text-5xl font-black text-transparent">
-                {item.amount}
+
+              <div className="mb-7 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-wastely-blue">
+                <span className="h-px w-8 bg-wastely-cyan" />
+                Lake & Pond Rejuvenation
               </div>
 
-              <h3 className="mt-5 text-2xl font-bold">
-                {item.title}
-              </h3>
+              <h1 className="max-w-2xl text-5xl font-bold leading-[1.05] tracking-[-0.035em] text-wastely-deep sm:text-6xl lg:text-[4.5rem]">
+                Restore the water body.
+                <span className="mt-2 block text-wastely-blue">
+                  Rebuild its balance.
+                </span>
+              </h1>
 
-              <p className="mt-3 text-slate-400">
-                {item.subtitle}
+              <p className="mt-7 max-w-xl text-base leading-8 text-wastely-sub sm:text-lg">
+                Lake and pond rejuvenation requires more than improving
+                water appearance. We assess the conditions affecting the
+                water body and develop practical interventions for water
+                quality, oxygen balance and ecological recovery.
               </p>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
 
-      {/* PROBLEMS */}
-      <section className="relative py-24 md:py-32">
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="max-w-4xl">
-      <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-2 text-[11px] uppercase tracking-[0.25em] text-emerald-300 backdrop-blur-xl">
-        Water Challenges
-      </div>
+              <div className="mt-9 flex flex-wrap gap-3">
+                <Link
+                  to="/contact"
+                  className="wastely-btn wastely-btn-primary"
+                >
+                  Request an Assessment
+                  <ArrowRight size={17} />
+                </Link>
 
-      <h2 className="mt-8 text-4xl md:text-6xl font-black leading-tight">
-        Problems We
-        <span className="block bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-          Solve
-        </span>
-      </h2>
-
-      <p className="mt-8 max-w-3xl text-base md:text-lg leading-relaxed text-slate-400">
-        Comprehensive restoration strategies for polluted lakes, ponds,
-        urban reservoirs and ecological water bodies suffering from
-        contamination and oxygen depletion.
-      </p>
-    </div>
-
-    <div className="mt-20 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-      {problemData.map((item, index) => {
-        const Icon = item.icon;
-
-        return (
-          <motion.div
-            key={index}
-            whileHover={{ y: -6 }}
-            transition={{ duration: 0.4 }}
-            className="
-              group
-              relative
-              overflow-hidden
-              rounded-[32px]
-              border border-white/10
-              bg-white/[0.04]
-              p-7 md:p-8
-              backdrop-blur-xl
-              transition-all duration-500
-              hover:border-cyan-400/20
-              hover:bg-white/[0.06]
-            "
-          >
-            <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-cyan-500/10 blur-3xl transition-all duration-500 group-hover:bg-cyan-500/20" />
-
-            <div className="relative z-10">
-              <div className="flex h-20 w-20 items-center justify-center rounded-3xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300">
-                <Icon size={36} />
+                <Link
+                  to="/products/floating-wetlands"
+                  className="wastely-btn wastely-btn-secondary"
+                >
+                  View Restoration Technologies
+                </Link>
               </div>
 
-              <h3 className="mt-10 text-3xl font-black">
-                {item.title}
-              </h3>
+              {/* Small field indicators */}
+              <div className="mt-12 grid max-w-xl grid-cols-3 border-y border-wastely-line">
+                <div className="border-r border-wastely-line py-5 pr-4">
+                  <div className="text-sm font-bold text-wastely-deep">
+                    Water
+                  </div>
+                  <div className="mt-1 text-xs text-wastely-sub">
+                    Quality
+                  </div>
+                </div>
 
-              <p className="mt-5 leading-relaxed text-slate-400">
-                {item.description}
-              </p>
+                <div className="border-r border-wastely-line px-4 py-5">
+                  <div className="text-sm font-bold text-wastely-deep">
+                    Oxygen
+                  </div>
+                  <div className="mt-1 text-xs text-wastely-sub">
+                    Balance
+                  </div>
+                </div>
+
+                <div className="py-5 pl-4">
+                  <div className="text-sm font-bold text-wastely-deep">
+                    Ecology
+                  </div>
+                  <div className="mt-1 text-xs text-wastely-sub">
+                    Recovery
+                  </div>
+                </div>
+              </div>
             </div>
-          </motion.div>
-        );
-      })}
-    </div>
-  </div>
-</section>
 
-      {/* TECHNOLOGIES */}
-      <section className="relative py-24 md:py-32">
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="relative overflow-hidden rounded-[40px] border border-white/10 bg-white/[0.04] backdrop-blur-2xl">
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-emerald-500/10" />
+            {/* RIGHT — LARGE IMAGE */}
+            <div className="relative">
 
-      <div className="relative z-10 px-6 py-16 sm:px-8 md:px-14 md:py-24">
-        <div className="max-w-5xl">
-          <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-2 text-[11px] uppercase tracking-[0.25em] text-cyan-300 backdrop-blur-xl">
-            Restoration Technologies
-          </div>
+              {/* engineering frame */}
+              <div className="absolute -right-8 -top-8 hidden h-40 w-40 border-r border-t border-wastely-cyan/40 lg:block" />
 
-          <h2 className="mt-8 text-4xl md:text-6xl font-black leading-tight">
-            Advanced Ecological
-            <span className="block bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-              Restoration Technologies
-            </span>
-          </h2>
+              <div className="relative overflow-hidden border border-wastely-line bg-white p-2">
+                <img
+                  src={Habitat}
+                  alt="Water body restoration"
+                  className="h-[500px] w-full object-cover sm:h-[600px]"
+                />
 
-          <p className="mt-8 max-w-3xl text-base md:text-lg leading-relaxed text-slate-400">
-            High-performance environmental engineering systems designed
-            for long-term water quality improvement and ecosystem recovery.
-          </p>
-        </div>
-
-        <div className="mt-20 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
-          {technologies.map((item, index) => {
-            const Icon = item.icon;
-
-            return (
-              <motion.div
-                key={index}
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.4 }}
-                className="
-                  group
-                  relative
-                  overflow-hidden
-                  rounded-[32px]
-                  border border-white/10
-                  bg-[#0c1721]/80
-                  p-6 md:p-7
-                  backdrop-blur-xl
-                  transition-all duration-500
-                  hover:border-cyan-400/20
-                  hover:bg-[#0f1d29]
-                "
-              >
-                <div className="absolute bottom-0 left-0 h-28 w-28 rounded-full bg-cyan-500/10 blur-3xl transition-all duration-500 group-hover:bg-cyan-500/20" />
-
-                <div className="relative z-10">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300">
-                    <Icon size={28} />
+                <div className="absolute bottom-7 left-7 border border-white/60 bg-white/90 px-5 py-4 backdrop-blur-sm">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-wastely-blue">
+                    Restoration Focus
                   </div>
 
-                  <h3 className="mt-8 text-2xl font-bold leading-tight">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-5 text-sm leading-relaxed text-slate-400">
-                    {item.description}
-                  </p>
+                  <div className="mt-2 text-sm font-semibold text-wastely-deep">
+                    Water quality + ecological balance
+                  </div>
                 </div>
-              </motion.div>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-      {/* BEFORE AFTER */}
-     <section className="relative py-24 md:py-32">
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="max-w-4xl">
-      <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-2 text-[11px] uppercase tracking-[0.25em] text-emerald-300 backdrop-blur-xl">
-        Restoration Results
-      </div>
-
-      <h2 className="mt-8 text-4xl md:text-6xl font-black leading-tight">
-        Before & After
-        <span className="block bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-          Ecological Transformation
-        </span>
-      </h2>
-    </div>
-
-    <div className="mt-20 space-y-12">
-      {beforeAfter.map((item, index) => (
-        <div
-          key={index}
-          className="overflow-hidden rounded-[40px] border border-white/10 bg-white/[0.04] backdrop-blur-xl"
-        >
-          <div className="border-b border-white/10 px-6 py-6 md:px-8">
-            <h3 className="text-2xl md:text-3xl font-black">
-              {item.title}
-            </h3>
-          </div>
-
-          <div className="grid lg:grid-cols-2">
-            {/* BEFORE */}
-            <div className="relative overflow-hidden">
-              <img
-                src={item.before}
-                alt={`${item.title} Before`}
-                loading="lazy"
-                className="
-                  h-[320px]
-                  md:h-[420px]
-                  w-full
-                  object-cover
-                  transition-transform
-                  duration-700
-                  hover:scale-105
-                "
-              />
-
-              <div className="absolute left-6 top-6 rounded-full border border-red-400/20 bg-red-500/10 px-4 py-2 text-[11px] uppercase tracking-[0.2em] text-red-300 backdrop-blur-xl">
-                Before
               </div>
-            </div>
 
-            {/* AFTER */}
-            <div className="relative overflow-hidden">
-              <img
-                src={item.after}
-                alt={`${item.title} After`}
-                loading="lazy"
-                className="
-                  h-[320px]
-                  md:h-[420px]
-                  w-full
-                  object-cover
-                  transition-transform
-                  duration-700
-                  hover:scale-105
-                "
-              />
-
-              <div className="absolute left-6 top-6 rounded-full border border-emerald-400/20 bg-emerald-500/10 px-4 py-2 text-[11px] uppercase tracking-[0.2em] text-emerald-300 backdrop-blur-xl">
-                After
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-      {/* METRICS */}
-      <section className="relative py-32">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="relative overflow-hidden rounded-[40px] border border-white/10 bg-white/5">
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-emerald-500/10" />
-
-            <div className="relative z-10 px-6 py-20 md:px-16 md:py-24">
-              <div className="max-w-4xl">
-                <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs uppercase tracking-[0.25em] text-cyan-300 backdrop-blur-xl">
-                  Water Quality Improvements
-                </div>
-
-                <h2 className="mt-8 text-4xl md:text-6xl font-black leading-tight">
-                  Measurable
-                  <span className="block bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                    Water Quality Impact
+              {/* vertical technical marker */}
+              <div className="absolute -right-5 top-1/2 hidden -translate-y-1/2 lg:block">
+                <div className="flex flex-col items-center gap-3">
+                  <span className="h-16 w-px bg-wastely-cyan" />
+                  <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-wastely-sub [writing-mode:vertical-rl]">
+                    Water Body Restoration
                   </span>
-                </h2>
-              </div>
-
-              <div className="mt-20 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
-                {metrics.map((item, index) => {
-                  const Icon = item.icon;
-
-                  return (
-                    <motion.div
-                      key={index}
-                      whileHover={{ y: -6 }}
-                      className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#0b1620]/80 p-8 backdrop-blur-xl"
-                    >
-                      <div className="absolute top-0 right-0 h-28 w-28 rounded-full bg-cyan-500/10 blur-3xl" />
-
-                      <div className="relative z-10">
-                        <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300">
-                          <Icon size={28} />
-                        </div>
-
-                        <div className="mt-8 text-5xl font-black bg-gradient-to-r from-cyan-300 to-emerald-400 bg-clip-text text-transparent">
-                          {item.value}
-                        </div>
-
-                        <h3 className="mt-4 text-2xl font-bold">
-                          {item.title}
-                        </h3>
-
-                        <p className="mt-4 text-sm leading-relaxed text-slate-400">
-                          {item.detail}
-                        </p>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </div>
-
-              {/* Bottom Highlights */}
-              <div className="mt-20 grid gap-5 md:grid-cols-2">
-                {[
-                  "Rapid reduction of BOD & COD",
-                  "Elimination of foul odor and black water",
-                  "Improved dissolved oxygen levels",
-                  "Reduction in sludge accumulation",
-                  "Enhanced water clarity and aesthetics",
-                  "Improved aquatic biodiversity and fish population",
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl"
-                  >
-                    <div className="mt-1 text-emerald-400">
-                      <CheckCircle2 size={20} />
-                    </div>
-
-                    <p className="text-slate-300">{item}</p>
-                  </div>
-                ))}
+                  <span className="h-16 w-px bg-wastely-cyan" />
+                </div>
               </div>
             </div>
           </div>
+
+        </div>
+
+        {/* wave divider */}
+        <div className="pointer-events-none absolute bottom-0 left-0 w-full">
+          <svg
+            viewBox="0 0 1440 80"
+            preserveAspectRatio="none"
+            className="h-16 w-full"
+          >
+            <path
+              d="M0 45C180 15 320 15 510 42C700 69 835 68 1020 39C1190 12 1310 14 1440 38V80H0Z"
+              fill="#ffffff"
+            />
+          </svg>
         </div>
       </section>
 
-      {/* CHALLENGES VISUAL */}
-      <section className="relative py-32">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl">
-            <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs uppercase tracking-[0.25em] text-cyan-300 backdrop-blur-xl">
-              Environmental Challenges
+      {/* =========================================================
+          DIAGNOSIS
+      ========================================================= */}
+      <section className="wastely-section-white">
+        <div className="wastely-container">
+
+          <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
+
+            <div>
+              <div className="wastely-section-eyebrow">
+                The water body
+              </div>
+
+              <h2 className="wastely-section-title max-w-md">
+                Restoration starts with understanding what is changing.
+              </h2>
+
+              <p className="wastely-section-description">
+                Lakes and ponds can deteriorate through multiple interacting
+                factors. The restoration approach therefore begins with the
+                physical, chemical and ecological conditions of the site.
+              </p>
             </div>
 
-            <h2 className="mt-8 text-4xl md:text-6xl font-black leading-tight">
-              Restoring Polluted
-              <span className="block bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                Aquatic Ecosystems
-              </span>
-            </h2>
-          </div>
+            <div className="grid border-l border-t border-wastely-line sm:grid-cols-2">
 
-          <div className="mt-20 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {challenges.map((item, index) => {
-              const Icon = item.icon;
+              {[
+                {
+                  icon: Droplets,
+                  title: "Water quality",
+                  text: "Pollution and nutrient loading can alter the condition of the water.",
+                },
+                {
+                  icon: Activity,
+                  title: "Oxygen balance",
+                  text: "Low dissolved oxygen can affect aquatic life and biological processes.",
+                },
+                {
+                  icon: Waves,
+                  title: "Sediment load",
+                  text: "Accumulated material can reduce effective depth and degrade conditions.",
+                },
+                {
+                  icon: Fish,
+                  title: "Ecological health",
+                  text: "Water quality and habitat conditions influence aquatic biodiversity.",
+                },
+              ].map((item) => {
+                const Icon = item.icon;
 
-              return (
-                <motion.div
-                  key={index}
-                  whileHover={{ y: -6 }}
-                  className="group relative overflow-hidden rounded-[36px] border border-white/10 bg-white/5 min-h-[520px]"
-                >
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
+                return (
+                  <div
+                    key={item.title}
+                    className="border-b border-r border-wastely-line p-7 sm:p-8"
+                  >
+                    <Icon
+                      size={25}
+                      strokeWidth={1.6}
+                      className="text-wastely-blue"
+                    />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#081219] via-[#081219]/40 to-transparent" />
-
-                  <div className="relative z-10 flex h-full flex-col justify-end p-8">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 backdrop-blur-xl">
-                      <Icon size={30} />
-                    </div>
-
-                    <h3 className="mt-8 text-3xl font-black">
+                    <h3 className="mt-6 text-lg font-bold text-wastely-deep">
                       {item.title}
                     </h3>
 
-                    <p className="mt-4 leading-relaxed text-slate-300">
-                      {item.description}
+                    <p className="mt-3 text-sm leading-7 text-wastely-sub">
+                      {item.text}
                     </p>
                   </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+                );
+              })}
 
-      {/* CTA */}
-      <section className="relative py-32">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="relative overflow-hidden rounded-[44px] border border-white/10 bg-white/5 px-8 py-20 md:px-20 md:py-24 text-center backdrop-blur-2xl">
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-emerald-500/10" />
-
-            <div className="absolute left-[-100px] top-[-100px] h-[260px] w-[260px] rounded-full bg-cyan-500/20 blur-[120px]" />
-
-            <div className="absolute bottom-[-120px] right-[-120px] h-[280px] w-[280px] rounded-full bg-emerald-500/20 blur-[120px]" />
-
-            <div className="relative z-10">
-              <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs uppercase tracking-[0.25em] text-cyan-300 backdrop-blur-xl">
-                Sustainable Restoration
-              </div>
-
-              <h2 className="mt-8 text-4xl md:text-6xl font-black leading-tight">
-                Build Healthier
-                <span className="block bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                  Water Ecosystems
-                </span>
-              </h2>
-
-              <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-slate-400">
-                Partner with Wastely Aqua for advanced lake rejuvenation,
-                ecological restoration and long-term sustainable water
-                management systems.
-              </p>
-
-              <div className="mt-12 flex flex-wrap justify-center gap-5">
-                <Link to="/contact">
-                  <button className="rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400 px-8 py-4 font-semibold text-black transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_-12px_rgba(14,165,233,0.45)]">
-                    Request Consultation
-                  </button>
-                </Link>
-
-                {/* <Link to="/projects">
-                  <button className="rounded-full border border-white/10 bg-white/5 px-8 py-4 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/30 hover:bg-white/10">
-                    View Restoration Projects
-                  </button>
-                </Link> */}
-              </div>
             </div>
           </div>
         </div>
       </section>
-    </div>
+
+      {/* =========================================================
+          RESTORATION JOURNEY — DISTINCTIVE HORIZONTAL DESIGN
+      ========================================================= */}
+      <section className="relative overflow-hidden bg-wastely-deep py-20 text-white lg:py-24">
+
+        {/* contour lines */}
+        <svg
+          className="pointer-events-none absolute inset-0 h-full w-full opacity-10"
+          viewBox="0 0 1440 500"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M-100 330C180 180 330 440 620 280C900 125 1110 390 1540 160"
+            fill="none"
+            stroke="#2FB4CE"
+            strokeWidth="1"
+          />
+          <path
+            d="M-100 370C190 220 350 470 650 320C930 170 1150 420 1540 205"
+            fill="none"
+            stroke="#2FB4CE"
+            strokeWidth="1"
+          />
+          <path
+            d="M-100 410C210 260 360 500 690 355C980 215 1190 450 1540 250"
+            fill="none"
+            stroke="#2FB4CE"
+            strokeWidth="1"
+          />
+        </svg>
+
+        <div className="wastely-container relative">
+
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-wastely-cyan-light">
+              <span className="h-px w-8 bg-wastely-cyan" />
+              Restoration Journey
+            </div>
+
+            <h2 className="mt-5 text-3xl font-bold leading-tight text-white sm:text-4xl">
+              A water body is restored in stages.
+            </h2>
+
+            <p className="mt-5 text-sm leading-7 text-white/65 sm:text-base">
+              The intervention depends on what the site assessment reveals.
+              Our approach connects diagnosis, treatment and ecological
+              recovery rather than treating each symptom in isolation.
+            </p>
+          </div>
+
+          <div className="relative mt-16">
+
+            {/* connecting line */}
+            <div className="absolute left-0 right-0 top-5 hidden h-px bg-white/20 lg:block" />
+
+            <div className="grid gap-10 lg:grid-cols-4 lg:gap-6">
+              {restorationStages.map((stage) => (
+                <div key={stage.number} className="relative">
+
+                  <div className="relative z-10 flex h-10 w-10 items-center justify-center border border-wastely-cyan bg-wastely-deep text-xs font-bold text-wastely-cyan-light">
+                    {stage.number}
+                  </div>
+
+                  <h3 className="mt-7 text-xl font-bold text-white">
+                    {stage.title}
+                  </h3>
+
+                  <p className="mt-3 max-w-xs text-sm leading-7 text-white/60">
+                    {stage.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          BEFORE / AFTER — MAIN VISUAL FEATURE
+      ========================================================= */}
+      <section className="wastely-section-soft">
+        <div className="wastely-container">
+
+          <div className="flex flex-col justify-between gap-7 md:flex-row md:items-end">
+            <div>
+              <div className="wastely-section-eyebrow">
+                Restoration Projects
+              </div>
+
+              <h2 className="wastely-section-title">
+                From degraded water bodies to restored environments.
+              </h2>
+
+              <p className="wastely-section-description">
+                Existing project imagery can communicate the physical change
+                more clearly than a list of claims.
+              </p>
+            </div>
+
+            <div className="hidden h-16 w-16 border-b border-r border-wastely-cyan md:block" />
+          </div>
+
+          <div className="mt-14 space-y-10">
+            {beforeAfter.map((item, index) => (
+              <article
+                key={item.title}
+                className="border border-wastely-line bg-white"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-4 border-b border-wastely-line px-5 py-5 sm:px-7">
+                  <div>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-wastely-blue">
+                      Restoration Project {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <h3 className="mt-2 text-xl font-bold text-wastely-deep sm:text-2xl">
+                      {item.title}
+                    </h3>
+                  </div>
+
+                  <div className="flex items-center gap-3 text-xs font-semibold text-wastely-sub">
+                    <span>Before</span>
+                    <span className="h-px w-8 bg-wastely-cyan" />
+                    <span>After</span>
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2">
+
+                  <div className="relative border-b border-wastely-line md:border-b-0 md:border-r">
+                    <img
+                      src={item.before}
+                      alt={`${item.title} before restoration`}
+                      className="h-[300px] w-full object-cover sm:h-[380px]"
+                    />
+
+                    <div className="absolute left-5 top-5 bg-wastely-deep px-3 py-2 text-[10px] font-bold uppercase tracking-[0.15em] text-white">
+                      Before
+                    </div>
+                  </div>
+
+                  <div className="relative">
+                    <img
+                      src={item.after}
+                      alt={`${item.title} after restoration`}
+                      className="h-[300px] w-full object-cover sm:h-[380px]"
+                    />
+
+                    <div className="absolute left-5 top-5 bg-wastely-blue px-3 py-2 text-[10px] font-bold uppercase tracking-[0.15em] text-white">
+                      After
+                    </div>
+                  </div>
+
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          RESTORATION METHODS — EDITORIAL LIST
+      ========================================================= */}
+      <section className="wastely-section-white">
+        <div className="wastely-container">
+
+          <div className="grid gap-14 lg:grid-cols-[0.7fr_1.3fr]">
+
+            <div>
+              <div className="wastely-section-eyebrow">
+                Restoration Methods
+              </div>
+
+              <h2 className="wastely-section-title">
+                Interventions selected around the site.
+              </h2>
+
+              <p className="wastely-section-description">
+                Restoration is not a single technology. Different water
+                bodies require different combinations of biological,
+                mechanical and ecological interventions.
+              </p>
+
+              <Link
+                to="/technologies"
+                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-wastely-blue hover:text-wastely-deep"
+              >
+                Explore treatment technologies
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+
+            <div className="border-t border-wastely-line">
+              {restorationMethods.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <div
+                    key={item.number}
+                    className="group grid gap-5 border-b border-wastely-line py-7 md:grid-cols-[70px_50px_1fr] md:items-start"
+                  >
+                    <div className="text-xs font-bold tracking-[0.15em] text-wastely-cyan">
+                      {item.number}
+                    </div>
+
+                    <Icon
+                      size={24}
+                      strokeWidth={1.6}
+                      className="text-wastely-blue transition-transform duration-200 group-hover:translate-x-1"
+                    />
+
+                    <div>
+                      <h3 className="text-xl font-bold text-wastely-deep">
+                        {item.title}
+                      </h3>
+
+                      <p className="mt-2 max-w-2xl text-sm leading-7 text-wastely-sub">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          FIELD CONDITIONS — IMAGE MOSAIC
+      ========================================================= */}
+      <section className="bg-wastely-bg-soft py-20 lg:py-24">
+        <div className="wastely-container">
+
+          <div className="grid gap-6 lg:grid-cols-12">
+
+            <div className="lg:col-span-5">
+              <div className="relative h-full min-h-[460px] overflow-hidden border border-wastely-line bg-white">
+                <img
+                  src={Pollution}
+                  alt="Water pollution challenge"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-wastely-deep/90 to-transparent p-7 pt-24">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-wastely-cyan-light">
+                    Field Condition
+                  </span>
+
+                  <h3 className="mt-2 text-2xl font-bold text-white">
+                    Pollution loading
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:col-span-7">
+
+              {challenges.slice(1).map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <div
+                    key={item.title}
+                    className="group relative min-h-[220px] overflow-hidden border border-wastely-line bg-white"
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="absolute inset-0 h-full w-full object-cover opacity-35 transition-transform duration-500 group-hover:scale-105"
+                    />
+
+                    <div className="absolute inset-0 bg-white/75 transition-colors group-hover:bg-white/65" />
+
+                    <div className="relative z-10 flex h-full flex-col justify-end p-6">
+                      <Icon
+                        size={23}
+                        strokeWidth={1.7}
+                        className="text-wastely-blue"
+                      />
+
+                      <h3 className="mt-4 text-lg font-bold text-wastely-deep">
+                        {item.title}
+                      </h3>
+
+                      <p className="mt-2 text-sm leading-6 text-wastely-sub">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          NAVIGATION HANDOFF — NO CTA
+      ========================================================= */}
+      <section className="border-t border-wastely-line bg-white py-10">
+        <div className="wastely-container">
+
+          <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
+
+            <div>
+              <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-wastely-blue">
+                Next
+              </div>
+
+              <div className="mt-2 text-lg font-bold text-wastely-deep">
+                Explore the technologies used across water restoration.
+              </div>
+            </div>
+
+            <Link
+              to="/technologies"
+              className="wastely-btn wastely-btn-secondary shrink-0"
+            >
+              View Technologies
+              <ArrowRight size={16} />
+            </Link>
+
+          </div>
+
+        </div>
+      </section>
+
+    </main>
   );
 };
 

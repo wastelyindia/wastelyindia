@@ -1,1422 +1,794 @@
-// // Navbar.jsx
 
-// import { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
-// import {
-//   Menu,
-//   X,
-//   ChevronDown,
-//   Waves,
-//   Factory,
-//   Cpu,
-//   Settings2,
-//   Leaf,
-//   FlaskConical,
-// } from "lucide-react";
-// import {navItems} from "./navData"
-
-// import Logo from "../../../assets/wastely_logo.png";
-
-// const Navbar = () => {
-//   const [mobileOpen, setMobileOpen] = useState(false);
-//   const [activeMenu, setActiveMenu] = useState(null);
-//   const [scrolled, setScrolled] = useState(false);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setScrolled(window.scrollY > 40);
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   return (
-//     <header
-//       className={`
-//         fixed top-0 left-0 w-full z-50
-//         transition-all duration-500
-//         ${
-//           scrolled
-//             ? "bg-[#081219]/80 backdrop-blur-2xl border-b border-white/10 shadow-2xl"
-//             : "bg-transparent"
-//         }
-//       `}
-//     >
-//       <div className="max-w-7xl mx-auto px-6">
-//         <div className="h-24 flex items-center justify-between">
-
-//           {/* LOGO */}
-//           <Link to="/" className="flex items-center gap-3">
-//             <img
-//               src={Logo}
-//               alt="Wastely Aqua"
-//               className="h-14 object-contain"
-//             />
-
-//             <div className="hidden xl:block">
-//               <h1 className="text-white font-semibold tracking-wide text-lg">
-//                 WASTELY AQUA
-//               </h1>
-
-//               <p className="text-xs text-cyan-200/70 tracking-widest uppercase">
-//                 Environmental Engineering
-//               </p>
-//             </div>
-//           </Link>
-
-//           {/* DESKTOP MENU */}
-//           <nav className="hidden lg:flex items-center gap-6 xl:gap-10">
-
-//             {navItems.map((item, index) => (
-//               <div
-//                 key={index}
-//                 className="relative"
-//                 onMouseEnter={() => setActiveMenu(index)}
-//                 onMouseLeave={() => setActiveMenu(null)}
-//               >
-
-//                 {item.megaMenu ? (
-//                   <>
-//                     <button
-//                       className="
-//                         flex items-center gap-1
-//                         text-white/90
-//                         hover:text-cyan-300
-//                         font-medium
-//                         tracking-wide
-//                         transition-all duration-300
-//                       "
-//                     >
-//                       {item.title}
-//                       <ChevronDown size={18} />
-//                     </button>
-
-//                     {/* MEGA MENU */}
-//                     <div
-//                         // absolute top-14 left-1/2 -translate-x-1/2
-//                       className={`
-//                         absolute top-full pt-6 left-1/2 -translate-x-1/2
-//                         w-[90vw] max-w-[850px]
-//                         transition-all duration-300
-//                         ${
-//                           activeMenu === index
-//                             ? "opacity-100 visible translate-y-0"
-//                             : "opacity-0 invisible translate-y-5"
-//                         }
-//                       `}
-//                     >
-//                       <div
-//                         className="
-//                           bg-[#0B1220]/95
-//                           backdrop-blur-2xl
-//                           border border-white/10
-//                           rounded-3xl
-//                           shadow-[0_20px_80px_rgba(0,0,0,0.45)]
-//                           p-8
-//                         "
-//                       >
-//                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-//                           {item.sections.map((section, idx) => (
-//                             <div key={idx}>
-//                               <h3
-//                                 className="
-//                                   text-cyan-300
-//                                   text-sm
-//                                   uppercase
-//                                   tracking-[3px]
-//                                   mb-5
-//                                 "
-//                               >
-//                                 {section.heading}
-//                               </h3>
-
-//                               <div className="space-y-3">
-
-//                                 {section.links.map((link, i) => {
-//                                   const Icon = link.icon;
-
-//                                   return (
-//                                     <Link
-//                                       key={i}
-//                                       to={link.path}
-//                                       className="
-//                                         group
-//                                         flex items-start gap-4
-//                                         p-4
-//                                         rounded-2xl
-//                                         hover:bg-white/5
-//                                         transition-all duration-300
-//                                       "
-//                                     >
-//                                       <div
-//                                         className="
-//                                           bg-cyan-500/10
-//                                           border border-cyan-400/20
-//                                           p-3
-//                                           rounded-xl
-//                                           group-hover:scale-110
-//                                           transition-all duration-300
-//                                         "
-//                                       >
-//                                         <Icon
-//                                           size={20}
-//                                           className="text-cyan-300"
-//                                         />
-//                                       </div>
-
-//                                       <div>
-//                                         <h4
-//                                           className="
-//                                             text-white
-//                                             font-medium
-//                                             group-hover:text-cyan-300
-//                                             transition-all
-//                                           "
-//                                         >
-//                                           {link.name}
-//                                         </h4>
-
-//                                         <p
-//                                           className="
-//                                             text-sm
-//                                             text-slate-400
-//                                             mt-1
-//                                             leading-relaxed
-//                                           "
-//                                         >
-//                                           {link.desc}
-//                                         </p>
-//                                       </div>
-//                                     </Link>
-//                                   );
-//                                 })}
-//                               </div>
-//                             </div>
-//                           ))}
-//                         </div>
-//                       </div>
-//                     </div>
-//                   </>
-//                 ) : (
-//                   <Link
-//                     to={item.path}
-//                     className="
-//                       text-white/90
-//                       hover:text-cyan-300
-//                       font-medium
-//                       tracking-wide
-//                       transition-all duration-300
-//                     "
-//                   >
-//                     {item.title}
-//                   </Link>
-//                 )}
-//               </div>
-//             ))}
-//           </nav>
-
-//           {/* RIGHT SIDE */}
-//           <div className="hidden lg:flex items-center gap-4">
-
-//             <Link
-//               to="/contact"
-//               className="
-//                 relative overflow-hidden
-//                 px-6 py-3
-//                 rounded-full
-//                 bg-gradient-to-r
-//                 from-cyan-500
-//                 to-emerald-500
-//                 text-white
-//                 font-medium
-//                 shadow-lg shadow-cyan-500/20
-//                 hover:scale-105
-//                 transition-all duration-300
-//               "
-//             >
-//               Request Consultation
-//             </Link>
-//           </div>
-
-//           {/* MOBILE BUTTON */}
-//           <button
-//             className="lg:hidden text-white"
-//             onClick={() => setMobileOpen(!mobileOpen)}
-//           >
-//             {mobileOpen ? <X size={32} /> : <Menu size={32} />}
-//           </button>
-//         </div>
-//       </div>
-
-
-
-
-
-
-//       {/* MOBILE MENU */}
-//       <div
-//         className={`
-//           lg:hidden
-//           fixed top-0 right-0
-//           h-screen w-[90%] sm:w-[80%] max-w-[420px]
-//           overflow-y-auto
-//           bg-[#081219]/95
-//           backdrop-blur-2xl
-//           border-l border-white/10
-//           transition-all duration-500
-//           ${
-//             mobileOpen
-//               ? "translate-x-0"
-//               : "translate-x-full"
-//           }
-//         `}
-//       >
-//         <div className="p-8 pt-28">
-
-//           <div className="space-y-8">
-
-//             {navItems.map((item, index) => (
-//               <div key={index}>
-
-//                 <h2
-//                   className="
-//                     text-white
-//                     text-lg
-//                     font-medium
-//                     mb-4
-//                   "
-//                 >
-//                   {item.title}
-//                 </h2>
-
-//                 {item.sections && (
-//                   <div className="space-y-5 pl-2">
-
-//                     {item.sections.map((section, idx) => (
-//                       <div key={idx}>
-
-//                         <h3
-//                           className="
-//                             text-cyan-300
-//                             uppercase
-//                             text-xs
-//                             tracking-[2px]
-//                             mb-3
-//                           "
-//                         >
-//                           {section.heading}
-//                         </h3>
-
-//                         <div className="space-y-3">
-
-//                           {section.links.map((link, i) => (
-//                             <Link
-//                               key={i}
-//                               to={link.path}
-//                               className="
-//                                 block
-//                                 text-slate-300
-//                                 hover:text-cyan-300
-//                                 transition-all duration-300
-//                               "
-//                             >
-//                               {link.name}
-//                             </Link>
-//                           ))}
-//                         </div>
-//                       </div>
-//                     ))}
-//                   </div>
-//                 )}
-//               </div>
-//             ))}
-
-//             <Link
-//               to="/contact"
-//               className="
-//                 inline-block
-//                 mt-6
-//                 px-6 py-3
-//                 rounded-full
-//                 bg-gradient-to-r
-//                 from-cyan-500
-//                 to-emerald-500
-//                 text-white
-//                 font-medium
-//               "
-//             >
-//               Contact Us
-//             </Link>
-//           </div>
-//         </div>
-//       </div>
-//     </header>
-//   );
-// };
-
-// export default Navbar;
-
-
-
-
-// // Navbar.jsx
-
-// import { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
-// import {
-//   Menu,
-//   X,
-//   ChevronDown,
-// } from "lucide-react";
-
-// import { navItems } from "./navData";
-// import Logo from "../../../assets/wastely_logo.png";
-
-// const Navbar = () => {
-//   const [mobileOpen, setMobileOpen] = useState(false);
-//   const [activeMenu, setActiveMenu] = useState(null);
-//   const [scrolled, setScrolled] = useState(false);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setScrolled(window.scrollY > 40);
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   // Prevent body scroll when mobile menu is open
-//   useEffect(() => {
-//     if (mobileOpen) {
-//       document.body.style.overflow = "hidden";
-//     } else {
-//       document.body.style.overflow = "auto";
-//     }
-
-//     return () => {
-//       document.body.style.overflow = "auto";
-//     };
-//   }, [mobileOpen]);
-
-//   return (
-//     <>
-//       <header
-//         className={`
-//           fixed top-0 left-0 w-full z-50
-//           transition-all duration-500
-//           ${
-//             scrolled
-//               ? "bg-[#081219]/80 backdrop-blur-2xl border-b border-white/10 shadow-2xl"
-//               : "bg-transparent"
-//           }
-//         `}
-//       >
-//         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-//           <div className="h-20 lg:h-24 flex items-center justify-between">
-
-//             {/* LOGO */}
-//             <Link
-//               to="/"
-//               className="flex items-center gap-3 shrink-0"
-//             >
-//               <img
-//                 src={Logo}
-//                 alt="Wastely Aqua"
-//                 className="h-12 lg:h-14 object-contain"
-//               />
-
-//               <div className="hidden xl:block">
-//                 <h1 className="text-white font-semibold tracking-wide text-lg">
-//                   WASTELY AQUA
-//                 </h1>
-
-//                 <p className="text-xs text-cyan-200/70 tracking-widest uppercase">
-//                   Environmental Engineering
-//                 </p>
-//               </div>
-//             </Link>
-
-//             {/* DESKTOP MENU */}
-//             <nav className="hidden lg:flex items-center gap-6 xl:gap-10">
-
-//               {navItems.map((item, index) => (
-//                 <div
-//                   key={index}
-//                   className="relative"
-//                   onMouseEnter={() => setActiveMenu(index)}
-//                   onMouseLeave={() => setActiveMenu(null)}
-//                 >
-
-//                   {item.megaMenu ? (
-//                     <>
-//                       <button
-//                         className="
-//                           flex items-center gap-1
-//                           text-white/90
-//                           hover:text-cyan-300
-//                           font-medium
-//                           tracking-wide
-//                           transition-all duration-300
-//                         "
-//                       >
-//                         {item.title}
-//                         <ChevronDown size={18} />
-//                       </button>
-
-//                       {/* MEGA MENU */}
-//                       <div
-//                         className={`
-//                           absolute top-full pt-6 left-1/2 -translate-x-1/2
-//                           w-[92vw] max-w-[900px]
-//                           transition-all duration-300
-//                           ${
-//                             activeMenu === index
-//                               ? "opacity-100 visible translate-y-0"
-//                               : "opacity-0 invisible translate-y-5"
-//                           }
-//                         `}
-//                       >
-//                         <div
-//                           className="
-//                             bg-[#0B1220]/95
-//                             backdrop-blur-2xl
-//                             border border-white/10
-//                             rounded-3xl
-//                             shadow-[0_20px_80px_rgba(0,0,0,0.45)]
-//                             p-6 lg:p-8
-//                           "
-//                         >
-//                           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-//                             {item.sections.map((section, idx) => (
-//                               <div key={idx}>
-//                                 <h3
-//                                   className="
-//                                     text-cyan-300
-//                                     text-sm
-//                                     uppercase
-//                                     tracking-[3px]
-//                                     mb-5
-//                                   "
-//                                 >
-//                                   {section.heading}
-//                                 </h3>
-
-//                                 <div className="space-y-3">
-
-//                                   {section.links.map((link, i) => {
-//                                     const Icon = link.icon;
-
-//                                     return (
-//                                       <Link
-//                                         key={i}
-//                                         to={link.path}
-//                                         className="
-//                                           group
-//                                           flex items-start gap-4
-//                                           p-4
-//                                           rounded-2xl
-//                                           hover:bg-white/5
-//                                           transition-all duration-300
-//                                         "
-//                                       >
-//                                         <div
-//                                           className="
-//                                             bg-cyan-500/10
-//                                             border border-cyan-400/20
-//                                             p-3
-//                                             rounded-xl
-//                                             shrink-0
-//                                             group-hover:scale-110
-//                                             transition-all duration-300
-//                                           "
-//                                         >
-//                                           <Icon
-//                                             size={20}
-//                                             className="text-cyan-300"
-//                                           />
-//                                         </div>
-
-//                                         <div>
-//                                           <h4
-//                                             className="
-//                                               text-white
-//                                               font-medium
-//                                               group-hover:text-cyan-300
-//                                               transition-all
-//                                             "
-//                                           >
-//                                             {link.name}
-//                                           </h4>
-
-//                                           <p
-//                                             className="
-//                                               text-sm
-//                                               text-slate-400
-//                                               mt-1
-//                                               leading-relaxed
-//                                             "
-//                                           >
-//                                             {link.desc}
-//                                           </p>
-//                                         </div>
-//                                       </Link>
-//                                     );
-//                                   })}
-//                                 </div>
-//                               </div>
-//                             ))}
-//                           </div>
-//                         </div>
-//                       </div>
-//                     </>
-//                   ) : (
-//                     <Link
-//                       to={item.path}
-//                       className="
-//                         text-white/90
-//                         hover:text-cyan-300
-//                         font-medium
-//                         tracking-wide
-//                         transition-all duration-300
-//                       "
-//                     >
-//                       {item.title}
-//                     </Link>
-//                   )}
-//                 </div>
-//               ))}
-//             </nav>
-
-//             {/* RIGHT SIDE */}
-//             <div className="hidden lg:flex items-center gap-4">
-
-//               <Link
-//                 to="/contact"
-//                 className="
-//                   relative overflow-hidden
-//                   px-5 xl:px-6
-//                   py-3
-//                   rounded-full
-//                   bg-gradient-to-r
-//                   from-cyan-500
-//                   to-emerald-500
-//                   text-white
-//                   text-sm xl:text-base
-//                   font-medium
-//                   shadow-lg shadow-cyan-500/20
-//                   hover:scale-105
-//                   transition-all duration-300
-//                 "
-//               >
-//                 Request Consultation
-//               </Link>
-//             </div>
-
-//             {/* MOBILE BUTTON */}
-//             <button
-//               aria-label="Toggle Menu"
-//               className="lg:hidden text-white z-[60]"
-//               onClick={() => setMobileOpen(!mobileOpen)}
-//             >
-//               {mobileOpen ? <X size={32} /> : <Menu size={32} />}
-//             </button>
-//           </div>
-//         </div>
-//       </header>
-
-//       {/* OVERLAY */}
-//       <div
-//         className={`
-//           fixed inset-0 z-40 lg:hidden
-//           bg-black/60 backdrop-blur-sm
-//           transition-all duration-500
-//           ${
-//             mobileOpen
-//               ? "opacity-100 visible"
-//               : "opacity-0 invisible"
-//           }
-//         `}
-//         onClick={() => setMobileOpen(false)}
-//       />
-
-//       {/* MOBILE MENU */}
-//       <div
-//         className={`
-//           lg:hidden
-//           fixed top-0 right-0 z-50
-//           h-screen
-//           w-[90%] sm:w-[80%]
-//           max-w-[420px]
-//           overflow-y-auto
-//           bg-[#081219]/95
-//           backdrop-blur-2xl
-//           border-l border-white/10
-//           transition-all duration-500
-//           ${
-//             mobileOpen
-//               ? "translate-x-0"
-//               : "translate-x-full"
-//           }
-//         `}
-//       >
-//         <div className="p-6 sm:p-8 pt-24">
-
-//           <div className="space-y-8">
-
-//             {navItems.map((item, index) => (
-//               <div key={index}>
-
-//                 {/* SIMPLE NAV ITEMS */}
-//                 {!item.sections ? (
-//                   <Link
-//                     to={item.path}
-//                     onClick={() => setMobileOpen(false)}
-//                     className="
-//                       block
-//                       text-white
-//                       text-lg
-//                       font-medium
-//                       hover:text-cyan-300
-//                       transition-all duration-300
-//                     "
-//                   >
-//                     {item.title}
-//                   </Link>
-//                 ) : (
-//                   <>
-//                     {/* MEGA MENU TITLE */}
-//                     <h2
-//                       className="
-//                         text-white
-//                         text-lg
-//                         font-medium
-//                         mb-4
-//                       "
-//                     >
-//                       {item.title}
-//                     </h2>
-
-//                     {/* SECTIONS */}
-//                     <div className="space-y-5 pl-2">
-
-//                       {item.sections.map((section, idx) => (
-//                         <div key={idx}>
-
-//                           <h3
-//                             className="
-//                               text-cyan-300
-//                               uppercase
-//                               text-xs
-//                               tracking-[2px]
-//                               mb-3
-//                             "
-//                           >
-//                             {section.heading}
-//                           </h3>
-
-//                           <div className="space-y-3">
-
-//                             {section.links.map((link, i) => (
-//                               <Link
-//                                 key={i}
-//                                 to={link.path}
-//                                 onClick={() => setMobileOpen(false)}
-//                                 className="
-//                                   block
-//                                   text-slate-300
-//                                   hover:text-cyan-300
-//                                   transition-all duration-300
-//                                 "
-//                               >
-//                                 {link.name}
-//                               </Link>
-//                             ))}
-//                           </div>
-//                         </div>
-//                       ))}
-//                     </div>
-//                   </>
-//                 )}
-//               </div>
-//             ))}
-
-//             {/* MOBILE CTA */}
-//             <Link
-//               to="/contact"
-//               onClick={() => setMobileOpen(false)}
-//               className="
-//                 inline-flex
-//                 items-center
-//                 justify-center
-//                 w-full
-//                 mt-6
-//                 px-6 py-3
-//                 rounded-full
-//                 bg-gradient-to-r
-//                 from-cyan-500
-//                 to-emerald-500
-//                 text-white
-//                 font-medium
-//                 shadow-lg shadow-cyan-500/20
-//               "
-//             >
-//               Contact Us
-//             </Link>
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Navbar;
-
-
-
-// Navbar.jsx
-
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import {
   Menu,
   X,
   ChevronDown,
+  ArrowUpRight,
 } from "lucide-react";
 
 import { navItems } from "./navData";
 import Logo from "../../../assets/wastely_logo.png";
+
+// ======================================================
+// WASTELY AQUA — NAVBAR
+// ======================================================
+// Design direction:
+// - White / light navigation
+// - Deep blue typography
+// - Blue / cyan accents
+// - Thin borders
+// - Minimal radius
+// - No glassmorphism
+// - No neon gradients
+// - Buyer-oriented CTA
+// ======================================================
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
   const [scrolled, setScrolled] = useState(false);
 
+  const location = useLocation();
+
   // ======================================================
-  // SCROLL EFFECT
+  // SCROLL STATE
   // ======================================================
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      setScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener(
-      "scroll",
-      handleScroll
-    );
+    handleScroll();
 
-    return () =>
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   // ======================================================
-  // BODY SCROLL LOCK
+  // CLOSE MENUS ON ROUTE CHANGE
+  // ======================================================
+
+  useEffect(() => {
+    setMobileOpen(false);
+    setActiveMenu(null);
+  }, [location.pathname]);
+
+  // ======================================================
+  // BODY SCROLL LOCK — MOBILE
   // ======================================================
 
   useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
     }
 
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
     };
   }, [mobileOpen]);
 
+  // ======================================================
+  // HELPERS
+  // ======================================================
+
+  const isActivePath = (path) => {
+    if (!path) return false;
+
+    if (path === "/") {
+      return location.pathname === "/";
+    }
+
+    return location.pathname === path ||
+      location.pathname.startsWith(`${path}/`);
+  };
+
+  const closeMobile = () => {
+    setMobileOpen(false);
+    setActiveMenu(null);
+  };
+
+  // ======================================================
+  // RENDER
+  // ======================================================
+
   return (
     <>
-      {/* ====================================================== */}
-      {/* HEADER */}
-      {/* ====================================================== */}
+      {/* ==================================================
+          HEADER
+      ================================================== */}
 
       <header
         className={`
-          fixed top-0 left-0 w-full z-50
-          transition-all duration-500
-
+          fixed
+          inset-x-0
+          top-0
+          z-50
+          border-b
+          transition-all
+          duration-200
           ${
             scrolled
-              ? `
-                bg-[#081219]/80
-                backdrop-blur-2xl
-                border-b border-white/10
-                shadow-[0_10px_50px_rgba(0,0,0,0.35)]
-              `
-              : "bg-transparent"
+              ? "border-wastely-line bg-white shadow-[0_1px_8px_rgba(7,59,92,0.06)]"
+              : "border-transparent bg-white"
           }
         `}
       >
-        <div
-          className="
-            max-w-[1440px]
-            mx-auto
-            px-4 md:px-6 xl:px-8
-          "
-        >
-          <div
-            className="
-              h-20 xl:h-24
-              flex items-center justify-between
-              gap-6
-            "
-          >
-            {/* ====================================================== */}
-            {/* LOGO */}
-            {/* ====================================================== */}
+        <div className="wastely-container">
+          <div className="flex h-[72px] items-center justify-between gap-6 lg:h-[78px]">
+            {/* ==================================================
+                LOGO
+            ================================================== */}
 
             <Link
               to="/"
+              onClick={closeMobile}
               className="
-                flex items-center
-                gap-3
+                flex
                 shrink-0
-                min-w-fit
+                items-center
+                focus-visible:outline-none
               "
+              aria-label="Wastely Aqua home"
             >
               <img
                 src={Logo}
                 alt="Wastely Aqua"
                 className="
-                  h-12 xl:h-14
+                  h-10
+                  w-auto
                   object-contain
+                  sm:h-11
+                  lg:h-12
                 "
               />
-
-              {/* LARGE SCREEN BRAND TEXT */}
-              <div className="hidden 2xl:block">
-                <h1
-                  className="
-                    text-white
-                    font-semibold
-                    tracking-wide
-                    text-lg
-                    whitespace-nowrap
-                  "
-                >
-                  WASTELY AQUA
-                </h1>
-
-                <p
-                  className="
-                    text-xs
-                    text-cyan-200/70
-                    tracking-[0.22em]
-                    uppercase
-                    mt-1
-                  "
-                >
-                  Environmental Engineering
-                </p>
-              </div>
             </Link>
 
-            {/* ====================================================== */}
-            {/* DESKTOP NAVIGATION */}
-            {/* ====================================================== */}
+            {/* ==================================================
+                DESKTOP NAVIGATION
+            ================================================== */}
 
             <nav
               className="
-                hidden xl:flex
+                hidden
+                flex-1
                 items-center
                 justify-center
                 gap-5
-                2xl:gap-8
-                flex-1
+                lg:flex
+                xl:gap-7
               "
+              aria-label="Main navigation"
             >
-              {navItems.map((item, index) => (
-                <div
-                  key={index}
-                  className="relative"
-                  onMouseEnter={() =>
-                    setActiveMenu(index)
-                  }
-                  onMouseLeave={() =>
-                    setActiveMenu(null)
-                  }
-                >
-                  {/* ====================================================== */}
-                  {/* MEGA MENU */}
-                  {/* ====================================================== */}
+              {navItems.map((item, index) => {
+                const hasMegaMenu = Boolean(item.megaMenu);
+                const active =
+                  item.path && isActivePath(item.path);
 
-                  {item.megaMenu ? (
-                    <>
-                      <button
-                        className="
-                          flex items-center gap-1
-                          text-[15px]
-                          font-medium
-                          tracking-wide
-                          whitespace-nowrap
-                          text-white/90
-                          hover:text-cyan-300
-                          transition-all duration-300
-                        "
-                      >
-                        {item.title}
+                return (
+                  <div
+                    key={item.title}
+                    className="relative"
+                    onMouseEnter={() => {
+                      if (hasMegaMenu) {
+                        setActiveMenu(index);
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      if (hasMegaMenu) {
+                        setActiveMenu(null);
+                      }
+                    }}
+                  >
+                    {/* ==================================================
+                        MEGA MENU TRIGGER
+                    ================================================== */}
 
-                        <ChevronDown
-                          size={17}
-                        />
-                      </button>
-
-                      {/* DROPDOWN */}
-                      <div
-                        className={`
-                          absolute
-                          left-1/2 top-full
-                          pt-6
-                          -translate-x-1/2
-                          w-[92vw]
-                          max-w-[980px]
-
-                          transition-all duration-300
-
-                          ${
-                            activeMenu === index
-                              ? `
-                                opacity-100
-                                visible
-                                translate-y-0
-                              `
-                              : `
-                                opacity-0
-                                invisible
-                                translate-y-5
-                              `
+                    {hasMegaMenu ? (
+                      <>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setActiveMenu(
+                              activeMenu === index ? null : index
+                            )
                           }
-                        `}
-                      >
+                          className={`
+                            group
+                            inline-flex
+                            items-center
+                            gap-1
+                            whitespace-nowrap
+                            border-b
+                            border-transparent
+                            py-3
+                            text-[14px]
+                            font-semibold
+                            tracking-[-0.01em]
+                            transition-colors
+                            duration-150
+                            focus-visible:outline-none
+                            ${
+                              activeMenu === index
+                                ? "text-wastely-blue"
+                                : "text-wastely-deep hover:text-wastely-blue"
+                            }
+                          `}
+                          aria-expanded={activeMenu === index}
+                        >
+                          {item.title}
+
+                          <ChevronDown
+                            size={15}
+                            strokeWidth={2}
+                            className={`
+                              transition-transform
+                              duration-150
+                              ${
+                                activeMenu === index
+                                  ? "rotate-180"
+                                  : ""
+                              }
+                            `}
+                          />
+                        </button>
+
+                        {/* ==================================================
+                            DESKTOP MEGA MENU
+                        ================================================== */}
+
                         <div
-                          className="
-                            rounded-[32px]
-                            border border-white/10
-                            bg-[#0B1220]/95
-                            backdrop-blur-2xl
-                            shadow-[0_20px_80px_rgba(0,0,0,0.45)]
-                            p-7 xl:p-8
-                          "
+                          className={`
+                            absolute
+                            left-1/2
+                            top-full
+                            w-[min(920px,calc(100vw-32px))]
+                            -translate-x-1/2
+                            pt-3
+                            transition-all
+                            duration-150
+                            ${
+                              activeMenu === index
+                                ? "visible translate-y-0 opacity-100"
+                                : "invisible translate-y-1 opacity-0"
+                            }
+                          `}
                         >
                           <div
                             className="
-                              grid
-                              grid-cols-1 md:grid-cols-2
-                              gap-8
+                              overflow-hidden
+                              rounded-wastely
+                              border
+                              border-wastely-line
+                              bg-white
+                              shadow-[0_12px_35px_rgba(7,59,92,0.10)]
                             "
                           >
-                            {item.sections.map(
-                              (
-                                section,
-                                idx
-                              ) => (
-                                <div key={idx}>
-                                  <h3
-                                    className="
-                                      mb-5
-                                      text-xs
-                                      uppercase
-                                      tracking-[0.24em]
-                                      text-cyan-300
-                                    "
-                                  >
-                                    {
-                                      section.heading
-                                    }
-                                  </h3>
+                            {/* Top accent line */}
 
-                                  <div className="space-y-3">
-                                    {section.links.map(
-                                      (
-                                        link,
-                                        i
-                                      ) => {
-                                        const Icon =
-                                          link.icon;
+                            <div className="h-[2px] w-full bg-wastely-cyan" />
+
+                            <div className="grid grid-cols-2 gap-0">
+                              {item.sections?.map(
+                                (section, sectionIndex) => (
+                                  <div
+                                    key={section.heading}
+                                    className={`
+                                      p-6
+                                      xl:p-7
+                                      ${
+                                        sectionIndex > 0
+                                          ? "border-l border-wastely-line"
+                                          : ""
+                                      }
+                                    `}
+                                  >
+                                    {/* Section heading */}
+
+                                    <div className="mb-4">
+                                      <p
+                                        className="
+                                          text-[11px]
+                                          font-bold
+                                          uppercase
+                                          tracking-[0.14em]
+                                          text-wastely-blue
+                                        "
+                                      >
+                                        {section.heading}
+                                      </p>
+
+                                      <div className="mt-2 h-[2px] w-8 bg-wastely-cyan" />
+                                    </div>
+
+                                    {/* Section links */}
+
+                                    <div className="space-y-1">
+                                      {section.links?.map((link) => {
+                                        const Icon = link.icon;
 
                                         return (
                                           <Link
-                                            key={
-                                              i
-                                            }
-                                            to={
-                                              link.path
+                                            key={link.name}
+                                            to={link.path}
+                                            onClick={() =>
+                                              setActiveMenu(null)
                                             }
                                             className="
                                               group
-                                              flex items-start gap-4
-                                              rounded-2xl
-                                              p-4
-                                              transition-all duration-300
-                                              hover:bg-white/5
+                                              flex
+                                              items-start
+                                              gap-3
+                                              border-b
+                                              border-transparent
+                                              px-2
+                                              py-3
+                                              transition-colors
+                                              duration-150
+                                              hover:border-wastely-line
+                                              hover:bg-wastely-bg-soft
                                             "
                                           >
-                                            {/* ICON */}
+                                            {/* Icon */}
+
                                             <div
                                               className="
+                                                mt-0.5
+                                                flex
+                                                h-9
+                                                w-9
                                                 shrink-0
-                                                rounded-2xl
-                                                border border-cyan-400/20
-                                                bg-cyan-500/10
-                                                p-3
-                                                transition-all duration-300
-                                                group-hover:scale-110
+                                                items-center
+                                                justify-center
+                                                rounded-wastely
+                                                border
+                                                border-wastely-line
+                                                bg-wastely-bg-soft
+                                                text-wastely-blue
+                                                transition-colors
+                                                duration-150
+                                                group-hover:border-wastely-cyan
+                                                group-hover:bg-white
                                               "
                                             >
-                                              <Icon
-                                                size={
-                                                  20
-                                                }
-                                                className="text-cyan-300"
-                                              />
+                                              {Icon && (
+                                                <Icon
+                                                  size={17}
+                                                  strokeWidth={1.8}
+                                                />
+                                              )}
                                             </div>
 
-                                            {/* TEXT */}
-                                            <div>
-                                              <h4
-                                                className="
-                                                  text-white
-                                                  font-medium
-                                                  transition-all
-                                                  group-hover:text-cyan-300
-                                                "
-                                              >
-                                                {
-                                                  link.name
-                                                }
-                                              </h4>
+                                            {/* Text */}
 
-                                              <p
+                                            <div className="min-w-0">
+                                              <div
                                                 className="
-                                                  mt-1
-                                                  text-sm
-                                                  leading-relaxed
-                                                  text-slate-400
+                                                  flex
+                                                  items-center
+                                                  gap-1.5
+                                                  text-[14px]
+                                                  font-semibold
+                                                  leading-5
+                                                  text-wastely-deep
+                                                  transition-colors
+                                                  group-hover:text-wastely-blue
                                                 "
                                               >
-                                                {
-                                                  link.desc
-                                                }
-                                              </p>
+                                                {link.name}
+
+                                                <ArrowUpRight
+                                                  size={12}
+                                                  className="
+                                                    opacity-0
+                                                    transition-opacity
+                                                    group-hover:opacity-100
+                                                  "
+                                                />
+                                              </div>
+
+                                              {link.desc && (
+                                                <p
+                                                  className="
+                                                    mt-0.5
+                                                    text-[12px]
+                                                    leading-5
+                                                    text-wastely-sub
+                                                  "
+                                                >
+                                                  {link.desc}
+                                                </p>
+                                              )}
                                             </div>
                                           </Link>
                                         );
-                                      }
-                                    )}
+                                      })}
+                                    </div>
                                   </div>
-                                </div>
-                              )
-                            )}
+                                )
+                              )}
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </>
-                  ) : (
-                    // ======================================================
-                    // NORMAL LINK
-                    // ======================================================
+                      </>
+                    ) : (
+                      /* ==================================================
+                         NORMAL LINK
+                      ================================================== */
 
-                    <Link
-                      to={item.path}
-                      className="
-                        text-[15px]
-                        font-medium
-                        tracking-wide
-                        whitespace-nowrap
-                        text-white/90
-                        hover:text-cyan-300
-                        transition-all duration-300
-                      "
-                    >
-                      {item.title}
-                    </Link>
-                  )}
-                </div>
-              ))}
+                      <Link
+                        to={item.path}
+                        className={`
+                          inline-flex
+                          items-center
+                          whitespace-nowrap
+                          border-b
+                          py-3
+                          text-[14px]
+                          font-semibold
+                          tracking-[-0.01em]
+                          transition-colors
+                          duration-150
+                          focus-visible:outline-none
+                          ${
+                            active
+                              ? "border-wastely-cyan text-wastely-blue"
+                              : "border-transparent text-wastely-deep hover:text-wastely-blue"
+                          }
+                        `}
+                      >
+                        {item.title}
+                      </Link>
+                    )}
+                  </div>
+                );
+              })}
             </nav>
 
-            {/* ====================================================== */}
-            {/* RIGHT CTA */}
-            {/* ====================================================== */}
+            {/* ==================================================
+                DESKTOP CTA
+            ================================================== */}
 
-            <div
-              className="
-                hidden xl:flex
-                items-center
-                shrink-0
-              "
-            >
+            <div className="hidden shrink-0 lg:block">
               <Link
                 to="/contact"
                 className="
-                  relative overflow-hidden
-                  rounded-full
-
-                  bg-gradient-to-r
-                  from-cyan-500
-                  to-emerald-500
-
-                  px-5 2xl:px-6
-                  py-2.5
-
-                  text-sm 2xl:text-base
-                  font-medium
-                  text-white
-
-                  shadow-lg shadow-cyan-500/20
-
-                  transition-all duration-300
-                  hover:scale-105
+                  wastely-btn
+                  wastely-btn-primary
+                  min-h-[42px]
+                  px-4
+                  text-[13px]
+                  xl:px-5
+                  xl:text-[14px]
                 "
               >
-                Request Consultation
+                Request an Assessment
               </Link>
             </div>
 
-            {/* ====================================================== */}
-            {/* MOBILE MENU BUTTON */}
-            {/* ====================================================== */}
+            {/* ==================================================
+                MOBILE MENU BUTTON
+            ================================================== */}
 
             <button
-              aria-label="Toggle Menu"
-              className="
-                xl:hidden
-                text-white
-                z-[60]
-              "
-              onClick={() =>
-                setMobileOpen(
-                  !mobileOpen
-                )
+              type="button"
+              aria-label={
+                mobileOpen ? "Close navigation" : "Open navigation"
               }
+              aria-expanded={mobileOpen}
+              onClick={() => setMobileOpen((value) => !value)}
+              className="
+                flex
+                h-10
+                w-10
+                items-center
+                justify-center
+                rounded-wastely
+                border
+                border-wastely-line
+                bg-white
+                text-wastely-deep
+                transition-colors
+                hover:border-wastely-cyan
+                hover:text-wastely-blue
+                focus-visible:outline-none
+                lg:hidden
+              "
             >
               {mobileOpen ? (
-                <X size={32} />
+                <X size={21} strokeWidth={2} />
               ) : (
-                <Menu size={32} />
+                <Menu size={21} strokeWidth={2} />
               )}
             </button>
           </div>
         </div>
       </header>
 
-      {/* ====================================================== */}
-      {/* MOBILE OVERLAY */}
-      {/* ====================================================== */}
+      {/* ==================================================
+          MOBILE OVERLAY
+      ================================================== */}
 
       <div
         className={`
-          fixed inset-0 z-40
-          xl:hidden
-
-          bg-black/60
-          backdrop-blur-sm
-
-          transition-all duration-500
-
+          fixed
+          inset-0
+          z-40
+          bg-wastely-deep/20
+          transition-opacity
+          duration-200
+          lg:hidden
           ${
             mobileOpen
-              ? `
-                opacity-100
-                visible
-              `
-              : `
-                opacity-0
-                invisible
-              `
+              ? "visible opacity-100"
+              : "invisible opacity-0"
           }
         `}
-        onClick={() =>
-          setMobileOpen(false)
-        }
+        onClick={closeMobile}
+        aria-hidden="true"
       />
 
-      {/* ====================================================== */}
-      {/* MOBILE MENU */}
-      {/* ====================================================== */}
+      {/* ==================================================
+          MOBILE NAVIGATION
+      ================================================== */}
 
-      <div
+      <aside
         className={`
-          fixed top-0 right-0 z-50
-          xl:hidden
-
+          fixed
+          right-0
+          top-0
+          z-50
           h-screen
-          w-[90%] sm:w-[80%]
+          w-[88%]
           max-w-[420px]
-
           overflow-y-auto
-
-          border-l border-white/10
-
-          bg-[#081219]/95
-          backdrop-blur-2xl
-
-          transition-all duration-500
-
+          border-l
+          border-wastely-line
+          bg-white
+          shadow-[-10px_0_35px_rgba(7,59,92,0.10)]
+          transition-transform
+          duration-200
+          lg:hidden
           ${
             mobileOpen
               ? "translate-x-0"
               : "translate-x-full"
           }
         `}
+        aria-label="Mobile navigation"
       >
+        {/* Mobile header */}
+
         <div
           className="
-            p-6 sm:p-8
-            pt-24
+            flex
+            h-[72px]
+            items-center
+            justify-between
+            border-b
+            border-wastely-line
+            px-5
           "
         >
-          <div className="space-y-8">
-            {navItems.map(
-              (item, index) => (
-                <div key={index}>
-                  {/* SIMPLE LINKS */}
-                  {!item.sections ? (
-                    <Link
-                      to={item.path}
-                      onClick={() =>
-                        setMobileOpen(
-                          false
-                        )
-                      }
-                      className="
-                        block
-                        text-lg
-                        font-medium
-                        text-white
-                        transition-all duration-300
-                        hover:text-cyan-300
-                      "
-                    >
-                      {item.title}
-                    </Link>
-                  ) : (
-                    <>
-                      {/* TITLE */}
-                      <h2
-                        className="
-                          mb-4
-                          text-lg
-                          font-medium
-                          text-white
-                        "
-                      >
-                        {item.title}
-                      </h2>
+          <Link
+            to="/"
+            onClick={closeMobile}
+            aria-label="Wastely Aqua home"
+          >
+            <img
+              src={Logo}
+              alt="Wastely Aqua"
+              className="h-10 w-auto object-contain"
+            />
+          </Link>
 
-                      {/* SECTIONS */}
-                      <div
-                        className="
-                          pl-2
-                          space-y-5
-                        "
-                      >
-                        {item.sections.map(
-                          (
-                            section,
-                            idx
-                          ) => (
-                            <div
-                              key={idx}
-                            >
-                              <h3
-                                className="
-                                  mb-3
-                                  text-xs
-                                  uppercase
-                                  tracking-[0.18em]
-                                  text-cyan-300
-                                "
+          <button
+            type="button"
+            aria-label="Close navigation"
+            onClick={closeMobile}
+            className="
+              flex
+              h-9
+              w-9
+              items-center
+              justify-center
+              rounded-wastely
+              border
+              border-wastely-line
+              text-wastely-deep
+              hover:border-wastely-cyan
+              hover:text-wastely-blue
+            "
+          >
+            <X size={19} />
+          </button>
+        </div>
+
+        {/* Mobile content */}
+
+        <div className="px-5 py-6">
+          <nav aria-label="Mobile main navigation">
+            <div className="divide-y divide-wastely-line">
+              {navItems.map((item, index) => {
+                const hasMegaMenu = Boolean(item.megaMenu);
+                const expanded = activeMenu === index;
+
+                return (
+                  <div key={item.title}>
+                    {hasMegaMenu ? (
+                      <>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setActiveMenu(
+                              expanded ? null : index
+                            )
+                          }
+                          className="
+                            flex
+                            w-full
+                            items-center
+                            justify-between
+                            py-4
+                            text-left
+                            text-[15px]
+                            font-semibold
+                            text-wastely-deep
+                            transition-colors
+                            hover:text-wastely-blue
+                          "
+                          aria-expanded={expanded}
+                        >
+                          <span>{item.title}</span>
+
+                          <ChevronDown
+                            size={17}
+                            className={`
+                              text-wastely-sub
+                              transition-transform
+                              duration-150
+                              ${
+                                expanded
+                                  ? "rotate-180"
+                                  : ""
+                              }
+                            `}
+                          />
+                        </button>
+
+                        {/* Expanded mobile section */}
+
+                        <div
+                          className={`
+                            overflow-hidden
+                            transition-all
+                            duration-200
+                            ${
+                              expanded
+                                ? "max-h-[1200px] pb-4 opacity-100"
+                                : "max-h-0 opacity-0"
+                            }
+                          `}
+                        >
+                          <div className="border-l-2 border-wastely-cyan pl-4">
+                            {item.sections?.map((section) => (
+                              <div
+                                key={section.heading}
+                                className="mb-5 last:mb-0"
                               >
-                                {
-                                  section.heading
-                                }
-                              </h3>
+                                <p
+                                  className="
+                                    mb-2
+                                    text-[10px]
+                                    font-bold
+                                    uppercase
+                                    tracking-[0.14em]
+                                    text-wastely-blue
+                                  "
+                                >
+                                  {section.heading}
+                                </p>
 
-                              <div className="space-y-3">
-                                {section.links.map(
-                                  (
-                                    link,
-                                    i
-                                  ) => (
+                                <div className="space-y-1">
+                                  {section.links?.map((link) => (
                                     <Link
-                                      key={
-                                        i
-                                      }
-                                      to={
-                                        link.path
-                                      }
-                                      onClick={() =>
-                                        setMobileOpen(
-                                          false
-                                        )
-                                      }
+                                      key={link.name}
+                                      to={link.path}
+                                      onClick={closeMobile}
                                       className="
                                         block
-                                        text-slate-300
-                                        transition-all duration-300
-                                        hover:text-cyan-300
+                                        py-2
+                                        text-[14px]
+                                        font-medium
+                                        text-wastely-sub
+                                        transition-colors
+                                        hover:text-wastely-blue
                                       "
                                     >
-                                      {
-                                        link.name
-                                      }
+                                      {link.name}
                                     </Link>
-                                  )
-                                )}
+                                  ))}
+                                </div>
                               </div>
-                            </div>
-                          )
-                        )}
-                      </div>
-                    </>
-                  )}
-                </div>
-              )
-            )}
+                            ))}
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      <Link
+                        to={item.path}
+                        onClick={closeMobile}
+                        className={`
+                          block
+                          py-4
+                          text-[15px]
+                          font-semibold
+                          transition-colors
+                          ${
+                            isActivePath(item.path)
+                              ? "text-wastely-blue"
+                              : "text-wastely-deep hover:text-wastely-blue"
+                          }
+                        `}
+                      >
+                        {item.title}
+                      </Link>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </nav>
 
-            {/* MOBILE CTA */}
+          {/* ==================================================
+              MOBILE CTA
+          ================================================== */}
+
+          <div className="mt-7 border-t border-wastely-line pt-6">
             <Link
               to="/contact"
-              onClick={() =>
-                setMobileOpen(false)
-              }
+              onClick={closeMobile}
               className="
-                mt-6
-                inline-flex
+                wastely-btn
+                wastely-btn-primary
                 w-full
-                items-center justify-center
-
-                rounded-full
-
-                bg-gradient-to-r
-                from-cyan-500
-                to-emerald-500
-
-                px-6 py-3
-
-                font-medium
-                text-white
-
-                shadow-lg shadow-cyan-500/20
+                text-sm
               "
             >
-              Contact Us
+              Request an Assessment
             </Link>
           </div>
+
+          {/* Supporting line */}
+
+          <p
+            className="
+              mt-4
+              text-center
+              text-xs
+              leading-5
+              text-wastely-sub
+            "
+          >
+            Water & wastewater treatment solutions
+          </p>
         </div>
-      </div>
+      </aside>
+
+      {/* ==================================================
+          NAVBAR SPACING
+          Prevents page content from sitting underneath
+          the fixed header.
+      ================================================== */}
+
+      <div className="h-[72px] lg:h-[78px]" />
     </>
   );
 };

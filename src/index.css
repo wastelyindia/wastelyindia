@@ -1,3 +1,348 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* =========================================================
+   WASTELY AQUA — GLOBAL DESIGN SYSTEM
+   ========================================================= */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+
+    background: #ffffff;
+    color: #0B2B3A;
+
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+
+    font-size: 16px;
+    line-height: 1.6;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  img {
+    height: auto;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    color: #073B5C;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    margin: 0;
+    color: #5D7A87;
+  }
+
+  ::selection {
+    background: #2FB4CE;
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid #2FB4CE;
+    outline-offset: 3px;
+  }
+}
+
+/* =========================================================
+   WASTELY AQUA — REUSABLE COMPONENT STYLES
+   ========================================================= */
+
+@layer components {
+  /* ---------- Page Container ---------- */
+
+  .wastely-container {
+    width: min(100% - 2rem, 1280px);
+    margin-inline: auto;
+  }
+
+  /* ---------- Section ---------- */
+
+  .wastely-section {
+    width: 100%;
+    padding-block: 5rem;
+  }
+
+  .wastely-section-sm {
+    width: 100%;
+    padding-block: 4rem;
+  }
+
+  .wastely-section-lg {
+    width: 100%;
+    padding-block: 7rem;
+  }
+
+  .wastely-section-white {
+    background: #ffffff;
+  }
+
+  .wastely-section-soft {
+    background: #F3F8FA;
+  }
+
+  .wastely-section-dark {
+    background: #073B5C;
+    color: #ffffff;
+  }
+
+  /* ---------- Section Header ---------- */
+
+  .wastely-section-header {
+    max-width: 760px;
+    margin-bottom: 3rem;
+  }
+
+  .wastely-section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    margin-bottom: 0.75rem;
+
+    color: #0E76A8;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .wastely-section-eyebrow::before {
+    content: "";
+
+    width: 28px;
+    height: 1px;
+
+    background: #2FB4CE;
+  }
+
+  .wastely-section-title {
+    color: #073B5C;
+
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+  }
+
+  .wastely-section-description {
+    max-width: 680px;
+    margin-top: 1rem;
+
+    color: #5D7A87;
+
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* ---------- Buttons ---------- */
+
+  .wastely-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    min-height: 46px;
+    padding: 0.75rem 1.25rem;
+
+    border: 1px solid transparent;
+    border-radius: 3px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.2;
+
+    transition:
+      background-color 180ms ease,
+      border-color 180ms ease,
+      color 180ms ease,
+      transform 180ms ease;
+  }
+
+  .wastely-btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .wastely-btn-primary {
+    background: #0E76A8;
+    color: #ffffff;
+  }
+
+  .wastely-btn-primary:hover {
+    background: #0B4F7A;
+  }
+
+  .wastely-btn-secondary {
+    background: transparent;
+    border-color: #0E76A8;
+    color: #0E76A8;
+  }
+
+  .wastely-btn-secondary:hover {
+    background: #0E76A8;
+    color: #ffffff;
+  }
+
+  .wastely-btn-light {
+    background: #ffffff;
+    color: #073B5C;
+  }
+
+  .wastely-btn-light:hover {
+    background: #F3F8FA;
+  }
+
+  /* ---------- Engineering Card ---------- */
+
+  .wastely-card {
+    background: #ffffff;
+    border: 1px solid #E3EDF1;
+    border-radius: 3px;
+  }
+
+  .wastely-card-hover {
+    transition:
+      border-color 180ms ease,
+      transform 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .wastely-card-hover:hover {
+    border-color: #2FB4CE;
+    transform: translateY(-2px);
+    box-shadow: 0 1px 3px rgba(7, 59, 92, 0.06);
+  }
+
+  /* ---------- Dividers ---------- */
+
+  .wastely-divider {
+    width: 100%;
+    height: 1px;
+    background: #E3EDF1;
+  }
+
+  .wastely-divider-accent {
+    width: 48px;
+    height: 2px;
+    background: #2FB4CE;
+  }
+
+  /* ---------- Dark Content ---------- */
+
+  .wastely-dark-title {
+    color: #ffffff;
+  }
+
+  .wastely-dark-text {
+    color: rgba(255, 255, 255, 0.72);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE FOUNDATION
+   ========================================================= */
+
+@media (min-width: 640px) {
+  .wastely-container {
+    width: min(100% - 3rem, 1280px);
+  }
+
+  .wastely-section {
+    padding-block: 6rem;
+  }
+
+  .wastely-section-lg {
+    padding-block: 8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wastely-container {
+    width: min(100% - 4rem, 1280px);
+  }
+
+  .wastely-section {
+    padding-block: 7rem;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

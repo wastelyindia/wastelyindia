@@ -1,618 +1,9 @@
-
-
-// // Footer.jsx
-
-// import { Link } from "react-router-dom";
-
-// import {
-//   Mail,
-//   Phone,
-//   MapPin,
-//   ArrowRight,
-// } from "lucide-react";
-// // Linkedin,
-// // Instagram,
-// // Facebook,
-
-// import {
-//   FaFacebookF,
-//   FaInstagram,
-//   FaLinkedinIn,
-// } from "react-icons/fa";
-
-
-// import Logo from "../../../assets/wastely_logo1.png";
-
-// const Footer = () => {
-//   return (
-//     <footer className="relative bg-[#050B12] overflow-hidden">
-
-//       {/* BACKGROUND GLOW */}
-//       <div
-//         className="
-//           absolute top-0 left-1/2
-//           -translate-x-1/2
-//           w-[700px] h-[700px]
-//           bg-cyan-500/10
-//           blur-[140px]
-//           rounded-full
-//           pointer-events-none
-//         "
-//       />
-
-//       {/* TOP BORDER */}
-//       <div
-//         className="
-//           h-[1px]
-//           w-full
-//           bg-gradient-to-r
-//           from-transparent
-//           via-cyan-400/20
-//           to-transparent
-//         "
-//       />
-
-//       <div
-//         className="
-//           relative z-10
-//           max-w-7xl
-//           mx-auto
-//           px-4 sm:px-6 lg:px-8
-//           pt-16 sm:pt-20 lg:pt-24
-//           pb-8
-//         "
-//       >
-
-//         {/* MAIN GRID */}
-//         <div
-//           className="
-//             grid
-//             grid-cols-1
-//             sm:grid-cols-2
-//             lg:grid-cols-[1.4fr_1fr_1fr_1fr]
-//             gap-12 lg:gap-16
-//           "
-//         >
-
-//           {/* BRAND */}
-//           <div>
-
-//             <img
-//               src={Logo}
-//               alt="Wastely Aqua"
-//               className="h-16 sm:h-20 object-contain"
-//             />
-
-//             <p
-//               className="
-//                 mt-6 sm:mt-8
-//                 text-slate-400
-//                 leading-relaxed
-//                 text-sm sm:text-base
-//                 max-w-md
-//               "
-//             >
-//               Delivering advanced wastewater treatment,
-//               recycling, and environmental infrastructure
-//               systems for sustainable industrial and
-//               municipal ecosystems.
-//             </p>
-
-//             {/* SOCIAL */}
-//             <div className="flex items-center gap-4 mt-8">
-
-//               <a
-//                 href="#"
-//                 className="
-//                   w-11 h-11
-//                   rounded-2xl
-//                   bg-white/5
-//                   border border-white/10
-//                   flex items-center justify-center
-//                   text-slate-400
-//                   hover:text-cyan-300
-//                   hover:border-cyan-400/30
-//                   transition-all duration-300
-//                 "
-//               >
-//                 {/* <Linkedin size={18} /> */}
-//                 <FaLinkedinIn size={16} />
-//               </a>
-
-//               <a
-//                 href="#"
-//                 className="
-//                   w-11 h-11
-//                   rounded-2xl
-//                   bg-white/5
-//                   border border-white/10
-//                   flex items-center justify-center
-//                   text-slate-400
-//                   hover:text-cyan-300
-//                   hover:border-cyan-400/30
-//                   transition-all duration-300
-//                 "
-//               >
-//                 {/* <Instagram size={18} /> */}
-//                 <FaInstagram size={16} />
-//               </a>
-
-//               <a
-//                 href="#"
-//                 className="
-//                   w-11 h-11
-//                   rounded-2xl
-//                   bg-white/5
-//                   border border-white/10
-//                   flex items-center justify-center
-//                   text-slate-400
-//                   hover:text-cyan-300
-//                   hover:border-cyan-400/30
-//                   transition-all duration-300
-//                 "
-//               >
-//                 {/* <Facebook size={18} /> */}
-//                 <FaFacebookF size={16} />
-//               </a>
-//             </div>
-
-//             {/* CONTACT */}
-//             <div className="mt-10 space-y-5">
-
-//               {/* PHONE */}
-//               <div className="flex items-start gap-4">
-
-//                 <div
-//                   className="
-//                     w-11 h-11 sm:w-12 sm:h-12
-//                     shrink-0
-//                     flex items-center justify-center
-//                     rounded-2xl
-//                     bg-white/5
-//                     border border-white/10
-//                   "
-//                 >
-//                   <Phone
-//                     size={18}
-//                     className="text-cyan-300"
-//                   />
-//                 </div>
-
-//                 <div>
-//                   <p className="text-slate-500 text-sm">
-//                     Phone
-//                   </p>
-
-//                   <a
-//                     href="tel:+918853043647"
-//                     className="
-//                       text-white
-//                       hover:text-cyan-300
-//                       transition-all
-//                     "
-//                   >
-//                     +91 88530 43647
-//                   </a>
-//                 </div>
-//               </div>
-
-//               {/* EMAIL */}
-//               <div className="flex items-start gap-4">
-
-//                 <div
-//                   className="
-//                     w-11 h-11 sm:w-12 sm:h-12
-//                     shrink-0
-//                     flex items-center justify-center
-//                     rounded-2xl
-//                     bg-white/5
-//                     border border-white/10
-//                   "
-//                 >
-//                   <Mail
-//                     size={18}
-//                     className="text-emerald-300"
-//                   />
-//                 </div>
-
-//                 <div>
-//                   <p className="text-slate-500 text-sm">
-//                     Email
-//                   </p>
-
-//                   <a
-//                     href="mailto:info@wastelyaqua.com"
-//                     className="
-//                       text-white
-//                       break-all
-//                       hover:text-cyan-300
-//                       transition-all
-//                     "
-//                   >
-//                     info@wastelyaqua.com
-//                   </a>
-//                 </div>
-//               </div>
-
-//               {/* LOCATION */}
-//               <div className="flex items-start gap-4">
-
-//                 <div
-//                   className="
-//                     w-11 h-11 sm:w-12 sm:h-12
-//                     shrink-0
-//                     flex items-center justify-center
-//                     rounded-2xl
-//                     bg-white/5
-//                     border border-white/10
-//                   "
-//                 >
-//                   <MapPin
-//                     size={18}
-//                     className="text-cyan-300"
-//                   />
-//                 </div>
-
-//                 <div>
-//                   <p className="text-slate-500 text-sm">
-//                     Location
-//                   </p>
-
-//                   <h4 className="text-white">
-//                     Mumbai, India
-//                   </h4>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* SOLUTIONS */}
-//           <div>
-
-//             <h3
-//               className="
-//                 text-white
-//                 text-lg
-//                 font-semibold
-//                 mb-6 sm:mb-8
-//               "
-//             >
-//               Solutions
-//             </h3>
-
-//             <div className="space-y-4">
-
-//               <Link
-//                 to="/solutions/wastewater-treatment"
-//                 className="
-//                   block
-//                   text-slate-400
-//                   hover:text-cyan-300
-//                   transition-all duration-300
-//                 "
-//               >
-//                 Wastewater Treatment
-//               </Link>
-
-//               <Link
-//                 to="/solutions/water-treatment"
-//                 className="
-//                   block
-//                   text-slate-400
-//                   hover:text-cyan-300
-//                   transition-all duration-300
-//                 "
-//               >
-//                 Water Treatment
-//               </Link>
-
-//               <Link
-//                 to="/solutions/integrated-water-system"
-//                 className="
-//                   block
-//                   text-slate-400
-//                   hover:text-cyan-300
-//                   transition-all duration-300
-//                 "
-//               >
-//                 Integrated Water System
-//               </Link>
-
-//               <Link
-//                 to="/solutions/aquaculture"
-//                 className="
-//                   block
-//                   text-slate-400
-//                   hover:text-cyan-300
-//                   transition-all duration-300
-//                 "
-//               >
-//                 Aquaculture
-//               </Link>
-
-//               <Link
-//                 to="/solutions/lake-pond-rejuvenation"
-//                 className="
-//                   block
-//                   text-slate-400
-//                   hover:text-cyan-300
-//                   transition-all duration-300
-//                 "
-//               >
-//                 Lake & Pond Rejuvenation
-//               </Link>
-
-//               <Link
-//                 to="/solutions/water-body-restoration"
-//                 className="
-//                   block
-//                   text-slate-400
-//                   hover:text-cyan-300
-//                   transition-all duration-300
-//                 "
-//               >
-//                 River Restoration
-//               </Link>
-//             </div>
-//           </div>
-
-//           {/* PRODUCTS & SERVICES */}
-//           <div>
-
-//             <h3
-//               className="
-//                 text-white
-//                 text-lg
-//                 font-semibold
-//                 mb-6 sm:mb-8
-//               "
-//             >
-//               Products
-//             </h3>
-
-//             <div className="space-y-4">
-
-//               <Link
-//                 to="/products/aeration-oxygenation"
-//                 className="
-//                   block
-//                   text-slate-400
-//                   hover:text-cyan-300
-//                   transition-all duration-300
-//                 "
-//               >
-//                 Aeration Technology
-//               </Link>
-
-//               <Link
-//                 to="/products/ifas-membrane"
-//                 className="
-//                   block
-//                   text-slate-400
-//                   hover:text-cyan-300
-//                   transition-all duration-300
-//                 "
-//               >
-//                 IFAS / Membrane
-//               </Link>
-
-//               <Link
-//                 to="/products/floating-wetlands"
-//                 className="
-//                   block
-//                   text-slate-400
-//                   hover:text-cyan-300
-//                   transition-all duration-300
-//                 "
-//               >
-//                 Floating Wetlands
-//               </Link>
-
-//               <Link
-//                 to="/products/sludge-dewatering-unit"
-//                 className="
-//                   block
-//                   text-slate-400
-//                   hover:text-cyan-300
-//                   transition-all duration-300
-//                 "
-//               >
-//                 Sludge Dewatering
-//               </Link>
-
-//               <Link
-//                 to="/services/operation-maintenance"
-//                 className="
-//                   block
-//                   text-slate-400
-//                   hover:text-cyan-300
-//                   transition-all duration-300
-//                 "
-//               >
-//                 Operation & Maintenance
-//               </Link>
-
-//               <Link
-//                 to="/services/revamping-retrofitting"
-//                 className="
-//                   block
-//                   text-slate-400
-//                   hover:text-cyan-300
-//                   transition-all duration-300
-//                 "
-//               >
-//                 Revamping & Retrofitting
-//               </Link>
-//             </div>
-//           </div>
-
-//           {/* COMPANY */}
-//           <div>
-
-//             <h3
-//               className="
-//                 text-white
-//                 text-lg
-//                 font-semibold
-//                 mb-6 sm:mb-8
-//               "
-//             >
-//               Company
-//             </h3>
-
-//             <div className="space-y-4">
-
-//               <Link
-//                 to="/"
-//                 className="
-//                   block
-//                   text-slate-400
-//                   hover:text-cyan-300
-//                   transition-all duration-300
-//                 "
-//               >
-//                 Home
-//               </Link>
-
-//               <Link
-//                 to="/about"
-//                 className="
-//                   block
-//                   text-slate-400
-//                   hover:text-cyan-300
-//                   transition-all duration-300
-//                 "
-//               >
-//                 About Us
-//               </Link>
-
-//               <Link
-//                 to="/industries"
-//                 className="
-//                   block
-//                   text-slate-400
-//                   hover:text-cyan-300
-//                   transition-all duration-300
-//                 "
-//               >
-//                 Industries
-//               </Link>
-
-//               <Link
-//                 to="/technologies"
-//                 className="
-//                   block
-//                   text-slate-400
-//                   hover:text-cyan-300
-//                   transition-all duration-300
-//                 "
-//               >
-//                 Technologies
-//               </Link>
-
-//               <Link
-//                 to="/contact"
-//                 className="
-//                   inline-flex
-//                   items-center
-//                   gap-2
-//                   text-cyan-300
-//                   font-medium
-//                   group
-//                   pt-2
-//                 "
-//               >
-//                 Contact Us
-
-//                 <ArrowRight
-//                   size={18}
-//                   className="
-//                     group-hover:translate-x-1
-//                     transition-all duration-300
-//                   "
-//                 />
-//               </Link>
-//             </div>
-//           </div>
-//         </div>
-
-//         {/* BOTTOM */}
-//         <div
-//           className="
-//             mt-16 sm:mt-20
-//             pt-6 sm:pt-8
-//             border-t border-white/10
-//             flex flex-col md:flex-row
-//             items-center
-//             justify-between
-//             gap-5
-//           "
-//         >
-
-//           <p
-//             className="
-//               text-slate-500
-//               text-sm
-//               text-center md:text-left
-//             "
-//           >
-//             © {new Date().getFullYear()} Wastely Aqua.
-//             All rights reserved.
-//           </p>
-
-//           <div
-//             className="
-//               flex flex-wrap
-//               items-center
-//               justify-center
-//               gap-6
-//             "
-//           >
-
-//             <Link
-//               to="/privacy"
-//               className="
-//                 text-slate-500
-//                 hover:text-cyan-300
-//                 text-sm
-//                 transition-all duration-300
-//               "
-//             >
-//               Privacy Policy
-//             </Link>
-
-//             <Link
-//               to="/terms"
-//               className="
-//                 text-slate-500
-//                 hover:text-cyan-300
-//                 text-sm
-//                 transition-all duration-300
-//               "
-//             >
-//               Terms & Conditions
-//             </Link>
-//           </div>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// };
-
-// export default Footer;
-
-
-
-
-
-// Footer.jsx
-
 import { Link } from "react-router-dom";
-
 import {
   Mail,
   Phone,
   MapPin,
+  ArrowUpRight,
   ArrowRight,
 } from "lucide-react";
 
@@ -624,799 +15,795 @@ import {
 
 import Logo from "../../../assets/wastely_logo1.png";
 
+/* =========================================================
+   WASTELY AQUA — CORPORATE FOOTER
+   =========================================================
+   Final site hierarchy:
+
+   Solutions
+   Services
+   Technologies
+   Company
+
+   Footer owns the primary site-wide CTA.
+   ========================================================= */
+
+const solutionLinks = [
+  {
+    name: "Wastewater Treatment",
+    path: "/solutions/wastewater-treatment",
+  },
+  {
+    name: "Water Treatment",
+    path: "/solutions/water-treatment",
+  },
+  {
+    name: "Integrated Water System",
+    path: "/solutions/integrated-water-system",
+  },
+  {
+    name: "Aquaculture",
+    path: "/solutions/aquaculture",
+  },
+  {
+    name: "Lake & Pond Rejuvenation",
+    path: "/solutions/lake-pond-rejuvenation",
+  },
+  {
+    name: "Water Body Restoration",
+    path: "/solutions/water-body-restoration",
+  },
+];
+
+const serviceLinks = [
+  {
+    name: "Operation & Maintenance",
+    path: "/services/operation-maintenance",
+  },
+  {
+    name: "AMC Services",
+    path: "/services/amc-services",
+  },
+  {
+    name: "Revamping & Retrofitting",
+    path: "/services/revamping-retrofitting",
+  },
+  {
+    name: "Technology Process",
+    path: "/services/technology-process",
+  },
+];
+
+const technologyLinks = [
+  {
+    name: "Aeration & Oxygenation",
+    path: "/technologies/aeration-oxygenation",
+  },
+  {
+    name: "IFAS / Membrane Systems",
+    path: "/technologies/ifas-membrane",
+  },
+  {
+    name: "Floating Wetlands",
+    path: "/technologies/floating-wetlands",
+  },
+  {
+    name: "Algae Control System",
+    path: "/technologies/algae-control",
+  },
+  {
+    name: "Hydro-dis Disinfection",
+    path: "/technologies/hydro-dis",
+  },
+  {
+    name: "Sludge Management",
+    path: "/technologies/sludge-management",
+  },
+  {
+    name: "Package Treatment Units",
+    path: "/technologies/package-treatment-units",
+  },
+];
+
+const companyLinks = [
+  {
+    name: "About",
+    path: "/about",
+  },
+  {
+    name: "Industries",
+    path: "/industries",
+  },
+  {
+    name: "Case Studies",
+    path: "/case-studies",
+  },
+  {
+    name: "Technologies",
+    path: "/technologies",
+  },
+  {
+    name: "Contact",
+    path: "/contact",
+  },
+];
+
+/* =========================================================
+   FOOTER LINK
+   ========================================================= */
+
+const FooterLink = ({ name, path }) => (
+  <Link
+    to={path}
+    className="
+      group
+      inline-flex
+      items-center
+      gap-1.5
+      text-[13px]
+      leading-6
+      text-white/62
+      transition-colors
+      duration-150
+      hover:text-white
+    "
+  >
+    <span>{name}</span>
+
+    <ArrowUpRight
+      size={12}
+      strokeWidth={1.8}
+      className="
+        -translate-x-1
+        text-[#2FB4CE]
+        opacity-0
+        transition-all
+        duration-150
+        group-hover:translate-x-0
+        group-hover:opacity-100
+      "
+    />
+  </Link>
+);
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
 const Footer = () => {
   return (
-    <footer
-      className="
-        relative
-        overflow-hidden
-
-        bg-[#061018]
-
-        border-t border-white/10
-        backdrop-blur-2xl
-      "
-    >
-      {/* ====================================================== */}
-      {/* BACKGROUND SYSTEM */}
-      {/* ====================================================== */}
-
-      {/* GRID OVERLAY */}
+    <footer className="relative overflow-hidden bg-[#073B5C] text-white">
+      {/* ===================================================
+          ENGINEERING / WATER BACKGROUND
+          =================================================== */}
       <div
-        className="
-          absolute inset-0
-          opacity-[0.03]
-
-          bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)]
-
-          bg-[size:120px_120px]
-        "
-      />
-
-      {/* TOP GLOW */}
-      <div
-        className="
-          absolute
-          top-0
-          left-1/2
-          -translate-x-1/2
-
-          w-[900px]
-          h-[900px]
-
-          bg-cyan-500/10
-
-          blur-[180px]
-
-          rounded-full
-
-          pointer-events-none
-        "
-      />
-
-      {/* RADIAL ATMOSPHERE */}
-      <div
-        className="
-          absolute inset-0
-
-          bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.08),transparent_65%)]
-
-          opacity-30
-        "
-      />
-
-      {/* DIAGONAL LIGHT */}
-      <div
-        className="
-          absolute
-          top-0
-          left-[-20%]
-
-          h-full
-          w-[60%]
-
-          rotate-12
-
-          bg-cyan-400/5
-
-          blur-[120px]
-        "
-      />
-
-      {/* TOP BORDER */}
-      <div
-        className="
-          h-[1px]
-          w-full
-
-          bg-gradient-to-r
-          from-transparent
-          via-cyan-300/40
-          to-transparent
-        "
-      />
-
-      {/* ====================================================== */}
-      {/* MAIN CONTAINER */}
-      {/* ====================================================== */}
-
-      <div
-        className="
-          relative z-10
-
-          max-w-7xl
-          mx-auto
-
-          px-4 sm:px-6 lg:px-8
-
-          pt-16 sm:pt-20 lg:pt-24
-          pb-8
-        "
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 overflow-hidden"
       >
-        {/* ====================================================== */}
-        {/* MAIN GRID */}
-        {/* ====================================================== */}
-
+        {/* Engineering grid */}
         <div
           className="
-            grid
-            grid-cols-1
-            sm:grid-cols-2
-            lg:grid-cols-[1.4fr_1fr_1fr_1fr]
-
-            gap-12 lg:gap-16
+            absolute
+            inset-0
+            opacity-[0.035]
+            bg-[linear-gradient(rgba(255,255,255,0.8)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.8)_1px,transparent_1px)]
+            bg-[size:72px_72px]
           "
+        />
+
+        {/* Technical horizontal lines */}
+        <div className="absolute left-0 top-[24%] h-px w-[38%] bg-white/[0.06]" />
+        <div className="absolute left-0 top-[58%] h-px w-[25%] bg-white/[0.05]" />
+        <div className="absolute right-0 top-[76%] h-px w-[32%] bg-white/[0.05]" />
+
+        {/* Water / contour lines */}
+        <svg
+          className="
+            absolute
+            right-[-8%]
+            top-[6%]
+            h-[520px]
+            w-[720px]
+            opacity-[0.085]
+          "
+          viewBox="0 0 720 520"
+          fill="none"
         >
-          {/* ====================================================== */}
-          {/* BRAND */}
-          {/* ====================================================== */}
-
-          <div>
-            <img
-              src={Logo}
-              alt="Wastely Aqua"
-              className="h-16 sm:h-20 object-contain"
-            />
-
-            {/* TAGLINE */}
-            <h3
-              className="
-                mt-8
-
-                text-2xl
-                font-bold
-                leading-tight
-
-                text-white
-              "
-            >
-              Integrated Environmental Engineering
-            </h3>
-
-            <p
-              className="
-                mt-3
-
-                text-xs
-                uppercase
-
-                tracking-[0.22em]
-
-                text-cyan-200/70
-              "
-            >
-              Intelligent Water Infrastructure
-            </p>
-
-            {/* DESCRIPTION */}
-            <p
-              className="
-                mt-6 sm:mt-8
-
-                text-slate-300
-                text-[15px]
-
-                leading-relaxed
-
-                max-w-md
-              "
-            >
-              Delivering advanced wastewater treatment,
-              recycling, ecological restoration and
-              intelligent environmental infrastructure
-              systems for sustainable industrial and
-              municipal ecosystems.
-            </p>
-
-            {/* SOCIAL */}
-            <div className="flex items-center gap-4 mt-8">
-              {/* LINKEDIN */}
-              <a
-                href="https://www.linkedin.com/in/mohammad-sadique-khan-427696112"
-                className="
-                  w-12 h-12
-
-                  rounded-2xl
-
-                  bg-white/[0.06]
-
-                  border border-white/10
-
-                  backdrop-blur-xl
-
-                  shadow-[0_0_30px_-12px_rgba(34,211,238,0.12)]
-
-                  flex items-center justify-center
-
-                  text-slate-400
-
-                  transition-all duration-300
-
-                  hover:bg-cyan-400/10
-                  hover:border-cyan-400/30
-
-                  hover:shadow-[0_0_40px_-8px_rgba(34,211,238,0.25)]
-
-                  hover:-translate-y-1
-                  hover:text-cyan-300
-                "
-              >
-                <FaLinkedinIn size={16} />
-              </a>
-
-              {/* INSTAGRAM */}
-              <a
-                href="#"
-                className="
-                  w-12 h-12
-
-                  rounded-2xl
-
-                  bg-white/[0.06]
-
-                  border border-white/10
-
-                  backdrop-blur-xl
-
-                  shadow-[0_0_30px_-12px_rgba(34,211,238,0.12)]
-
-                  flex items-center justify-center
-
-                  text-slate-400
-
-                  transition-all duration-300
-
-                  hover:bg-cyan-400/10
-                  hover:border-cyan-400/30
-
-                  hover:shadow-[0_0_40px_-8px_rgba(34,211,238,0.25)]
-
-                  hover:-translate-y-1
-                  hover:text-cyan-300
-                "
-              >
-                <FaInstagram size={16} />
-              </a>
-
-              {/* FACEBOOK */}
-              <a
-                href="#"
-                className="
-                  w-12 h-12
-
-                  rounded-2xl
-
-                  bg-white/[0.06]
-
-                  border border-white/10
-
-                  backdrop-blur-xl
-
-                  shadow-[0_0_30px_-12px_rgba(34,211,238,0.12)]
-
-                  flex items-center justify-center
-
-                  text-slate-400
-
-                  transition-all duration-300
-
-                  hover:bg-cyan-400/10
-                  hover:border-cyan-400/30
-
-                  hover:shadow-[0_0_40px_-8px_rgba(34,211,238,0.25)]
-
-                  hover:-translate-y-1
-                  hover:text-cyan-300
-                "
-              >
-                <FaFacebookF size={16} />
-              </a>
-            </div>
-
-            {/* CONTACT */}
-            <div className="mt-10 space-y-5">
-              {/* PHONE */}
-              <div className="flex items-start gap-4">
-                <div
-                  className="
-                    w-11 h-11 sm:w-12 sm:h-12
-
-                    shrink-0
-
-                    flex items-center justify-center
-
-                    rounded-2xl
-
-                    bg-white/[0.06]
-
-                    border border-white/10
-
-                    backdrop-blur-xl
-                  "
-                >
-                  <Phone
-                    size={18}
-                    className="text-cyan-300"
-                  />
-                </div>
-
-                <div>
-                  <p className="text-slate-500 text-sm">
-                    Phone
-                  </p>
-
-                  <a
-                    href="tel:+919136069130"
-                    className="
-                      text-white
-
-                      hover:text-cyan-300
-
-                      transition-all duration-300
-                    "
-                  >
-                    +91 91360 69130
-                  </a>
-                </div>
-              </div>
-
-              {/* EMAIL */}
-              <div className="flex items-start gap-4">
-                <div
-                  className="
-                    w-11 h-11 sm:w-12 sm:h-12
-
-                    shrink-0
-
-                    flex items-center justify-center
-
-                    rounded-2xl
-
-                    bg-white/[0.06]
-
-                    border border-white/10
-
-                    backdrop-blur-xl
-                  "
-                >
-                  <Mail
-                    size={18}
-                    className="text-emerald-300"
-                  />
-                </div>
-
-                <div>
-                  <p className="text-slate-500 text-sm">
-                    Email
-                  </p>
-
-                  <a
-                    href="mailto:info@wastelyaqua.com"
-                    className="
-                      text-white
-
-                      break-all
-
-                      hover:text-cyan-300
-
-                      transition-all duration-300
-                    "
-                  >
-                    info@wastelyaqua.com
-                  </a>
-                </div>
-              </div>
-
-              {/* LOCATION */}
-              <div className="flex items-start gap-4">
-                <div
-                  className="
-                    w-11 h-11 sm:w-12 sm:h-12
-
-                    shrink-0
-
-                    flex items-center justify-center
-
-                    rounded-2xl
-
-                    bg-white/[0.06]
-
-                    border border-white/10
-
-                    backdrop-blur-xl
-                  "
-                >
-                  <MapPin
-                    size={18}
-                    className="text-cyan-300"
-                  />
-                </div>
-
-                <div>
-                  <p className="text-slate-500 text-sm">
-                    Location
-                  </p>
-
-                  <h4 className="text-white">
-                    Mumbai, India
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* ====================================================== */}
-          {/* SOLUTIONS */}
-          {/* ====================================================== */}
-
-          <div>
-            <h3
-              className="
-                text-white
-                text-xl
-                font-semibold
-                tracking-wide
-                mb-6 sm:mb-8
-              "
-            >
-              Solutions
-            </h3>
-
-            <div className="space-y-4 pt-1">
-              {[
-                {
-                  name: "Wastewater Treatment",
-                  path: "/solutions/wastewater-treatment",
-                },
-
-                {
-                  name: "Water Treatment",
-                  path: "/solutions/water-treatment",
-                },
-
-                {
-                  name: "Integrated Water System",
-                  path: "/solutions/integrated-water-system",
-                },
-
-                {
-                  name: "Aquaculture",
-                  path: "/solutions/aquaculture",
-                },
-
-                {
-                  name: "Lake & Pond Rejuvenation",
-                  path: "/solutions/lake-pond-rejuvenation",
-                },
-
-                {
-                  name: "River Restoration",
-                  path: "/solutions/water-body-restoration",
-                },
-              ].map((item, index) => (
-                <Link
-                  key={index}
-                  to={item.path}
-                  className="
-                    block
-
-                    text-slate-400
-
-                    transition-all duration-300
-
-                    hover:text-cyan-300
-                    hover:translate-x-1
-                  "
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* ====================================================== */}
-          {/* PRODUCTS */}
-          {/* ====================================================== */}
-
-          <div>
-            <h3
-              className="
-                text-white
-                text-xl
-                font-semibold
-                tracking-wide
-                mb-6 sm:mb-8
-              "
-            >
-              Products
-            </h3>
-
-            <div className="space-y-4 pt-1">
-              {[
-                {
-                  name: "Aeration Technology",
-                  path: "/products/aeration-oxygenation",
-                },
-
-                {
-                  name: "IFAS / Membrane",
-                  path: "/products/ifas-membrane",
-                },
-
-                {
-                  name: "Floating Wetlands",
-                  path: "/products/floating-wetlands",
-                },
-
-                {
-                  name: "Sludge Dewatering",
-                  path: "/products/sludge-dewatering-unit",
-                },
-
-                {
-                  name: "Operation & Maintenance",
-                  path: "/services/operation-maintenance",
-                },
-
-                {
-                  name: "Revamping & Retrofitting",
-                  path: "/services/revamping-retrofitting",
-                },
-              ].map((item, index) => (
-                <Link
-                  key={index}
-                  to={item.path}
-                  className="
-                    block
-
-                    text-slate-400
-
-                    transition-all duration-300
-
-                    hover:text-cyan-300
-                    hover:translate-x-1
-                  "
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* ====================================================== */}
-          {/* COMPANY */}
-          {/* ====================================================== */}
-
-          <div>
-            <h3
-              className="
-                text-white
-                text-xl
-                font-semibold
-                tracking-wide
-                mb-6 sm:mb-8
-              "
-            >
-              Company
-            </h3>
-
-            <div className="space-y-4 pt-1">
-              {[
-                {
-                  name: "Home",
-                  path: "/",
-                },
-
-                {
-                  name: "About Us",
-                  path: "/about",
-                },
-
-                {
-                  name: "Industries",
-                  path: "/industries",
-                },
-
-                {
-                  name: "Technologies",
-                  path: "/technologies",
-                },
-              ].map((item, index) => (
-                <Link
-                  key={index}
-                  to={item.path}
-                  className="
-                    block
-
-                    text-slate-400
-
-                    transition-all duration-300
-
-                    hover:text-cyan-300
-                    hover:translate-x-1
-                  "
-                >
-                  {item.name}
-                </Link>
-              ))}
-
-              {/* CTA */}
-              <Link
-                to="/contact"
-                className="
-                  inline-flex
-                  items-center
-                  gap-2
-
-                  text-cyan-300
-                  font-medium
-
-                  group
-
-                  pt-3
-                "
-              >
-                Contact Us
-
-                <ArrowRight
-                  size={18}
-                  className="
-                    transition-all duration-300
-                    group-hover:translate-x-1
-                  "
-                />
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* ====================================================== */}
-        {/* METRICS */}
-        {/* ====================================================== */}
-
+          <path
+            d="M-20 110C120 30 220 70 320 120C420 170 520 175 740 70"
+            stroke="#3BB8D9"
+            strokeWidth="1"
+          />
+
+          <path
+            d="M-20 155C120 75 220 115 320 165C420 215 520 220 740 115"
+            stroke="#3BB8D9"
+            strokeWidth="1"
+          />
+
+          <path
+            d="M-20 200C120 120 220 160 320 210C420 260 520 265 740 160"
+            stroke="#3BB8D9"
+            strokeWidth="1"
+          />
+
+          <path
+            d="M-20 245C120 165 220 205 320 255C420 305 520 310 740 205"
+            stroke="#3BB8D9"
+            strokeWidth="1"
+          />
+
+          <path
+            d="M-20 290C120 210 220 250 320 300C420 350 520 355 740 250"
+            stroke="#3BB8D9"
+            strokeWidth="1"
+          />
+
+          <path
+            d="M-20 335C120 255 220 295 320 345C420 395 520 400 740 295"
+            stroke="#3BB8D9"
+            strokeWidth="1"
+          />
+
+          <path
+            d="M-20 380C120 300 220 340 320 390C420 440 520 445 740 340"
+            stroke="#3BB8D9"
+            strokeWidth="1"
+          />
+        </svg>
+
+        {/* Ripple rings */}
+        <div className="absolute bottom-[-140px] left-[7%] h-[340px] w-[340px] rounded-full border border-[#2FB4CE]/10" />
+
+        <div className="absolute bottom-[-90px] left-[12%] h-[250px] w-[250px] rounded-full border border-[#2FB4CE]/10" />
+
+        <div className="absolute bottom-[-45px] left-[17%] h-[160px] w-[160px] rounded-full border border-[#2FB4CE]/10" />
+
+        {/* Top water accent */}
         <div
           className="
-            mt-16
-
-            grid
-            grid-cols-2
-            xl:grid-cols-4
-
-            gap-5
+            absolute
+            left-0
+            top-0
+            h-[2px]
+            w-full
+            bg-gradient-to-r
+            from-transparent
+            via-[#2FB4CE]
+            to-transparent
+            opacity-80
           "
-        >
-          {[
-            {
-              value: "120+",
-              label: "Projects",
-            },
+        />
+      </div>
 
-            {
-              value: "₹33+ Cr",
-              label: "Capability",
-            },
-
-            {
-              value: "500M+",
-              label: "Liters Treated",
-            },
-
-            {
-              value: "24/7",
-              label: "Monitoring",
-            },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="
-                rounded-[28px]
-
-                border border-white/10
-
-                bg-white/[0.05]
-
-                backdrop-blur-xl
-
-                p-6
-              "
-            >
-              <h3
-                className="
-                  text-3xl
-                  font-black
-
-                  bg-gradient-to-r
-                  from-cyan-300
-                  to-emerald-300
-
-                  bg-clip-text
-                  text-transparent
-                "
-              >
-                {item.value}
-              </h3>
-
-              <p
-                className="
-                  mt-3
-                  text-sm
-                  text-slate-400
-                "
-              >
-                {item.label}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* ====================================================== */}
-        {/* BOTTOM */}
-        {/* ====================================================== */}
-
-        <div
-          className="
-            mt-16 sm:mt-20
-
-            pt-6 sm:pt-8
-
-            border-t border-white/10
-
-            backdrop-blur-xl
-
-            flex flex-col md:flex-row
-            items-center
-            justify-between
-
-            gap-5
-          "
-        >
-          <p
-            className="
-              text-slate-500
-              text-sm
-
-              text-center md:text-left
-            "
-          >
-            © {new Date().getFullYear()} Wastely Aqua.
-            All rights reserved.
-          </p>
-
+      {/* ===================================================
+          MAIN FOOTER
+          =================================================== */}
+      <div className="relative z-10">
+        <div className="wastely-container">
+          {/* =================================================
+              BRAND + PRIMARY CTA
+              ================================================= */}
           <div
             className="
-              flex flex-wrap
-              items-center
-              justify-center
-              gap-6
+              grid
+              gap-10
+              border-b
+              border-white/10
+              py-12
+              md:grid-cols-[1.5fr_1fr]
+              md:py-14
+              lg:grid-cols-[1.7fr_1fr]
+              lg:py-16
             "
           >
-            <Link
-              to="/privacy"
-              className="
-                text-slate-500
-                text-sm
+            {/* Brand */}
+            <div>
+              <Link
+                to="/"
+                className="inline-flex items-center"
+              >
+                <img
+                  src={Logo}
+                  alt="Wastely Aqua"
+                  className="h-12 w-auto object-contain sm:h-14"
+                />
+              </Link>
 
-                transition-all duration-300
+              <div className="mt-6 max-w-xl">
+                <p
+                  className="
+                    text-[11px]
+                    font-bold
+                    uppercase
+                    tracking-[0.16em]
+                    text-[#3BB8D9]
+                  "
+                >
+                  Water & Wastewater Treatment
+                </p>
 
-                hover:text-cyan-300
-              "
+                <h2
+                  className="
+                    mt-2
+                    max-w-xl
+                    text-[1.55rem]
+                    font-bold
+                    leading-[1.2]
+                    tracking-[-0.02em]
+                    text-white
+                    sm:text-[1.9rem]
+                  "
+                >
+                  Treatment systems built around the water,
+                  the site and the operating requirement.
+                </h2>
+
+                <p
+                  className="
+                    mt-4
+                    max-w-xl
+                    text-[14px]
+                    leading-7
+                    text-white/62
+                  "
+                >
+                  Wastely Aqua works across water and wastewater
+                  treatment, plant services, treatment technologies
+                  and waterbody restoration for municipal, industrial
+                  and institutional applications.
+                </p>
+              </div>
+            </div>
+
+            {/* Assessment CTA */}
+            <div className="flex flex-col justify-end md:items-end">
+              <div
+                className="
+                  w-full
+                  max-w-sm
+                  border
+                  border-white/10
+                  bg-white/[0.035]
+                  p-6
+                  sm:p-7
+                "
+              >
+                <div className="flex items-start justify-between gap-5">
+                  <div>
+                    <p
+                      className="
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        tracking-[0.15em]
+                        text-[#3BB8D9]
+                      "
+                    >
+                      Start a conversation
+                    </p>
+
+                    <h3 className="mt-2 text-xl font-bold text-white">
+                      Have a treatment requirement?
+                    </h3>
+                  </div>
+
+                  <div className="hidden h-9 w-9 items-center justify-center border border-white/10 sm:flex">
+                    <ArrowRight
+                      size={16}
+                      className="text-[#3BB8D9]"
+                    />
+                  </div>
+                </div>
+
+                <p className="mt-3 text-sm leading-6 text-white/60">
+                  Share your water, wastewater or waterbody
+                  requirement and the site conditions you are
+                  working with.
+                </p>
+
+                <Link
+                  to="/contact"
+                  className="
+                    wastely-btn
+                    wastely-btn-light
+                    mt-6
+                    w-full
+                    sm:w-auto
+                  "
+                >
+                  Request an Assessment
+                  <ArrowUpRight size={16} />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* =================================================
+              NAVIGATION
+              ================================================= */}
+          <div
+            className="
+              grid
+              gap-10
+              border-b
+              border-white/10
+              py-12
+              sm:grid-cols-2
+              lg:grid-cols-4
+              lg:gap-8
+              lg:py-14
+            "
+          >
+            {/* Solutions */}
+            <div>
+              <h3
+                className="
+                  text-sm
+                  font-bold
+                  uppercase
+                  tracking-[0.12em]
+                  text-white
+                "
+              >
+                Solutions
+              </h3>
+
+              <div className="mt-5 space-y-1">
+                {solutionLinks.map((item) => (
+                  <FooterLink
+                    key={item.name}
+                    {...item}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h3
+                className="
+                  text-sm
+                  font-bold
+                  uppercase
+                  tracking-[0.12em]
+                  text-white
+                "
+              >
+                Services
+              </h3>
+
+              <div className="mt-5 space-y-1">
+                {serviceLinks.map((item) => (
+                  <FooterLink
+                    key={item.name}
+                    {...item}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Technologies */}
+            <div>
+              <h3
+                className="
+                  text-sm
+                  font-bold
+                  uppercase
+                  tracking-[0.12em]
+                  text-white
+                "
+              >
+                Technologies
+              </h3>
+
+              <div className="mt-5 space-y-1">
+                {technologyLinks.map((item) => (
+                  <FooterLink
+                    key={item.name}
+                    {...item}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Company */}
+            <div>
+              <h3
+                className="
+                  text-sm
+                  font-bold
+                  uppercase
+                  tracking-[0.12em]
+                  text-white
+                "
+              >
+                Company
+              </h3>
+
+              <div className="mt-5 space-y-1">
+                {companyLinks.map((item) => (
+                  <FooterLink
+                    key={item.name}
+                    {...item}
+                  />
+                ))}
+              </div>
+
+              <div className="mt-7 h-px w-12 bg-[#2FB4CE]" />
+
+              <p className="mt-4 max-w-[220px] text-xs leading-5 text-white/40">
+                Water infrastructure, treatment services
+                and technology selected around application
+                requirements.
+              </p>
+            </div>
+          </div>
+
+          {/* =================================================
+              CONTACT
+              ================================================= */}
+          <div
+            className="
+              grid
+              gap-8
+              border-b
+              border-white/10
+              py-10
+              md:grid-cols-3
+              lg:py-12
+            "
+          >
+            {/* Phone */}
+            <a
+              href="tel:+919136069130"
+              className="group flex items-start gap-3"
             >
-              Privacy Policy
-            </Link>
+              <div
+                className="
+                  flex
+                  h-9
+                  w-9
+                  shrink-0
+                  items-center
+                  justify-center
+                  border
+                  border-white/10
+                  text-[#3BB8D9]
+                  transition-colors
+                  group-hover:border-[#2FB4CE]
+                  group-hover:bg-white/[0.04]
+                "
+              >
+                <Phone size={16} />
+              </div>
 
-            <Link
-              to="/terms"
-              className="
-                text-slate-500
-                text-sm
+              <div>
+                <p
+                  className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    tracking-[0.12em]
+                    text-white/40
+                  "
+                >
+                  Phone
+                </p>
 
-                transition-all duration-300
+                <p
+                  className="
+                    mt-1
+                    text-sm
+                    text-white/75
+                    group-hover:text-white
+                  "
+                >
+                  +91 91360 69130
+                </p>
+              </div>
+            </a>
 
-                hover:text-cyan-300
-              "
+            {/* Email */}
+            <a
+              href="mailto:info@wastelyaqua.com"
+              className="group flex items-start gap-3"
             >
-              Terms & Conditions
-            </Link>
+              <div
+                className="
+                  flex
+                  h-9
+                  w-9
+                  shrink-0
+                  items-center
+                  justify-center
+                  border
+                  border-white/10
+                  text-[#3BB8D9]
+                  transition-colors
+                  group-hover:border-[#2FB4CE]
+                  group-hover:bg-white/[0.04]
+                "
+              >
+                <Mail size={16} />
+              </div>
+
+              <div className="min-w-0">
+                <p
+                  className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    tracking-[0.12em]
+                    text-white/40
+                  "
+                >
+                  Email
+                </p>
+
+                <p
+                  className="
+                    mt-1
+                    break-all
+                    text-sm
+                    text-white/75
+                    group-hover:text-white
+                  "
+                >
+                  info@wastelyaqua.com
+                </p>
+              </div>
+            </a>
+
+            {/* Location */}
+            <div className="flex items-start gap-3">
+              <div
+                className="
+                  flex
+                  h-9
+                  w-9
+                  shrink-0
+                  items-center
+                  justify-center
+                  border
+                  border-white/10
+                  text-[#3BB8D9]
+                "
+              >
+                <MapPin size={16} />
+              </div>
+
+              <div>
+                <p
+                  className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    tracking-[0.12em]
+                    text-white/40
+                  "
+                >
+                  Location
+                </p>
+
+                <p className="mt-1 text-sm text-white/75">
+                  Mumbai, India
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* =================================================
+              BOTTOM BAR
+              ================================================= */}
+          <div
+            className="
+              flex
+              flex-col
+              gap-5
+              py-6
+              md:flex-row
+              md:items-center
+              md:justify-between
+            "
+          >
+            {/* Copyright */}
+            <p className="text-xs leading-5 text-white/40">
+              © {new Date().getFullYear()} Wastely Aqua.
+              All rights reserved.
+            </p>
+
+            {/* Legal */}
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+              <Link
+                to="/privacy"
+                className="
+                  text-xs
+                  text-white/40
+                  transition-colors
+                  hover:text-white
+                "
+              >
+                Privacy Policy
+              </Link>
+
+              <Link
+                to="/terms"
+                className="
+                  text-xs
+                  text-white/40
+                  transition-colors
+                  hover:text-white
+                "
+              >
+                Terms & Conditions
+              </Link>
+            </div>
+
+            {/* Social */}
+            <div className="flex items-center gap-2">
+              <a
+                href="https://www.linkedin.com/in/mohammad-sadique-khan-427696112"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+                className="
+                  flex
+                  h-8
+                  w-8
+                  items-center
+                  justify-center
+                  border
+                  border-white/10
+                  text-white/45
+                  transition-colors
+                  hover:border-[#2FB4CE]
+                  hover:text-[#3BB8D9]
+                "
+              >
+                <FaLinkedinIn size={13} />
+              </a>
+
+              <a
+                href="#"
+                aria-label="Instagram"
+                className="
+                  flex
+                  h-8
+                  w-8
+                  items-center
+                  justify-center
+                  border
+                  border-white/10
+                  text-white/45
+                  transition-colors
+                  hover:border-[#2FB4CE]
+                  hover:text-[#3BB8D9]
+                "
+              >
+                <FaInstagram size={13} />
+              </a>
+
+              <a
+                href="#"
+                aria-label="Facebook"
+                className="
+                  flex
+                  h-8
+                  w-8
+                  items-center
+                  justify-center
+                  border
+                  border-white/10
+                  text-white/45
+                  transition-colors
+                  hover:border-[#2FB4CE]
+                  hover:text-[#3BB8D9]
+                "
+              >
+                <FaFacebookF size={13} />
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -12,6 +12,10 @@ import BeforeAfterShowcase from "./BeforeAfterShowcase";
 import SmartMonitoring from "./SmartMonitoring";
 import CaseStudyMarquee from "./CaseStudyMarquee";
 import SectionTransition from "./SectionTransition";
+import WhatWeDo from "./WhatWeDo";
+import Solutions from "./Solutions";
+import Proof from "./Proof";
+import AssessmentCTA from "./AssessmentCTA";
 
 const Home = () => {
   return (
@@ -72,7 +76,17 @@ const Home = () => {
       <div className="relative z-10">
         <Hero />
 
-        <SectionTransition />
+        <WhatWeDo />
+
+        <Solutions />
+
+        <Industries />
+
+        <Proof />
+
+        <AssessmentCTA />
+
+        {/* <SectionTransition />
 
         <IntegratedEcosystem />
 
@@ -106,7 +120,7 @@ const Home = () => {
 
         <SectionTransition />
 
-        <CTASection />
+        <CTASection /> */}
       </div>
     </main>
   );

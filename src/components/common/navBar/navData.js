@@ -1,226 +1,3 @@
-
-// // src/constants/navData.js
-
-// import {
-//   Waves,
-//   Droplets,
-//   Leaf,
-//   Fish,
-//   Wind,
-//   Layers3,
-//   Flower2,
-//   Factory,
-//   Boxes,
-//   Cpu,
-//   Settings2,
-//   ShieldCheck,
-//   RefreshCw,
-// } from "lucide-react";
-
-// export const navItems = [
-//   // =====================================================
-//   // SOLUTIONS
-//   // =====================================================
-//   {
-//     title: "Solutions",
-//     megaMenu: true,
-
-//     sections: [
-//       {
-//         heading: "Water Treatment",
-
-//         links: [
-//           {
-//             name: "Wastewater Treatment",
-//             desc: "Industrial & municipal wastewater systems",
-//             icon: Waves,
-//             path: "/solutions/wastewater-treatment",
-//           },
-
-//           {
-//             name: "Water Treatment",
-//             desc: "Advanced purification & filtration solutions",
-//             icon: Droplets,
-//             path: "/solutions/water-treatment",
-//           },
-
-//           {
-//             name: "Integrated Water System",
-//             desc: "Smart integrated water management systems",
-//             icon: Cpu,
-//             path: "/solutions/integrated-water-system",
-//           },
-//         ],
-//       },
-
-//       {
-//         heading: "Environmental Restoration",
-
-//         links: [
-//           {
-//             name: "Aquaculture",
-//             desc: "Sustainable aquatic ecosystem technologies",
-//             icon: Fish,
-//             path: "/solutions/aquaculture",
-//           },
-
-//           {
-//             name: "Lake & Pond Rejuvenation",
-//             desc: "Restoration of polluted lakes & ponds",
-//             icon: Leaf,
-//             path: "/solutions/lake-pond-rejuvenation",
-//           },
-
-//           {
-//             name: "River & Water Body Restoration",
-//             desc: "Environmental rehabilitation solutions",
-//             icon: Waves,
-//             path: "/solutions/water-body-restoration",
-//           },
-//         ],
-//       },
-//     ],
-//   },
-
-//   // =====================================================
-//   // PRODUCTS
-//   // =====================================================
-//   {
-//     title: "Products",
-//     megaMenu: true,
-
-//     sections: [
-//       {
-//         heading: "Core Technologies",
-
-//         links: [
-//           {
-//             name: "Aeration / Oxygenation Technology",
-//             desc: "High-efficiency oxygen transfer systems",
-//             icon: Wind,
-//             path: "/products/aeration-oxygenation",
-//           },
-
-//           {
-//             name: "IFAS / Membrane",
-//             desc: "Advanced biological treatment technology",
-//             icon: Layers3,
-//             path: "/products/ifas-membrane",
-//           },
-
-//           {
-//             name: "Floating Wetlands",
-//             desc: "Eco-based floating treatment ecosystems",
-//             icon: Flower2,
-//             path: "/products/floating-wetlands",
-//           },
-//         ],
-//       },
-
-//       {
-//         heading: "Treatment Systems",
-
-//         links: [
-//           {
-//             name: "Sludge Dewatering Unit",
-//             desc: "Efficient sludge reduction & management",
-//             icon: Factory,
-//             path: "/products/sludge-dewatering-unit",
-//           },
-
-//           {
-//             name: "Package Treatment Units",
-//             desc: "Compact modular wastewater systems",
-//             icon: Boxes,
-//             path: "/products/package-treatment-units",
-//           },
-//           {
-//             name: "Algae Control System",
-//             desc: "Alge",
-//             icon: Flower2,
-//             path: "/products/alge-control-system",
-//           },
-//         ],
-//       },
-//     ],
-//   },
-
-//   // =====================================================
-//   // SERVICES
-//   // =====================================================
-//   {
-//     title: "Services",
-//     megaMenu: true,
-
-//     sections: [
-//       {
-//         heading: "Plant Services",
-
-//         links: [
-//           {
-//             name: "Operation & Maintenance",
-//             desc: "Complete plant operation & monitoring",
-//             icon: Settings2,
-//             path: "/services/operation-maintenance",
-//           },
-
-//           {
-//             name: "AMC Services",
-//             desc: "Annual maintenance & support contracts",
-//             icon: ShieldCheck,
-//             path: "/services/amc-services",
-//           },
-
-//           {
-//             name: "Revamping & Retrofitting",
-//             desc: "Plant modernization & performance upgrades",
-//             icon: RefreshCw,
-//             path: "/services/revamping-retrofitting",
-//           },
-//         ],
-//       },
-
-//       {
-//         heading: "Engineering",
-
-//         links: [
-//           {
-//             name: "Technology Process",
-//             desc: "Advanced process engineering solutions",
-//             icon: Cpu,
-//             path: "/services/technology-process",
-//           },
-//         ],
-//       },
-//     ],
-//   },
-
-//   // =====================================================
-//   // MAIN NAVIGATION
-//   // =====================================================
-//   {
-//     title: "Industries",
-//     path: "/industries",
-//   },
-
-//   {
-//     title: "Technologies",
-//     path: "/technologies",
-//   },
-
-//   {
-//     title: "About",
-//     path: "/about",
-//   },
-
-//   {
-//     title: "Case -study",
-//     path: "/case-studies",
-//   },
-// ];
-
-
-
 import {
   Waves,
   Droplets,
@@ -239,10 +16,20 @@ import {
 } from "lucide-react";
 
 // ======================================================
-// NAVIGATION DATA
+// WASTELY AQUA — NAVIGATION DATA
+// ======================================================
+//
+// Information architecture:
+//
+// Solutions    → What water/environmental problem?
+// Services     → How Wastely supports the project
+// Industries   → Where the solutions are applied
+// Technologies → What treatment/process technologies are used
+//
 // ======================================================
 
 export const navItems = [
+
   // ======================================================
   // SOLUTIONS
   // ======================================================
@@ -265,14 +52,14 @@ export const navItems = [
 
           {
             name: "Water Treatment",
-            desc: "Advanced purification, filtration and reuse systems",
+            desc: "Water purification, filtration and reuse systems",
             icon: Droplets,
             path: "/solutions/water-treatment",
           },
 
           {
             name: "Integrated Water System",
-            desc: "Smart integrated environmental water infrastructure",
+            desc: "Connected water infrastructure from treatment to reuse",
             icon: Cpu,
             path: "/solutions/integrated-water-system",
           },
@@ -280,93 +67,28 @@ export const navItems = [
       },
 
       {
-        heading: "Ecological Restoration",
+        heading: "Waterbody & Ecological Restoration",
 
         links: [
           {
             name: "Aquaculture",
-            desc: "Advanced aquatic ecosystem restoration technologies",
+            desc: "Water-quality and aquatic ecosystem management",
             icon: Fish,
             path: "/solutions/aquaculture",
           },
 
           {
             name: "Lake & Pond Rejuvenation",
-            desc: "Integrated polluted lake and pond restoration systems",
+            desc: "Restoration of polluted and degraded water bodies",
             icon: Leaf,
             path: "/solutions/lake-pond-rejuvenation",
           },
 
           {
             name: "Water Body Restoration",
-            desc: "Large-scale river, canal and reservoir restoration",
+            desc: "Restoration of rivers, canals, reservoirs and water bodies",
             icon: Waves,
             path: "/solutions/water-body-restoration",
-          },
-        ],
-      },
-    ],
-  },
-
-  // ======================================================
-  // PRODUCTS
-  // ======================================================
-
-  {
-    title: "Products",
-    megaMenu: true,
-
-    sections: [
-      {
-        heading: "Environmental Technologies",
-
-        links: [
-          {
-            name: "Aeration & Oxygenation",
-            desc: "High-efficiency nano bubble and oxygen transfer systems",
-            icon: Wind,
-            path: "/products/aeration-oxygenation",
-          },
-
-          {
-            name: "IFAS / Membrane Systems",
-            desc: "Advanced biological treatment and membrane technologies",
-            icon: Layers3,
-            path: "/products/ifas-membrane",
-          },
-
-          {
-            name: "Floating Wetlands",
-            desc: "Nature-based ecological floating treatment systems",
-            icon: Flower2,
-            path: "/products/floating-wetlands",
-          },
-        ],
-      },
-
-      {
-        heading: "Treatment & Monitoring",
-
-        links: [
-          {
-            name: "Sludge Dewatering & Drying",
-            desc: "LTSD sludge reduction and drying systems",
-            icon: Factory,
-            path: "/products/sludge-dewatering-unit",
-          },
-
-          {
-            name: "Package Treatment Units",
-            desc: "Compact modular wastewater treatment infrastructure",
-            icon: Boxes,
-            path: "/products/package-treatment-units",
-          },
-
-          {
-            name: "Algae Control System",
-            desc: "Ultrasonic algae monitoring and smart buoy systems",
-            icon: Radar,
-            path: "/products/algae-control-system",
           },
         ],
       },
@@ -383,26 +105,26 @@ export const navItems = [
 
     sections: [
       {
-        heading: "Operations & Support",
+        heading: "Plant Operations & Support",
 
         links: [
           {
             name: "Operation & Maintenance",
-            desc: "End-to-end plant operations and performance monitoring",
+            desc: "End-to-end plant operation and performance support",
             icon: Settings2,
             path: "/services/operation-maintenance",
           },
 
           {
             name: "AMC Services",
-            desc: "Annual maintenance and environmental support services",
+            desc: "Planned maintenance and ongoing technical support",
             icon: ShieldCheck,
             path: "/services/amc-services",
           },
 
           {
             name: "Revamping & Retrofitting",
-            desc: "Plant modernization and process optimization systems",
+            desc: "Upgrade existing plants for improved performance",
             icon: RefreshCw,
             path: "/services/revamping-retrofitting",
           },
@@ -415,7 +137,7 @@ export const navItems = [
         links: [
           {
             name: "Technology Process",
-            desc: "Advanced environmental engineering and process design",
+            desc: "Treatment-process assessment and engineering design",
             icon: Cpu,
             path: "/services/technology-process",
           },
@@ -425,7 +147,7 @@ export const navItems = [
   },
 
   // ======================================================
-  // MAIN NAVIGATION
+  // INDUSTRIES
   // ======================================================
 
   {
@@ -433,15 +155,114 @@ export const navItems = [
     path: "/industries",
   },
 
+  // ======================================================
+  // TECHNOLOGIES
+  // ======================================================
+  //
+  // Technologies is the public replacement for Products.
+  // This is intentionally a MEGA MENU.
+  //
+  // ======================================================
+
   {
     title: "Technologies",
-    path: "/technologies",
+    megaMenu: true,
+
+    sections: [
+
+      // --------------------------------------------------
+      // TREATMENT TECHNOLOGIES
+      // --------------------------------------------------
+
+      {
+        heading: "Treatment Technologies",
+
+        links: [
+          {
+            name: "Aeration & Oxygenation",
+            desc: "Systems supporting oxygen transfer and aeration requirements",
+            icon: Wind,
+            path: "/technologies/aeration-oxygenation",
+          },
+
+          {
+            name: "IFAS / Membrane Systems",
+            desc: "Biological and membrane-based treatment systems",
+            icon: Layers3,
+            path: "/technologies/ifas-membrane",
+          },
+
+          {
+            name: "Floating Wetlands",
+            desc: "Nature-based treatment and ecological restoration systems",
+            icon: Flower2,
+            path: "/technologies/floating-wetlands",
+          },
+
+          {
+            name: "Algae Control System",
+            desc: "Technology supporting algae control in suitable waterbody applications",
+            icon: Radar,
+            path: "/technologies/algae-control",
+          },
+
+          {
+            name: "Hydro-dis Disinfection",
+            desc: "Electrochemical disinfection for water and wastewater applications",
+            icon: Droplets,
+            path: "/technologies/hydro-dis",
+          },
+        ],
+      },
+
+      // --------------------------------------------------
+      // SLUDGE MANAGEMENT
+      // --------------------------------------------------
+
+      {
+        heading: "Sludge Management",
+
+        links: [
+          {
+            name: "Sludge Management",
+            desc: "Integrated sludge dewatering and drying systems",
+            icon: Factory,
+            path: "/technologies/sludge-management",
+          },
+        ],
+      },
+
+      // --------------------------------------------------
+      // PACKAGED INFRASTRUCTURE
+      // --------------------------------------------------
+
+      {
+        heading: "Packaged Infrastructure",
+
+        links: [
+          {
+            name: "Package Treatment Units",
+            desc: "Compact and configurable packaged treatment infrastructure",
+            icon: Boxes,
+            path: "/technologies/package-treatment-units",
+          },
+        ],
+      },
+    ],
   },
+
+  // ======================================================
+  // CASE STUDIES
+  // ======================================================
 
   {
     title: "Case Studies",
     path: "/case-studies",
   },
+
+  // ======================================================
+  // ABOUT
+  // ======================================================
 
   {
     title: "About",

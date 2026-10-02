@@ -1,735 +1,735 @@
-
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import {
   Activity,
   ArrowRight,
-  BarChart3,
   Building2,
-  Cpu,
-  Database,
+  Check,
   Droplets,
+  Factory,
   Gauge,
   Globe2,
   Network,
   Radar,
   Satellite,
   ScanLine,
-  Sparkles,
   Waves,
   Workflow,
-  Factory,
-  ShieldCheck,
 } from "lucide-react";
 
-// HERO / BACKGROUND IMAGES
 import HeroBg from "../../assets/images/water-body-hero.png";
-import DashboardImg from "../../assets/images/dashboard-water.png";
 import SmartCityImg from "../../assets/images/smart-city-water.png";
 import ReservoirImg from "../../assets/images/reservoir-water.png";
 import CanalImg from "../../assets/images/canal-water.png";
 import RiverImg from "../../assets/images/river-restoration.png";
-import MPCBuoyImg from "../../assets/images/mpc-buoy.png";
-
-const heroStats = [
-  {
-    value: "800m",
-    label: "Monitoring Radius",
-  },
-  {
-    value: "95%",
-    label: "Algae Reduction",
-  },
-  {
-    value: "24/7",
-    label: "IoT Monitoring",
-  },
-  {
-    value: "Real-Time",
-    label: "Analytics",
-  },
-];
-
-const executionCards = [
-  {
-    title: "Municipal Restoration",
-    description:
-      "Large-scale restoration systems for urban lakes, canals, rivers and public reservoirs.",
-    icon: Building2,
-  },
-  {
-    title: "Smart City Water Systems",
-    description:
-      "Integrated restoration infrastructure with automation, IoT monitoring and analytics.",
-    icon: Cpu,
-  },
-  {
-    title: "Industrial Rehabilitation",
-    description:
-      "Water quality restoration for industrial ponds, cooling systems and process reservoirs.",
-    icon: Factory,
-  },
-  {
-    title: "Reservoir Infrastructure",
-    description:
-      "Advanced oxygenation, algae control and ecosystem balancing for large water surfaces.",
-    icon: Waves,
-  },
-];
 
 const waterBodies = [
   {
+    number: "01",
     title: "Rivers",
+    description:
+      "Restoration planning for river stretches affected by pollution, reduced water quality and degraded ecological conditions.",
     image: RiverImg,
   },
   {
+    number: "02",
     title: "Urban Canals",
+    description:
+      "Water-quality improvement strategies for canals and connected urban waterways.",
     image: CanalImg,
   },
   {
+    number: "03",
     title: "Reservoirs",
+    description:
+      "Large-water-surface interventions focused on water quality, oxygenation and ecosystem conditions.",
     image: ReservoirImg,
   },
   {
-    title: "Smart Lakes",
+    number: "04",
+    title: "Urban Lakes",
+    description:
+      "Integrated restoration approaches for lakes within municipal and urban environments.",
     image: HeroBg,
   },
 ];
 
-const workflow = [
-  "Site Survey",
-  "Water Quality Analysis",
-  "DPR & Engineering Design",
-  "Technology Selection",
-  "SITC Execution",
-  "Commissioning",
-  "IoT Integration",
-  "Monitoring & Analytics",
-  "3-Year DLP Support",
-];
-
-const automationSystems = [
+const restorationSystem = [
   {
-    title: "MPC Buoy",
+    number: "01",
+    title: "Assess",
     description:
-      "Solar-powered floating system combining real-time water quality monitoring and ultrasonic algae control.",
-    icon: Radar,
+      "Survey the water body, surrounding infrastructure, inflows, outfalls and existing site conditions.",
+    icon: ScanLine,
   },
   {
-    title: "IoT Monitoring",
+    number: "02",
+    title: "Diagnose",
     description:
-      "Continuous live monitoring of DO, pH, temperature, turbidity and chlorophyll.",
+      "Characterize water-quality conditions and identify the main factors affecting the system.",
+    icon: Gauge,
+  },
+  {
+    number: "03",
+    title: "Intervene",
+    description:
+      "Select and integrate appropriate restoration, treatment and oxygenation measures.",
+    icon: Waves,
+  },
+  {
+    number: "04",
+    title: "Monitor",
+    description:
+      "Use appropriate measurement and monitoring systems to track the condition of the restored water body.",
     icon: Activity,
   },
+];
+
+const projectDelivery = [
+  "Site survey",
+  "Water-quality assessment",
+  "DPR & engineering design",
+  "Technology selection",
+  "SITC execution",
+  "Commissioning",
+  "Monitoring integration",
+  "Performance support",
+];
+
+const applications = [
   {
-    title: "Predictive Analytics",
+    title: "Municipal Water Bodies",
     description:
-      "AI-assisted algae bloom prediction using historical and real-time environmental data.",
-    icon: Database,
+      "Restoration programs for lakes, canals, reservoirs and other public water infrastructure.",
+    icon: Building2,
   },
   {
-    title: "Real-Time Dashboards",
+    title: "Industrial Water Bodies",
     description:
-      "Integrated analytics platform with alerts, visualization and automated reporting systems.",
-    icon: BarChart3,
+      "Water-quality management for industrial ponds, reservoirs and process-related water bodies.",
+    icon: Factory,
+  },
+  {
+    title: "Urban Water Networks",
+    description:
+      "Connected interventions across waterways and water bodies within growing urban areas.",
+    icon: Network,
+  },
+  {
+    title: "Monitoring Infrastructure",
+    description:
+      "Measurement and monitoring systems that provide visibility into changing water conditions.",
+    icon: Radar,
   },
 ];
 
-const sensors = [
+const monitoringParameters = [
   "Dissolved Oxygen",
   "pH",
   "Turbidity",
   "Temperature",
-  "Chlorophyll α",
-  "Phycocyanin",
-];
-
-const mpcFeatures = [
-  "Solar Powered",
-  "Ultrasonic Algae Control",
-  "Real-Time Monitoring",
-  "Predictive Analytics",
-  "4G / Satellite Communication",
-  "Autonomous Operation",
-  "800m Treatment Diameter",
+  "Chlorophyll",
+  "Water-quality trends",
 ];
 
 const WaterInfrastructure = () => {
   return (
-    <div className="relative overflow-hidden bg-[#081219] text-white">
-      {/* GLOBAL GRID */}
-      <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:80px_80px]" />
+    <main className="overflow-hidden bg-white text-wastely-ink">
 
-      {/* Ambient Glow */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-[-120px] top-[-120px] h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[160px]" />
+      {/* =========================================================
+          HERO — MASTERPLAN / INFRASTRUCTURE STYLE
+      ========================================================= */}
+      <section className="relative min-h-[760px] overflow-hidden bg-wastely-deep">
 
-        <div className="absolute bottom-[-200px] right-[-100px] h-[500px] w-[500px] rounded-full bg-emerald-500/10 blur-[180px]" />
-      </div>
-
-      {/* HERO */}
-      <section className="relative overflow-hidden">
-  {/* Background */}
-  <div className="absolute inset-0">
-    <img
-      src={HeroBg}
-      alt="Water Infrastructure"
-      loading="lazy"
-      className="h-full w-full object-cover opacity-30"
-    />
-
-    <div className="absolute inset-0 bg-gradient-to-r from-[#081219] via-[#081219]/90 to-[#081219]/60" />
-
-    <div className="absolute inset-0 bg-gradient-to-t from-[#081219] via-transparent to-[#081219]/40" />
-  </div>
-
-  <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid min-h-[100svh] items-center gap-14 py-28 md:py-32 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
-      {/* LEFT */}
-      <motion.div
-        initial={{ opacity: 0, y: 35 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9 }}
-      >
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 backdrop-blur-xl text-[11px] uppercase tracking-[0.25em] text-cyan-300">
-          <Sparkles size={14} />
-          Municipal • Smart City • Industrial Restoration
-        </div>
-
-        <h1 className="mt-10 text-[2.9rem] sm:text-6xl md:text-7xl xl:text-[88px] font-black leading-[0.9] tracking-[-0.04em]">
-          Smart Water
-          <span className="block bg-gradient-to-r from-cyan-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">
-            Infrastructure &
-          </span>
-          Restoration Systems
-        </h1>
-
-        <p className="mt-8 max-w-3xl text-[15px] sm:text-lg md:text-xl leading-relaxed text-slate-400">
-          Integrated engineering solutions for rivers, canals,
-          reservoirs, urban lakes and industrial water bodies powered by
-          restoration technologies, automation, IoT monitoring and
-          predictive analytics.
-        </p>
-
-        {/* CTA */}
-        <div className="mt-12 flex flex-wrap gap-4">
-          <Link
-            to="/contact"
-            className="
-              group
-              inline-flex items-center justify-center gap-3
-              rounded-full
-              bg-gradient-to-r
-              from-cyan-400
-              to-emerald-400
-              px-8 md:px-9
-              py-4
-              text-sm md:text-base
-              font-semibold
-              text-black
-              transition-all duration-500
-              hover:-translate-y-1
-              hover:scale-[1.03]
-              shadow-[0_10px_40px_-12px_rgba(34,211,238,0.45)]
-              hover:shadow-[0_20px_70px_-18px_rgba(34,211,238,0.55)]
-            "
-          >
-            Start Infrastructure Project
-
-            <ArrowRight
-              size={18}
-              className="transition-transform duration-300 group-hover:translate-x-1"
-            />
-          </Link>
-
-          <Link
-            to="/industries"
-            className="
-              rounded-full
-              border border-white/10
-              bg-white/5
-              px-8
-              py-4
-              backdrop-blur-xl
-              transition-all duration-500
-              hover:-translate-y-1
-              hover:border-cyan-400/30
-              hover:bg-white/[0.08]
-            "
-          >
-            Explore Systems
-          </Link>
-        </div>
-
-        {/* STATS */}
-        <div className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-4">
-          {heroStats.map((item, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.4 }}
-              className="
-                rounded-[28px]
-                border border-white/10
-                bg-white/[0.04]
-                p-5 md:p-6
-                backdrop-blur-xl
-                transition-all duration-500
-                hover:border-cyan-400/20
-                hover:bg-white/[0.06]
-              "
-            >
-              <h3 className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-3xl md:text-4xl font-black text-transparent">
-                {item.value}
-              </h3>
-
-              <p className="mt-2 text-sm text-slate-400">
-                {item.label}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-
-      {/* RIGHT DASHBOARD */}
-      <motion.div
-        initial={{ opacity: 0, x: 35 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.9 }}
-        className="relative hidden lg:block"
-      >
-        <div className="absolute inset-0 rounded-[40px] bg-gradient-to-br from-cyan-500/20 to-emerald-500/10 blur-3xl" />
-
-        <div className="relative overflow-hidden rounded-[40px] border border-white/10 bg-[#0b1620]/80 backdrop-blur-2xl shadow-[0_0_80px_-20px_rgba(14,165,233,0.25)]">
+        {/* Background image */}
+        <div className="absolute inset-0">
           <img
-            src={DashboardImg}
-            alt="Analytics Dashboard"
-            loading="lazy"
-            className="h-[760px] w-full object-cover opacity-90"
+            src={HeroBg}
+            alt="Water body infrastructure"
+            className="h-full w-full object-cover opacity-45"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-[#081219] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-wastely-deep via-wastely-deep/90 to-wastely-deep/45" />
+        </div>
 
-          {/* FLOATING CARD 1 */}
-          <div className="absolute left-6 top-6 rounded-3xl border border-white/10 bg-[#0b1620]/80 p-5 backdrop-blur-xl">
-            <div className="flex items-center gap-3">
-              <Activity className="text-cyan-300" size={24} />
+        {/* Technical grid */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.08]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,.35) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.35) 1px, transparent 1px)",
+            backgroundSize: "72px 72px",
+          }}
+        />
 
-              <div>
-                <h4 className="font-bold">Live Monitoring</h4>
+        <div className="wastely-container relative z-10">
 
-                <p className="text-sm text-slate-400">
-                  Real-time sensor data
-                </p>
+          <div className="grid min-h-[760px] items-end gap-14 py-28 lg:grid-cols-[1fr_0.75fr] lg:items-center">
+
+            {/* LEFT */}
+            <div>
+
+              <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-wastely-cyan-light">
+                <span className="h-px w-10 bg-wastely-cyan" />
+                Water Body Restoration
               </div>
+
+              <h1 className="mt-7 max-w-4xl text-5xl font-bold leading-[1.02] tracking-[-0.035em] text-white sm:text-6xl lg:text-[5rem]">
+                Restore water systems at
+                <span className="block text-wastely-cyan-light">
+                  the scale of the site.
+                </span>
+              </h1>
+
+              <p className="mt-7 max-w-2xl text-base leading-8 text-white/70 sm:text-lg">
+                Integrated restoration planning for rivers, canals,
+                reservoirs and urban water bodies — combining site
+                assessment, engineering, treatment interventions and
+                ongoing monitoring.
+              </p>
+
+              <div className="mt-9 flex flex-wrap gap-3">
+                <Link
+                  to="/contact"
+                  className="wastely-btn bg-white text-wastely-deep hover:bg-wastely-bg-soft"
+                >
+                  Request an Assessment
+                  <ArrowRight size={17} />
+                </Link>
+
+                <Link
+                  to="/industries"
+                  className="wastely-btn border-white/30 text-white hover:border-white hover:bg-white hover:text-wastely-deep"
+                >
+                  Explore Industries
+                </Link>
+              </div>
+
             </div>
-          </div>
 
-          {/* FLOATING CARD 2 */}
-          <div className="absolute bottom-6 right-6 rounded-3xl border border-white/10 bg-[#0b1620]/80 p-5 backdrop-blur-xl">
-            <div className="flex items-center gap-3">
-              <Database className="text-emerald-300" size={24} />
+            {/* RIGHT — MASTERPLAN PANEL */}
+            <div className="relative hidden lg:block">
 
-              <div>
-                <h4 className="font-bold">AI Analytics</h4>
+              <div className="relative border border-white/20 bg-white/[0.06] p-5 backdrop-blur-sm">
 
-                <p className="text-sm text-slate-400">
-                  Predictive insights
-                </p>
+                <div className="border border-white/15">
+
+                  <div className="flex items-center justify-between border-b border-white/15 px-5 py-4">
+                    <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-wastely-cyan-light">
+                      Restoration Framework
+                    </div>
+
+                    <div className="flex gap-1">
+                      <span className="h-2 w-2 rounded-full bg-wastely-cyan" />
+                      <span className="h-2 w-2 rounded-full bg-white/30" />
+                      <span className="h-2 w-2 rounded-full bg-white/30" />
+                    </div>
+                  </div>
+
+                  <div className="relative h-[430px] overflow-hidden">
+
+                    <img
+                      src={SmartCityImg}
+                      alt="Water infrastructure system"
+                      className="absolute inset-0 h-full w-full object-cover opacity-35"
+                    />
+
+                    <div className="absolute inset-0 bg-wastely-deep/55" />
+
+                    {/* Network lines */}
+                    <svg
+                      viewBox="0 0 500 430"
+                      className="absolute inset-0 h-full w-full"
+                      preserveAspectRatio="none"
+                    >
+                      <path
+                        d="M40 320 C130 270 120 150 210 125 C300 100 290 220 370 185 C420 165 430 100 470 70"
+                        fill="none"
+                        stroke="#3BB8D9"
+                        strokeWidth="1.5"
+                        strokeDasharray="5 6"
+                      />
+
+                      <path
+                        d="M65 90 C160 130 170 225 250 245 C335 265 350 335 455 340"
+                        fill="none"
+                        stroke="#ffffff"
+                        strokeOpacity=".4"
+                        strokeWidth="1"
+                      />
+
+                      {[
+                        [40, 320],
+                        [210, 125],
+                        [370, 185],
+                        [470, 70],
+                        [65, 90],
+                        [250, 245],
+                        [455, 340],
+                      ].map(([cx, cy], index) => (
+                        <g key={index}>
+                          <circle
+                            cx={cx}
+                            cy={cy}
+                            r="7"
+                            fill="#073B5C"
+                            stroke="#3BB8D9"
+                            strokeWidth="2"
+                          />
+                          <circle
+                            cx={cx}
+                            cy={cy}
+                            r="2"
+                            fill="#3BB8D9"
+                          />
+                        </g>
+                      ))}
+                    </svg>
+
+                    {/* labels */}
+                    <div className="absolute left-6 top-7 border-l border-wastely-cyan pl-3">
+                      <div className="text-[9px] uppercase tracking-[0.18em] text-white/50">
+                        Source
+                      </div>
+                      <div className="mt-1 text-xs font-semibold text-white">
+                        Water body
+                      </div>
+                    </div>
+
+                    <div className="absolute right-6 top-24 border-r border-wastely-cyan pr-3 text-right">
+                      <div className="text-[9px] uppercase tracking-[0.18em] text-white/50">
+                        Assess
+                      </div>
+                      <div className="mt-1 text-xs font-semibold text-white">
+                        Conditions
+                      </div>
+                    </div>
+
+                    <div className="absolute bottom-24 left-8 border-l border-wastely-cyan pl-3">
+                      <div className="text-[9px] uppercase tracking-[0.18em] text-white/50">
+                        Intervene
+                      </div>
+                      <div className="mt-1 text-xs font-semibold text-white">
+                        Restoration
+                      </div>
+                    </div>
+
+                    <div className="absolute bottom-8 right-8 border-r border-wastely-cyan pr-3 text-right">
+                      <div className="text-[9px] uppercase tracking-[0.18em] text-white/50">
+                        Monitor
+                      </div>
+                      <div className="mt-1 text-xs font-semibold text-white">
+                        Performance
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
               </div>
+
+              {/* technical coordinate marker */}
+              <div className="absolute -right-8 -top-8 h-24 w-24 border-r border-t border-wastely-cyan/60" />
+
+              <div className="absolute -bottom-5 -left-5 bg-wastely-cyan px-4 py-3 text-[9px] font-bold uppercase tracking-[0.18em] text-wastely-deep">
+                Integrated Water Infrastructure
+              </div>
+
             </div>
           </div>
         </div>
-      </motion.div>
-    </div>
-  </div>
-</section>
+      </section>
 
-      {/* EXECUTION */}
-      <section className="relative py-24 md:py-32">
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="max-w-4xl">
-      <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-2 text-[11px] uppercase tracking-[0.25em] text-cyan-300 backdrop-blur-xl">
-        Large Scale Execution
-      </div>
+      {/* =========================================================
+          SCALE OF RESTORATION
+      ========================================================= */}
+      <section className="wastely-section-white">
+        <div className="wastely-container">
 
-      <h2 className="mt-8 text-4xl md:text-6xl font-black leading-tight">
-        Engineering Infrastructure
-        <span className="block bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-          Restoration Projects
-        </span>
-      </h2>
-    </div>
+          <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
 
-    <div className="mt-20 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-      {executionCards.map((item, index) => {
-        const Icon = item.icon;
-
-        return (
-          <motion.div
-            key={index}
-            whileHover={{ y: -6 }}
-            transition={{ duration: 0.4 }}
-            className="
-              group
-              relative
-              overflow-hidden
-              rounded-[32px]
-              border border-white/10
-              bg-white/[0.04]
-              p-7 md:p-8
-              backdrop-blur-xl
-              transition-all duration-500
-              hover:border-cyan-400/20
-              hover:bg-white/[0.06]
-            "
-          >
-            <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-cyan-500/10 blur-3xl transition-all duration-500 group-hover:bg-cyan-500/20" />
-
-            <div className="relative z-10">
-              <div className="flex h-20 w-20 items-center justify-center rounded-3xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300">
-                <Icon size={36} />
+            <div>
+              <div className="wastely-section-eyebrow">
+                Restoration at different scales
               </div>
 
-              <h3 className="mt-10 text-3xl font-black leading-tight">
-                {item.title}
-              </h3>
+              <h2 className="wastely-section-title">
+                One approach cannot fit every water body.
+              </h2>
 
-              <p className="mt-5 leading-relaxed text-slate-400">
-                {item.description}
+              <p className="wastely-section-description">
+                The physical scale, surrounding land use, inflows and
+                water-quality conditions all influence how a restoration
+                program is designed and executed.
               </p>
             </div>
-          </motion.div>
-        );
-      })}
-    </div>
-  </div>
-</section>
 
-      {/* WATER BODIES */}
-      <section className="relative py-24 md:py-32">
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-      {waterBodies.map((item, index) => (
-        <motion.div
-          key={index}
-          whileHover={{ y: -6 }}
-          transition={{ duration: 0.4 }}
-          className="
-            group
-            relative
-            overflow-hidden
-            rounded-[36px]
-            border border-white/10
-            bg-white/[0.04]
-            min-h-[420px]
-            md:min-h-[520px]
-          "
-        >
-          <img
-            src={item.image}
-            alt={item.title}
-            loading="lazy"
-            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-          />
+            <div className="grid border-l border-t border-wastely-line sm:grid-cols-2">
 
-          <div className="absolute inset-0 bg-gradient-to-t from-[#081219] via-[#081219]/40 to-transparent" />
+              {waterBodies.map((item) => (
+                <article
+                  key={item.number}
+                  className="group relative min-h-[260px] overflow-hidden border-b border-r border-wastely-line"
+                >
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="absolute inset-0 h-full w-full object-cover opacity-20 transition duration-500 group-hover:scale-105 group-hover:opacity-30"
+                  />
 
-          <div className="relative z-10 flex h-full flex-col justify-end p-8">
-            <div className="inline-flex w-fit rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.2em] text-cyan-300 backdrop-blur-xl">
-              Infrastructure
+                  <div className="absolute inset-0 bg-white/90" />
+
+                  <div className="relative z-10 p-7 sm:p-8">
+
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-bold tracking-[0.18em] text-wastely-cyan">
+                        {item.number}
+                      </span>
+
+                      <Waves
+                        size={20}
+                        strokeWidth={1.6}
+                        className="text-wastely-blue"
+                      />
+                    </div>
+
+                    <h3 className="mt-12 text-2xl font-bold text-wastely-deep">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-3 text-sm leading-7 text-wastely-sub">
+                      {item.description}
+                    </p>
+                  </div>
+                </article>
+              ))}
+
             </div>
 
-            <h3 className="mt-6 text-3xl md:text-4xl font-black">
-              {item.title}
-            </h3>
           </div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
-      {/* WORKFLOW */}
-      <section className="relative py-32">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-5xl mx-auto">
-            <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs uppercase tracking-[0.25em] text-emerald-300 backdrop-blur-xl">
-              Restoration Workflow
+      {/* =========================================================
+          RESTORATION SYSTEM
+      ========================================================= */}
+      <section className="relative overflow-hidden bg-wastely-bg-soft py-20 lg:py-24">
+
+        <div className="wastely-container">
+
+          <div className="max-w-3xl">
+            <div className="wastely-section-eyebrow">
+              Restoration system
             </div>
 
-            <h2 className="mt-8 text-4xl md:text-6xl font-black leading-tight">
-              Engineering Execution
-              <span className="block bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                Lifecycle
-              </span>
+            <h2 className="wastely-section-title">
+              Connect diagnosis, intervention and monitoring.
+            </h2>
+
+            <p className="wastely-section-description">
+              Water-body restoration becomes more manageable when the
+              project is treated as a connected system rather than as a
+              collection of individual technologies.
+            </p>
+          </div>
+
+          <div className="relative mt-16">
+
+            {/* horizontal engineering line */}
+            <div className="absolute left-[12.5%] right-[12.5%] top-8 hidden h-px bg-wastely-cyan/40 lg:block" />
+
+            <div className="grid gap-10 lg:grid-cols-4">
+
+              {restorationSystem.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <div key={item.number} className="relative">
+
+                    <div className="relative z-10 flex h-16 w-16 items-center justify-center border border-wastely-cyan bg-wastely-bg-soft text-wastely-blue">
+                      <Icon size={25} strokeWidth={1.5} />
+                    </div>
+
+                    <div className="mt-6 text-[10px] font-bold uppercase tracking-[0.18em] text-wastely-cyan">
+                      Stage {item.number}
+                    </div>
+
+                    <h3 className="mt-2 text-xl font-bold text-wastely-deep">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-3 text-sm leading-7 text-wastely-sub">
+                      {item.description}
+                    </p>
+                  </div>
+                );
+              })}
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* =========================================================
+          PROJECT DELIVERY — DARK ENGINEERING BAND
+      ========================================================= */}
+      <section className="relative overflow-hidden bg-wastely-deep py-20 lg:py-24">
+
+        {/* blueprint grid */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.06]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px)",
+            backgroundSize: "56px 56px",
+          }}
+        />
+
+        <div className="wastely-container relative">
+
+          <div className="grid gap-14 lg:grid-cols-[0.75fr_1.25fr]">
+
+            <div>
+              <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-wastely-cyan-light">
+                <span className="h-px w-8 bg-wastely-cyan" />
+                Project Delivery
+              </div>
+
+              <h2 className="mt-5 text-3xl font-bold leading-tight text-white sm:text-4xl">
+                From field survey to operational support.
+              </h2>
+
+              <p className="mt-5 text-sm leading-7 text-white/65">
+                The project lifecycle can bring site assessment, engineering,
+                execution and monitoring into one coordinated delivery model.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2">
+
+              {projectDelivery.map((item, index) => (
+                <div
+                  key={item}
+                  className="group flex items-center gap-4 border-b border-white/10 px-5 py-5 sm:px-6"
+                >
+                  <span className="text-[10px] font-bold tracking-[0.15em] text-wastely-cyan">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <Check
+                    size={16}
+                    className="text-wastely-cyan-light"
+                    strokeWidth={2}
+                  />
+
+                  <span className="text-sm font-medium text-white/80 transition-colors group-hover:text-white">
+                    {item}
+                  </span>
+                </div>
+              ))}
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          CONNECTED INFRASTRUCTURE
+      ========================================================= */}
+      <section className="wastely-section-white">
+        <div className="wastely-container">
+
+          <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+
+            <div className="relative">
+
+              <div className="absolute -left-5 -top-5 h-20 w-20 border-l border-t border-wastely-cyan" />
+
+              <div className="border border-wastely-line bg-wastely-bg-soft p-2">
+
+                <div className="relative overflow-hidden">
+                  <img
+                    src={SmartCityImg}
+                    alt="Connected water infrastructure"
+                    className="h-[520px] w-full object-cover"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-wastely-deep/75 via-transparent to-transparent" />
+
+                  <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+
+                    <div>
+                      <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-wastely-cyan-light">
+                        Connected Infrastructure
+                      </div>
+
+                      <div className="mt-2 text-lg font-bold text-white">
+                        Water quality visibility
+                      </div>
+                    </div>
+
+                    <div className="hidden border border-white/30 bg-wastely-deep/60 px-3 py-2 text-[9px] uppercase tracking-[0.15em] text-white/70 sm:block">
+                      Field + Data
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div>
+
+              <div className="wastely-section-eyebrow">
+                Monitoring & visibility
+              </div>
+
+              <h2 className="wastely-section-title">
+                See how the water body is changing.
+              </h2>
+
+              <p className="wastely-section-description">
+                Where monitoring is part of the project requirement,
+                relevant water-quality parameters can be tracked to support
+                operational decisions and ongoing assessment.
+              </p>
+
+              <div className="mt-9 grid grid-cols-2 border-l border-t border-wastely-line">
+
+                {monitoringParameters.map((parameter) => (
+                  <div
+                    key={parameter}
+                    className="flex items-center gap-3 border-b border-r border-wastely-line p-4"
+                  >
+                    <Activity
+                      size={16}
+                      className="shrink-0 text-wastely-blue"
+                    />
+
+                    <span className="text-sm font-medium text-wastely-deep">
+                      {parameter}
+                    </span>
+                  </div>
+                ))}
+
+              </div>
+
+              <div className="mt-8 flex items-start gap-4 border-l-2 border-wastely-cyan pl-5">
+                <Satellite
+                  size={21}
+                  className="mt-1 shrink-0 text-wastely-blue"
+                  strokeWidth={1.6}
+                />
+
+                <div>
+                  <h3 className="font-bold text-wastely-deep">
+                    Monitoring architecture can be site-specific.
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-6 text-wastely-sub">
+                    Instrumentation, communication and analytics should be
+                    selected around the actual monitoring requirement rather
+                    than treated as a fixed package.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          APPLICATIONS
+      ========================================================= */}
+      <section className="wastely-section-soft">
+        <div className="wastely-container">
+
+          <div className="max-w-3xl">
+            <div className="wastely-section-eyebrow">
+              Where it applies
+            </div>
+
+            <h2 className="wastely-section-title">
+              Infrastructure designed around the operating context.
             </h2>
           </div>
 
-          <div className="mt-24 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {workflow.map((step, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -4 }}
-                className="relative overflow-hidden rounded-[30px] border border-white/10 bg-white/5 p-8 backdrop-blur-xl"
-              >
-                <div className="absolute right-[-20px] top-[-20px] text-[120px] font-black text-white/[0.03]">
-                  {index + 1}
-                </div>
+          <div className="mt-12 grid gap-0 border-l border-t border-wastely-line md:grid-cols-2">
 
-                <div className="relative z-10">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300">
-                    <Workflow size={28} />
+            {applications.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <article
+                  key={item.title}
+                  className="group border-b border-r border-wastely-line bg-white p-8 transition-colors duration-200 hover:bg-wastely-bg-soft lg:p-10"
+                >
+                  <div className="flex items-start justify-between gap-5">
+
+                    <div className="flex h-12 w-12 items-center justify-center border border-wastely-line text-wastely-blue">
+                      <Icon size={22} strokeWidth={1.6} />
+                    </div>
+
+                    <ArrowRight
+                      size={18}
+                      className="text-wastely-sub transition-transform duration-200 group-hover:translate-x-1 group-hover:text-wastely-blue"
+                    />
+
                   </div>
 
-                  <h3 className="mt-8 text-3xl font-black leading-tight">
-                    {step}
+                  <h3 className="mt-10 text-xl font-bold text-wastely-deep">
+                    {item.title}
                   </h3>
-                </div>
-              </motion.div>
-            ))}
+
+                  <p className="mt-3 max-w-md text-sm leading-7 text-wastely-sub">
+                    {item.description}
+                  </p>
+                </article>
+              );
+            })}
+
           </div>
+
         </div>
       </section>
 
-      {/* MONITORING */}
-      <section className="relative py-32">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="relative overflow-hidden rounded-[44px] border border-white/10 bg-white/5">
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-emerald-500/10" />
+      {/* =========================================================
+          TECHNOLOGY HANDOFF — NOT CTA
+      ========================================================= */}
+      <section className="border-t border-wastely-line bg-white py-10">
+        <div className="wastely-container">
 
-            <div className="relative z-10 px-6 py-20 md:px-16 md:py-24">
-              <div className="max-w-5xl">
-                <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs uppercase tracking-[0.25em] text-cyan-300 backdrop-blur-xl">
-                  Monitoring & Automation
-                </div>
+          <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
 
-                <h2 className="mt-8 text-4xl md:text-6xl font-black leading-tight">
-                  AI Powered Monitoring
-                  <span className="block bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                    & Automation Systems
-                  </span>
-                </h2>
+            <div>
+              <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-wastely-blue">
+                Technology
               </div>
 
-              <div className="mt-20 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-                {automationSystems.map((item, index) => {
-                  const Icon = item.icon;
-
-                  return (
-                    <motion.div
-                      key={index}
-                      whileHover={{ y: -6 }}
-                      className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-[#0b1620]/80 p-8 backdrop-blur-xl transition-all duration-500 hover:border-cyan-400/20"
-                    >
-                      <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-cyan-500/10 blur-3xl transition-all duration-500 group-hover:bg-cyan-500/20" />
-
-                      <div className="relative z-10">
-                        <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300">
-                          <Icon size={28} />
-                        </div>
-
-                        <h3 className="mt-8 text-2xl font-black leading-tight">
-                          {item.title}
-                        </h3>
-
-                        <p className="mt-5 leading-relaxed text-slate-400">
-                          {item.description}
-                        </p>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </div>
-
-              {/* SENSOR METRICS */}
-              <div className="mt-20 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-                {sensors.map((sensor, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl"
-                  >
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300">
-                      <Gauge size={24} />
-                    </div>
-
-                    <div>
-                      <h4 className="text-lg font-bold">
-                        {sensor}
-                      </h4>
-
-                      <p className="text-sm text-slate-400">
-                        Real-time monitored parameter
-                      </p>
-                    </div>
-                  </div>
-                ))}
+              <div className="mt-2 text-lg font-bold text-wastely-deep">
+                Explore the treatment technologies behind restoration projects.
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* MPC BUOY */}
-      <section className="relative py-32">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-16 items-center">
-            {/* IMAGE */}
-            <motion.div
-              initial={{ opacity: 0, x: -35 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="relative"
+            <Link
+              to="/technologies"
+              className="wastely-btn wastely-btn-secondary shrink-0"
             >
-              <div className="absolute inset-0 rounded-[40px] bg-gradient-to-br from-cyan-500/20 to-emerald-500/10 blur-3xl" />
+              View Technologies
+              <ArrowRight size={16} />
+            </Link>
 
-              <div className="relative overflow-hidden rounded-[40px] border border-white/10">
-                <img
-                  src={MPCBuoyImg}
-                  alt="MPC Buoy"
-                  className="h-[700px] w-full object-cover"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-[#081219] via-transparent to-transparent" />
-              </div>
-            </motion.div>
-
-            {/* CONTENT */}
-            <motion.div
-              initial={{ opacity: 0, x: 35 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs uppercase tracking-[0.25em] text-cyan-300 backdrop-blur-xl">
-                MPC Buoy System
-              </div>
-
-              <h2 className="mt-8 text-4xl md:text-6xl font-black leading-tight">
-                Monitor, Predict &
-                <span className="block bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                  Control Water Ecosystems
-                </span>
-              </h2>
-
-              <p className="mt-8 text-lg leading-relaxed text-slate-400">
-                Advanced floating monitoring platform integrating real-time
-                analytics, algae prediction, ultrasonic treatment and smart
-                communication infrastructure.
-              </p>
-
-              <div className="mt-12 space-y-5">
-                {mpcFeatures.map((feature, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl"
-                  >
-                    <div className="mt-1 text-cyan-300">
-                      <ShieldCheck size={20} />
-                    </div>
-
-                    <p className="text-slate-300">{feature}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
           </div>
+
         </div>
       </section>
 
-      {/* SMART CITY */}
-      <section className="relative pb-32">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="relative overflow-hidden rounded-[44px] border border-white/10 bg-white/5">
-            <div className="absolute inset-0">
-              <img
-                src={SmartCityImg}
-                alt="Smart City Water Systems"
-                className="h-full w-full object-cover opacity-25"
-              />
-
-              <div className="absolute inset-0 bg-[#081219]/85" />
-            </div>
-
-            <div className="relative z-10 px-8 py-20 md:px-20 md:py-24">
-              <div className="max-w-5xl">
-                <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs uppercase tracking-[0.25em] text-cyan-300 backdrop-blur-xl">
-                  Smart Infrastructure
-                </div>
-
-                <h2 className="mt-8 text-4xl md:text-6xl font-black leading-tight">
-                  Smart City Water
-                  <span className="block bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                    Infrastructure Systems
-                  </span>
-                </h2>
-
-                <p className="mt-8 max-w-4xl text-lg md:text-xl leading-relaxed text-slate-400">
-                  Integrated restoration infrastructure for smart cities,
-                  municipal corporations, urban development authorities and
-                  industrial ecosystems.
-                </p>
-
-                {/* GRID */}
-                <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-                  {[
-                    {
-                      icon: Globe2,
-                      title: "Urban Water Systems",
-                    },
-                    {
-                      icon: Network,
-                      title: "Connected Monitoring",
-                    },
-                    {
-                      icon: Satellite,
-                      title: "Remote Analytics",
-                    },
-                    {
-                      icon: ScanLine,
-                      title: "Predictive Intelligence",
-                    },
-                  ].map((item, index) => {
-                    const Icon = item.icon;
-
-                    return (
-                      <div
-                        key={index}
-                        className="rounded-[28px] border border-white/10 bg-white/5 p-6 backdrop-blur-xl"
-                      >
-                        <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300">
-                          <Icon size={28} />
-                        </div>
-
-                        <h3 className="mt-6 text-2xl font-black">
-                          {item.title}
-                        </h3>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* CTA */}
-                <div className="mt-16 flex flex-wrap gap-5">
-                  <Link to="/contact">
-                    <button className="rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400 px-8 py-4 font-semibold text-black transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_-12px_rgba(14,165,233,0.45)]">
-                      Discuss Infrastructure Project
-                    </button>
-                  </Link>
-
-                  {/* <Link to="/projects">
-                    <button className="rounded-full border border-white/10 bg-white/5 px-8 py-4 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/30 hover:bg-white/10">
-                      View Case Studies
-                    </button>
-                  </Link> */}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+    </main>
   );
 };
 

@@ -1,555 +1,603 @@
-
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import {
-  ShieldCheck,
-  Wrench,
-  LineChart,
-  Cog,
-  Phone,
-  Lock,
-  FlaskConical,
   CalendarDays,
-  HardHat,
+  Wrench,
+  ShieldCheck,
+  ClipboardCheck,
+  Settings2,
+  FileText,
+  SearchCheck,
   ArrowRight,
-  Sparkles,
+  CheckCircle2,
 } from "lucide-react";
 
-import heroImage from "../../assets/images/Wastely_hero_4.jpeg";
+import heroImage from "../../assets/images/Wastely_hero_4.png";
 
-const benefits = [
+const maintenanceAreas = [
   {
     icon: Wrench,
-    title: "Reduced Downtime",
+    number: "01",
+    title: "Preventive Maintenance",
     description:
-      "Predictive maintenance and rapid response systems minimize operational interruptions.",
+      "Planned inspection and maintenance of treatment equipment to reduce avoidable failures and keep critical systems serviceable.",
   },
   {
-    icon: LineChart,
-    title: "Performance Optimization",
+    icon: Settings2,
+    number: "02",
+    title: "Equipment & System Support",
     description:
-      "Maintain maximum treatment efficiency with intelligent monitoring and analytics.",
+      "Technical support for pumps, blowers, aeration systems, dosing equipment and other plant components within the agreed AMC scope.",
+  },
+  {
+    icon: SearchCheck,
+    number: "03",
+    title: "Inspection & Condition Checks",
+    description:
+      "Routine checks help identify wear, abnormal operation and maintenance requirements before they become larger plant issues.",
   },
   {
     icon: ShieldCheck,
-    title: "Regulatory Compliance",
+    number: "04",
+    title: "Safety & Compliance Support",
     description:
-      "Stay aligned with environmental standards and operational safety protocols.",
-  },
-  {
-    icon: Cog,
-    title: "Extended Equipment Life",
-    description:
-      "Preventive servicing increases plant reliability and equipment lifespan.",
+      "Maintenance activities are organized with attention to safe working practices, plant procedures and applicable operational requirements.",
   },
 ];
 
-const amcIncludes = [
+const amcCoverage = [
   {
     icon: CalendarDays,
-    title: "Preventive Maintenance",
-  },
-  {
-    icon: FlaskConical,
-    title: "Chemical Dosing & Monitoring",
+    title: "Planned Maintenance",
+    description:
+      "Maintenance activities organized around an agreed schedule and plant requirements.",
   },
   {
     icon: Wrench,
-    title: "Repair & Technical Support",
+    title: "Repair Support",
+    description:
+      "Technical assistance when equipment or treatment-system components require corrective attention.",
   },
   {
-    icon: ShieldCheck,
-    title: "Compliance & Safety Audits",
+    icon: ClipboardCheck,
+    title: "Inspection",
+    description:
+      "Routine checks of equipment condition, operation and maintenance requirements.",
   },
   {
-    icon: LineChart,
-    title: "Performance Reporting",
+    icon: FileText,
+    title: "Maintenance Records",
+    description:
+      "Documentation of maintenance activities, observations and follow-up requirements.",
+  },
+];
+
+const processSteps = [
+  {
+    number: "01",
+    title: "Review",
+    description:
+      "Understand the plant, equipment, operating conditions and existing maintenance requirements.",
   },
   {
-    icon: Lock,
-    title: "Equipment Security",
+    number: "02",
+    title: "Plan",
+    description:
+      "Define maintenance activities, frequency, responsibilities and priorities.",
   },
   {
-    icon: HardHat,
-    title: "Workplace Safety Monitoring",
+    number: "03",
+    title: "Maintain",
+    description:
+      "Carry out planned inspections, servicing and agreed technical support activities.",
   },
   {
-    icon: Phone,
-    title: "24/7 Emergency Support",
+    number: "04",
+    title: "Report",
+    description:
+      "Record completed work, observations and items requiring further attention.",
   },
 ];
 
 const AMCServices = () => {
   return (
-    <div className="relative overflow-hidden bg-[#081219] text-white">
-      {/* GRID */}
-      <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:80px_80px]" />
+    <main className="bg-white text-wastely-ink">
+      {/* =========================================================
+          HERO
+      ========================================================= */}
+      <section className="relative overflow-hidden border-b border-wastely-line bg-white">
+        {/* Engineering grid */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.45]"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(7,59,92,0.035) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(7,59,92,0.035) 1px, transparent 1px)
+            `,
+            backgroundSize: "72px 72px",
+          }}
+        />
 
-      {/* Ambient Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-150px] left-[-100px] h-[420px] w-[420px] rounded-full bg-cyan-500/10 blur-[120px]" />
+        {/* Water/ripple detail */}
+        <div className="pointer-events-none absolute right-[-120px] top-20 h-[420px] w-[420px] rounded-full border border-wastely-cyan/20" />
+        <div className="pointer-events-none absolute right-[-80px] top-40 h-[300px] w-[300px] rounded-full border border-wastely-cyan/15" />
 
-        <div className="absolute bottom-[-150px] right-[-100px] h-[420px] w-[420px] rounded-full bg-emerald-500/10 blur-[120px]" />
-
-        <div className="absolute top-[40%] left-[50%] h-[260px] w-[260px] -translate-x-1/2 rounded-full bg-cyan-400/5 blur-[120px]" />
-      </div>
-
-      {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 min-h-[100svh] flex items-center py-28 md:py-32">
-          <div className="grid w-full items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
-            {/* LEFT */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] backdrop-blur-xl px-5 py-2 text-[10px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.25em] text-cyan-300">
-                <Sparkles size={14} />
-                AMC Solutions
+        <div className="wastely-container relative z-10 py-20 sm:py-24 lg:py-28">
+          <div className="grid items-center gap-12 lg:grid-cols-[1fr_0.9fr] lg:gap-16">
+            {/* Copy */}
+            <div>
+              <div className="wastely-section-eyebrow">
+                AMC Services
               </div>
 
-              <h1 className="mt-8 text-[2.9rem] sm:text-6xl md:text-7xl xl:text-[88px] font-black leading-[0.92] tracking-[-0.04em]">
-                Annual Maintenance
-                <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                  {" "}
-                  Contracts
-                </span>{" "}
-                for Sustainable Plant Operations
+              <h1 className="max-w-3xl text-display-md sm:text-display-lg">
+                Maintain the systems that keep your plant running.
               </h1>
 
-              <p className="mt-8 max-w-3xl text-[15px] sm:text-lg md:text-xl leading-relaxed text-slate-400">
-                Wastely Aqua delivers intelligent AMC services for STP, ETP,
-                and WTP systems with preventive maintenance, monitoring,
-                compliance management, and 24/7 operational support.
+              <p className="mt-6 max-w-2xl text-base leading-7 text-wastely-sub sm:text-lg">
+                Annual Maintenance Contracts provide a structured approach to
+                preventive maintenance, equipment support, inspections and
+                maintenance documentation for water and wastewater treatment
+                infrastructure.
               </p>
 
-              {/* CTA */}
-              <div className="mt-12 flex flex-col sm:flex-row sm:flex-wrap gap-4">
-                <Link to="/contact">
-                  <button
-                    className="
-                      w-full sm:w-auto
-                      rounded-full
-                      bg-gradient-to-r
-                      from-cyan-400
-                      to-emerald-400
-                      px-7
-                      py-4
-                      font-semibold
-                      text-black
-                      transition-all duration-300
-                      hover:scale-[1.02]
-                      hover:shadow-[0_0_50px_-20px_rgba(14,165,233,0.18)]
-                    "
-                  >
-                    Get Free Consultation
-                  </button>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  to="/contact"
+                  className="wastely-btn wastely-btn-primary"
+                >
+                  Request an Assessment
+                  <ArrowRight size={17} />
                 </Link>
 
-                <Link to="/industries">
-                  <button
-                    className="
-                      w-full sm:w-auto
-                      rounded-full
-                      border border-white/10
-                      bg-white/[0.05]
-                      backdrop-blur-xl
-                      px-7
-                      py-4
-                      font-medium
-                      text-white
-                      transition-all duration-300
-                      hover:border-cyan-400/30
-                      hover:bg-white/[0.08]
-                    "
-                  >
-                    Explore Services
-                  </button>
-                </Link>
+                <a
+                  href="#amc-scope"
+                  className="wastely-btn wastely-btn-secondary"
+                >
+                  View AMC Scope
+                </a>
               </div>
 
-              {/* STATS */}
-              <div className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-4">
+              {/* Contract characteristics */}
+              <div className="mt-10 grid max-w-2xl grid-cols-2 border-y border-wastely-line sm:grid-cols-4">
                 {[
-                  { value: "24/7", label: "Technical Support" },
-                  { value: "99%", label: "Plant Uptime" },
-                  { value: "AMC", label: "Compliance Driven" },
-                  { value: "STP", label: "ETP • WTP" },
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.08 }}
-                    viewport={{ once: true }}
-                    className="
-                      rounded-[28px]
-                      border border-white/10
-                      bg-white/[0.04]
-                      p-5 md:p-6
-                      backdrop-blur-xl
-                      transition-all duration-500
-                      hover:border-cyan-400/20
-                      hover:bg-white/[0.06]
-                    "
-                  >
-                    <h3 className="text-3xl font-black bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                      {item.value}
-                    </h3>
-
-                    <p className="mt-2 text-sm text-slate-400">
-                      {item.label}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* RIGHT IMAGE */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <div className="absolute -inset-5 rounded-[40px] bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 blur-[120px]" />
-
-              <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-[0_0_50px_-20px_rgba(14,165,233,0.18)]">
-                <img
-                  src={heroImage}
-                  alt="AMC Services"
-                  loading="lazy"
-                  decoding="async"
-                  className="h-[420px] sm:h-[520px] md:h-[650px] w-full object-cover"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-[#081219] via-[#081219]/20 to-transparent" />
-              </div>
-
-              {/* FLOATING CARD */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="
-                  absolute
-                  bottom-4
-                  left-4
-                  sm:bottom-8
-                  sm:-left-6
-                  rounded-[28px]
-                  border border-white/10
-                  bg-[#0b1620]/80
-                  backdrop-blur-xl
-                  p-5 sm:p-6
-                  shadow-[0_0_50px_-20px_rgba(16,185,129,0.25)]
-                "
-              >
-                <p className="text-[11px] uppercase tracking-[0.2em] text-cyan-300">
-                  AMC Monitoring
-                </p>
-
-                <h4 className="mt-2 text-2xl sm:text-3xl font-black">
-                  365 Days
-                </h4>
-
-                <p className="mt-2 max-w-[220px] text-sm leading-relaxed text-slate-400">
-                  Continuous maintenance and monitoring for critical treatment
-                  infrastructure.
-                </p>
-              </motion.div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* WHAT IS AMC */}
-      <section className="relative py-24 md:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
-            {/* LEFT */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true }}
-            >
-              <div className="inline-flex rounded-full border border-white/10 bg-white/[0.05] px-5 py-2 backdrop-blur-xl text-[10px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.25em] text-cyan-300">
-                About AMC
-              </div>
-
-              <h2 className="mt-8 text-[2.2rem] sm:text-5xl md:text-6xl font-black leading-tight">
-                Intelligent Maintenance for
-                <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                  {" "}
-                  Critical Water Infrastructure
-                </span>
-              </h2>
-
-              <p className="mt-8 text-base md:text-lg leading-relaxed text-slate-400">
-                Annual Maintenance Contracts ensure smooth, reliable, and
-                efficient operation of wastewater treatment systems through
-                preventive maintenance, process optimization, and expert
-                technical support.
-              </p>
-
-              <div className="mt-10 space-y-5">
-                {[
-                  "Fixed maintenance cost planning",
-                  "Reduced equipment failure risks",
-                  "Improved operational efficiency",
-                  "Long-term sustainability assurance",
-                ].map((item, index) => (
+                  "Planned",
+                  "Preventive",
+                  "Documented",
+                  "Site-specific",
+                ].map((item) => (
                   <div
-                    key={index}
-                    className="
-                      flex items-start gap-4
-                      rounded-[24px]
-                      border border-white/10
-                      bg-white/[0.04]
-                      p-5
-                      backdrop-blur-xl
-                      transition-all duration-300
-                      hover:border-cyan-400/20
-                      hover:bg-white/[0.06]
-                    "
+                    key={item}
+                    className="border-r border-wastely-line px-3 py-4 first:pl-0 last:border-r-0"
                   >
-                    <div className="mt-1 h-3 w-3 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400" />
-
-                    <p className="text-slate-300">{item}</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.08em] text-wastely-blue">
+                      {item}
+                    </p>
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
-            {/* RIGHT */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="absolute -inset-5 rounded-[40px] bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 blur-[120px]" />
+            {/* Image / maintenance frame */}
+            <div className="relative">
+              <div className="absolute -inset-5 bg-wastely-gradient opacity-[0.08] blur-3xl" />
 
-              <div className="overflow-hidden rounded-[36px] border border-white/10 bg-white/[0.04] backdrop-blur-xl">
+              <div className="relative overflow-hidden border border-wastely-line bg-wastely-bg-soft">
+                <div className="absolute left-0 top-0 z-10 h-1 w-24 bg-wastely-gradient" />
+
                 <img
                   src={heroImage}
-                  alt="Water treatment plant"
-                  loading="lazy"
-                  decoding="async"
-                  className="h-[420px] sm:h-[520px] md:h-[600px] w-full object-cover"
+                  alt="Water treatment infrastructure"
+                  className="h-[420px] w-full object-cover sm:h-[500px]"
+                  loading="eager"
                 />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-wastely-deep/70 via-transparent to-transparent" />
+
+                {/* Technical overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
+                  <div className="border-l-2 border-wastely-cyan pl-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-wastely-cyan-light">
+                      Maintenance Framework
+                    </p>
+
+                    <p className="mt-1 text-sm font-medium text-white">
+                      Inspect → Maintain → Record → Follow up
+                    </p>
+                  </div>
+                </div>
               </div>
-            </motion.div>
+
+              {/* Small technical marker */}
+              <div className="absolute -bottom-5 -left-4 hidden border border-wastely-line bg-white p-4 shadow-subtle sm:block">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-9 w-9 items-center justify-center bg-wastely-bg-soft text-wastely-blue">
+                    <Wrench size={18} />
+                  </div>
+
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.1em] text-wastely-sub">
+                      Service model
+                    </p>
+                    <p className="mt-0.5 text-sm font-semibold text-wastely-deep">
+                      Planned maintenance
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* BENEFITS */}
-      <section className="relative py-24 md:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="inline-flex rounded-full border border-white/10 bg-white/[0.05] px-5 py-2 backdrop-blur-xl text-[10px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.25em] text-emerald-300">
-              Benefits
+      {/* =========================================================
+          WHY AMC
+      ========================================================= */}
+      <section className="wastely-section wastely-section-soft">
+        <div className="wastely-container">
+          <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
+            <div className="wastely-section-header mb-0">
+              <div className="wastely-section-eyebrow">
+                Why AMC
+              </div>
+
+              <h2 className="wastely-section-title">
+                Maintenance needs structure, not just response.
+              </h2>
+
+              <p className="wastely-section-description">
+                Treatment plants depend on equipment that must remain
+                serviceable over time. An AMC creates a defined maintenance
+                framework around inspection, servicing, repair support and
+                records.
+              </p>
             </div>
 
-            <h2 className="mt-8 text-[2.2rem] sm:text-5xl md:text-6xl font-black leading-tight">
-              Why Industries Choose
-              <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                {" "}
-                Wastely AMC Services
-              </span>
+            <div className="grid gap-0 border-l border-t border-wastely-line sm:grid-cols-2">
+              {[
+                {
+                  title: "Reduce avoidable failures",
+                  text:
+                    "Regular inspection and preventive maintenance can identify equipment issues before they become larger operational problems.",
+                },
+                {
+                  title: "Plan maintenance activities",
+                  text:
+                    "A defined maintenance schedule gives the plant team a clearer view of upcoming servicing and inspection requirements.",
+                },
+                {
+                  title: "Maintain equipment condition",
+                  text:
+                    "Routine attention to critical components supports continued serviceability of treatment infrastructure.",
+                },
+                {
+                  title: "Keep maintenance visible",
+                  text:
+                    "Records and follow-up actions provide a practical history of maintenance work carried out at the plant.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="border-b border-r border-wastely-line bg-white p-6 sm:p-7"
+                >
+                  <div className="mb-5 h-1 w-8 bg-wastely-cyan" />
+
+                  <h3 className="text-card-title text-wastely-deep">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-6 text-wastely-sub">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          AMC SCOPE
+      ========================================================= */}
+      <section
+        id="amc-scope"
+        className="wastely-section wastely-section-white"
+      >
+        <div className="wastely-container">
+          <div className="wastely-section-header">
+            <div className="wastely-section-eyebrow">
+              AMC Scope
+            </div>
+
+            <h2 className="wastely-section-title">
+              Maintenance coverage built around the plant.
             </h2>
+
+            <p className="wastely-section-description">
+              The exact AMC scope can be defined according to the treatment
+              process, equipment installed, site requirements and maintenance
+              responsibilities.
+            </p>
           </div>
 
-          <div className="mt-20 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {benefits.map((item, index) => {
+          <div className="grid gap-4 md:grid-cols-2">
+            {maintenanceAreas.map((item) => {
               const Icon = item.icon;
 
               return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.08 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -4 }}
-                  className="
-                    group
-                    relative
-                    overflow-hidden
-                    rounded-[32px]
-                    border border-white/10
-                    bg-white/[0.04]
-                    p-7 md:p-8
-                    backdrop-blur-xl
-                    transition-all duration-500
-                    hover:border-cyan-400/20
-                    hover:bg-white/[0.06]
-                  "
+                <article
+                  key={item.number}
+                  className="wastely-card wastely-card-hover group relative overflow-hidden p-6 sm:p-7"
                 >
-                  <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-cyan-400/10 blur-3xl" />
+                  <div className="absolute right-0 top-0 h-24 w-24 border-l border-b border-wastely-line bg-wastely-bg-soft" />
 
                   <div className="relative z-10">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-300">
-                      <Icon size={30} />
+                    <div className="flex items-start justify-between gap-6">
+                      <div className="flex h-11 w-11 items-center justify-center border border-wastely-line bg-wastely-bg-soft text-wastely-blue">
+                        <Icon size={20} />
+                      </div>
+
+                      <span className="text-xs font-semibold tracking-[0.12em] text-wastely-cyan">
+                        {item.number}
+                      </span>
                     </div>
 
-                    <h3 className="mt-8 text-2xl font-bold">
+                    <h3 className="mt-7 text-card-title text-wastely-deep">
                       {item.title}
                     </h3>
 
-                    <p className="mt-4 leading-relaxed text-slate-400">
+                    <p className="mt-3 max-w-xl text-sm leading-6 text-wastely-sub">
                       {item.description}
                     </p>
                   </div>
-                </motion.div>
+                </article>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* INCLUDED SERVICES */}
-      <section className="relative py-24 md:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-[32px] md:rounded-[40px] border border-white/10 bg-white/[0.04] p-5 sm:p-8 md:p-14 backdrop-blur-xl">
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-emerald-500/10" />
+      {/* =========================================================
+          OPERATING MODEL — DISTINCT FROM O&M
+      ========================================================= */}
+      <section className="relative overflow-hidden bg-wastely-deep text-white">
+        {/* Engineering contour lines */}
+        <svg
+          className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.12]"
+          viewBox="0 0 1200 500"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M-50 360 C160 230 250 450 470 300 S820 100 1250 260"
+            fill="none"
+            stroke="#2FB4CE"
+            strokeWidth="1"
+          />
+          <path
+            d="M-50 395 C160 265 250 485 470 335 S820 135 1250 295"
+            fill="none"
+            stroke="#2FB4CE"
+            strokeWidth="1"
+          />
+          <path
+            d="M-50 430 C160 300 250 520 470 370 S820 170 1250 330"
+            fill="none"
+            stroke="#2FB4CE"
+            strokeWidth="1"
+          />
+        </svg>
 
-            <div className="relative z-10">
-              <div className="inline-flex rounded-full border border-white/10 bg-white/[0.05] px-5 py-2 backdrop-blur-xl text-[10px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.25em] text-cyan-300">
-                Included Services
+        <div className="wastely-container relative z-10 py-20 sm:py-24 lg:py-28">
+          <div className="max-w-3xl">
+            <div className="wastely-section-eyebrow !text-wastely-cyan-light">
+              AMC Working Model
+            </div>
+
+            <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[2.5rem]">
+              A maintenance cycle that stays connected to plant conditions.
+            </h2>
+
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-white/70 sm:text-base">
+              AMC support should not be limited to isolated repair visits.
+              Inspection, planned maintenance, corrective action and
+              documentation work together as an ongoing maintenance cycle.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-0 border border-white/15 md:grid-cols-4">
+            {processSteps.map((step, index) => (
+              <div
+                key={step.number}
+                className={`relative p-6 sm:p-7 ${
+                  index !== processSteps.length - 1
+                    ? "border-b border-white/15 md:border-b-0 md:border-r"
+                    : ""
+                }`}
+              >
+                <span className="text-xs font-semibold tracking-[0.16em] text-wastely-cyan-light">
+                  {step.number}
+                </span>
+
+                <h3 className="mt-5 text-xl font-semibold text-white">
+                  {step.title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-6 text-white/65">
+                  {step.description}
+                </p>
+
+                {index !== processSteps.length - 1 && (
+                  <ArrowRight
+                    className="absolute right-5 top-7 hidden text-wastely-cyan md:block"
+                    size={17}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          INCLUDED COVERAGE
+      ========================================================= */}
+      <section className="wastely-section wastely-section-soft">
+        <div className="wastely-container">
+          <div className="grid items-start gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+            <div>
+              <div className="wastely-section-eyebrow">
+                Included Coverage
               </div>
 
-              <h2 className="mt-8 max-w-4xl text-[2.2rem] sm:text-5xl md:text-6xl font-black leading-tight">
-                Complete AMC Coverage for
-                <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                  {" "}
-                  Treatment Plants
-                </span>
+              <h2 className="wastely-section-title">
+                From scheduled servicing to maintenance records.
               </h2>
 
-              <div className="mt-16 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-                {amcIncludes.map((item, index) => {
-                  const Icon = item.icon;
+              <p className="wastely-section-description">
+                Depending on the agreed scope, AMC support can cover the
+                maintenance activities required to keep treatment-system
+                equipment and associated infrastructure serviceable.
+              </p>
+            </div>
 
-                  return (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: index * 0.05 }}
-                      viewport={{ once: true }}
-                      className="
-                        rounded-[28px]
-                        border border-white/10
-                        bg-[#0b1620]/70
-                        p-6
-                        backdrop-blur-xl
-                        transition-all duration-300
-                        hover:border-cyan-400/20
-                        hover:bg-white/[0.06]
-                      "
-                    >
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-cyan-300 border border-cyan-400/20">
-                        <Icon size={26} />
+            <div className="border-t border-wastely-line">
+              {amcCoverage.map((item, index) => {
+                const Icon = item.icon;
+
+                return (
+                  <div
+                    key={item.title}
+                    className="grid gap-4 border-b border-wastely-line py-6 sm:grid-cols-[48px_1fr] sm:items-start"
+                  >
+                    <div className="flex h-10 w-10 items-center justify-center bg-white text-wastely-blue">
+                      <Icon size={19} />
+                    </div>
+
+                    <div>
+                      <div className="flex flex-wrap items-center gap-3">
+                        <h3 className="text-base font-semibold text-wastely-deep">
+                          {item.title}
+                        </h3>
+
+                        <span className="text-xs text-wastely-cyan">
+                          0{index + 1}
+                        </span>
                       </div>
 
-                      <h3 className="mt-6 text-lg font-semibold leading-snug">
-                        {item.title}
-                      </h3>
-                    </motion.div>
-                  );
-                })}
-              </div>
+                      <p className="mt-2 max-w-2xl text-sm leading-6 text-wastely-sub">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative py-24 md:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-[32px] md:rounded-[40px] border border-white/10 bg-white/[0.04] backdrop-blur-xl px-5 sm:px-8 py-16 md:px-20 md:py-24 text-center shadow-[0_0_50px_-20px_rgba(14,165,233,0.18)]">
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-emerald-500/10" />
+      {/* =========================================================
+          AMC VS O&M
+      ========================================================= */}
+      <section className="wastely-section wastely-section-white">
+        <div className="wastely-container">
+          <div className="wastely-section-header">
+            <div className="wastely-section-eyebrow">
+              Service Structure
+            </div>
 
-            <div className="relative z-10 max-w-4xl mx-auto">
-              <div className="inline-flex rounded-full border border-white/10 bg-white/[0.05] px-5 py-2 backdrop-blur-xl text-[10px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.25em] text-cyan-300">
-                Wastely Aqua
+            <h2 className="wastely-section-title">
+              AMC and O&M serve different responsibilities.
+            </h2>
+
+            <p className="wastely-section-description">
+              Both services support plant performance, but the responsibility
+              and scope are different.
+            </p>
+          </div>
+
+          <div className="grid overflow-hidden border border-wastely-line md:grid-cols-2">
+            {/* AMC */}
+            <div className="border-b border-wastely-line p-7 md:border-b-0 md:border-r md:p-9">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center bg-wastely-bg-soft text-wastely-blue">
+                  <Wrench size={19} />
+                </div>
+
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-wastely-blue">
+                  AMC Services
+                </p>
               </div>
 
-              <h2 className="mt-8 text-[2.2rem] sm:text-5xl md:text-6xl font-black leading-tight">
-                Reliable AMC Services for
-                <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                  {" "}
-                  Sustainable Operations
-                </span>
-              </h2>
+              <h3 className="mt-6 text-2xl font-bold text-wastely-deep">
+                Maintenance-focused support
+              </h3>
 
-              <p className="mt-6 text-base md:text-lg leading-relaxed text-slate-400">
-                Secure long-term plant reliability, environmental compliance,
-                and optimized wastewater treatment performance with Wastely
-                Aqua AMC solutions.
+              <p className="mt-4 text-sm leading-6 text-wastely-sub">
+                A structured maintenance arrangement focused on planned
+                servicing, inspection, repair support, equipment condition and
+                maintenance records.
               </p>
 
-              <div className="mt-10 flex flex-col sm:flex-row sm:flex-wrap justify-center gap-4">
-                <Link to="/contact">
-                  <button
-                    className="
-                      w-full sm:w-auto
-                      rounded-full
-                      bg-gradient-to-r
-                      from-cyan-400
-                      to-emerald-400
-                      px-8
-                      py-4
-                      font-semibold
-                      text-black
-                      transition-all duration-300
-                      hover:scale-[1.02]
-                      hover:shadow-[0_0_50px_-20px_rgba(14,165,233,0.18)]
-                    "
+              <ul className="mt-6 space-y-3">
+                {[
+                  "Preventive maintenance",
+                  "Equipment servicing",
+                  "Inspection and condition checks",
+                  "Repair support",
+                  "Maintenance documentation",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 text-sm text-wastely-sub"
                   >
-                    Schedule Consultation
-                  </button>
-                </Link>
+                    <CheckCircle2
+                      size={17}
+                      className="mt-0.5 shrink-0 text-wastely-cyan"
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-                <Link to="/technologies">
-                  <button
-                    className="
-                      inline-flex
-                      w-full sm:w-auto
-                      items-center
-                      justify-center
-                      gap-2
-                      rounded-full
-                      border border-white/10
-                      bg-white/[0.05]
-                      px-8
-                      py-4
-                      font-medium
-                      text-white
-                      backdrop-blur-xl
-                      transition-all duration-300
-                      hover:border-cyan-400/30
-                      hover:bg-white/[0.08]
-                    "
-                  >
-                    Explore Solutions
-                    <ArrowRight size={18} />
-                  </button>
-                </Link>
+            {/* O&M */}
+            <div className="p-7 md:p-9">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center bg-wastely-bg-soft text-wastely-blue">
+                  <Settings2 size={19} />
+                </div>
+
+                <p className="text-xs font-bold uppercase tracking-[0.12em] text-wastely-blue">
+                  Operation & Maintenance
+                </p>
               </div>
+
+              <h3 className="mt-6 text-2xl font-bold text-wastely-deep">
+                Plant-operation support
+              </h3>
+
+              <p className="mt-4 text-sm leading-6 text-wastely-sub">
+                A broader service model that can include day-to-day plant
+                operation, process monitoring, operational adjustments,
+                reporting and maintenance coordination.
+              </p>
+
+              <Link
+                to="/services/operation-maintenance"
+                className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-wastely-blue hover:text-wastely-cyan"
+              >
+                View Operation & Maintenance
+                <ArrowRight size={16} />
+              </Link>
             </div>
           </div>
         </div>
       </section>
-    </div>
+
+      {/* No bottom CTA here.
+          The global Footer owns the primary Request an Assessment CTA. */}
+    </main>
   );
 };
 
