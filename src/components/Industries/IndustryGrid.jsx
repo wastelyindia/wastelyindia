@@ -5,7 +5,7 @@ import IndustrialImg from "../../assets/images/industries/industry-industrial.jp
 import FoodImg from "../../assets/images/industries/industry-food.jpg";
 import TextileImg from "../../assets/images/industries/industry-textile.jpg";
 import SlaughterhouseImg from "../../assets/images/industries/industry-slaughterhouse.jpg";
-import WaterworksImg from "../../assets/images/industries/industry-waterworks.jpg";
+import WaterworksImg from "../../assets/images/industries/industry-waterworks.png";
 import ReuseImg from "../../assets/images/industries/industry-reuse.jpg";
 
 const industries = [

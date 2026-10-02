@@ -1,17 +1,5 @@
 import Hero from "./Hero";
-import ImpactSection from "./ImpactSection";
-import ApplicationCard from "./ApplicationCard";
-import CardHome from "./CardHome";
 import Industries from "./Industries";
-import ProcessSection from "./ProcessSection";
-import CTASection from "./CTASection";
-import IntegratedEcosystem from "./IntegratedEcosystem";
-import FeaturedTechnologies from "./FeaturedTechnologies";
-import ImpactMetrics from "./ImpactMetrics";
-import BeforeAfterShowcase from "./BeforeAfterShowcase";
-import SmartMonitoring from "./SmartMonitoring";
-import CaseStudyMarquee from "./CaseStudyMarquee";
-import SectionTransition from "./SectionTransition";
 import WhatWeDo from "./WhatWeDo";
 import Solutions from "./Solutions";
 import Proof from "./Proof";
@@ -85,42 +73,7 @@ const Home = () => {
         <Proof />
 
         <AssessmentCTA />
-
-        {/* <SectionTransition />
-
-        <IntegratedEcosystem />
-
-        <SectionTransition flip />
-
-        <ImpactMetrics />
-
-        <SectionTransition />
-
-        <FeaturedTechnologies />
-
-        <SectionTransition flip />
-
-        <BeforeAfterShowcase />
-
-        <SectionTransition />
-
-        <SmartMonitoring />
-
-        <SectionTransition flip />
-
-        <Industries />
-
-        <SectionTransition />
-
-        <ProcessSection />
-
-        <SectionTransition flip />
-
-        <CaseStudyMarquee />
-
-        <SectionTransition />
-
-        <CTASection /> */}
+        
       </div>
     </main>
   );

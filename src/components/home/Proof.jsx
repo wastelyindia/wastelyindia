@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const proofPoints = [
   {
-    value: "10+",
+    value: "20+",
     label: "Projects",
     detail: "Projects completed or commissioned",
   },

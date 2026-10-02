@@ -48,6 +48,7 @@ import rotaryScreen from "../../assets/images/rotary-screen-reference.jpeg";
 import sludgeDryerReference from "../../assets/images/sludge-dryer-reference.jpeg";
 import ppMeshBelt from "../../assets/images/pp-mesh-belt-reference.jpeg";
 import sludgeDryerWorksite from "../../assets/images/sludge-dryer-worksite-reference.jpeg";
+import sludgeDryerWorksite1 from "../../assets/images/sludge-dryer-worksite-reference.png";
 
 /*
 |--------------------------------------------------------------------------
@@ -346,7 +347,7 @@ const supportingEquipment = [
     title: "Installed Drying Systems",
     description:
       "Drying equipment can be integrated with feeding, cooling, control and dry-solids handling systems.",
-    image: sludgeDryerWorksite,
+    image: sludgeDryerWorksite1,
   },
 ];
 
@@ -480,38 +481,40 @@ const DryerConfiguration = ({
 };
 
 const EquipmentImageCard = ({
-  image,
   number,
   title,
   description,
+  image,
 }) => {
   return (
-    <article className="border-b border-r border-wastely-line bg-white">
-      <div className="aspect-[16/10] overflow-hidden bg-wastely-bg-soft">
+    <article className="border-r border-b border-wastely-line bg-white">
+
+      <div className="aspect-[4/3] w-full overflow-hidden bg-wastely-bg-soft">
         <img
           src={image}
           alt={title}
-          className="h-full w-full object-cover transition-transform duration-500 hover:scale-[1.02]"
+          className="h-full w-full object-cover"
         />
       </div>
 
-      <div className="p-7 sm:p-8">
-        <div className="flex items-center justify-between">
-          <span className="text-xs font-bold tracking-[0.14em] text-wastely-cyan">
+      <div className="p-6 md:p-7">
+        <div className="mb-5 flex items-center justify-between">
+          <span className="text-[10px] font-medium tracking-[0.18em] text-wastely-blue">
             {number}
           </span>
 
-          <div className="h-px w-10 bg-wastely-line" />
+          <span className="h-px w-6 bg-wastely-line" />
         </div>
 
-        <h3 className="mt-6 text-xl font-bold text-wastely-deep">
+        <h3 className="text-lg font-semibold text-wastely-deep">
           {title}
         </h3>
 
-        <p className="mt-3 text-sm leading-6 text-wastely-sub">
+        <p className="mt-2 text-sm leading-6 text-wastely-text-muted">
           {description}
         </p>
       </div>
+
     </article>
   );
 };

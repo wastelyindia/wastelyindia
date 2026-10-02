@@ -10,7 +10,7 @@ const facts = [
     detail: "Current project presence",
   },
   {
-    value: "10+",
+    value: "20+",
     label: "Projects",
     detail: "Verified project count",
   },
