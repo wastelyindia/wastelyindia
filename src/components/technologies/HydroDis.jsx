@@ -71,24 +71,24 @@ const applications = [
 const systemStages = [
   {
     number: "01",
-    title: "Hydroxyl Radical Generation",
+    title: "Electrochemical Oxidation",
     description:
-      "The supplied Hydro-dis material describes electrolytic conversion of water molecules into hydroxyl radicals.",
-    formula: "2H₂O + 2e⁻ → 2OH• + H₂",
+      "The supplied Hydro-dis material describes an electrochemical stage associated with hydroxyl-radical generation. The exact reaction mechanism and operating conditions should be confirmed with the technology provider.",
+    formula: "Stage 01 · Reactive species generation",
   },
   {
     number: "02",
     title: "Residual Disinfection",
     description:
-      "Electro-catalytic conversion of chloride ions generates chlorine to maintain the required residual chlorine level.",
-    formula: "2Cl⁻ + 2e⁻ → Cl₂",
+      "The supplied material describes electrochemical chlorine generation to help maintain residual disinfection in the treated water.",
+    formula: "Stage 02 · Residual disinfectant",
   },
   {
     number: "03",
-    title: "Treated Water",
+    title: "Treatment Outcome",
     description:
-      "The process is presented as producing purified water without conventional chemical dosing while maintaining pH.",
-    formula: "Cl₂ + 2H₂O → 2HOCl + H⁺",
+      "The required disinfection outcome depends on water quality, system configuration, operating conditions and the applicable microbiological targets.",
+    formula: "Outcome · Verify against treatment requirements",
   },
 ];
 
@@ -258,13 +258,13 @@ export default function HydroDis() {
               </div>
 
               <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-[-0.03em] text-wastely-deep sm:text-5xl lg:text-[3.7rem]">
-                Chemical-free disinfection built around the water circuit.
+                Electrochemical disinfection designed around your water circuit.
               </h1>
-
               <p className="mt-6 max-w-2xl text-base leading-8 text-wastely-sub sm:text-lg">
-                Hydro-dis® is presented as a dual-step electrochemical
-                disinfection technology for potable water, wastewater and
-                other applications where microbiological control is required.
+                Hydro-dis® is presented as a dual-stage electrochemical disinfection
+                technology that generates reactive species within the treatment
+                process and supports residual disinfection. Suitability depends on
+                the water quality, treatment objective and system configuration.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">

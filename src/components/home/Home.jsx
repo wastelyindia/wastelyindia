@@ -4,6 +4,8 @@ import WhatWeDo from "./WhatWeDo";
 import Solutions from "./Solutions";
 import Proof from "./Proof";
 import AssessmentCTA from "./AssessmentCTA";
+import Testimonials from "./Testimonials";
+import RestorationCapability from "./RestorationCapability";
 
 const Home = () => {
   return (
@@ -68,9 +70,13 @@ const Home = () => {
 
         <Solutions />
 
+        <RestorationCapability />
+
         <Industries />
 
         <Proof />
+
+        <Testimonials/>
 
         <AssessmentCTA />
         

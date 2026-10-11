@@ -13,6 +13,7 @@ import {
   ShieldCheck,
   RefreshCw,
   Radar,
+  FlaskConical,
 } from "lucide-react";
 
 // ======================================================
@@ -62,6 +63,12 @@ export const navItems = [
             desc: "Connected water infrastructure from treatment to reuse",
             icon: Cpu,
             path: "/solutions/integrated-water-system",
+          },
+          {
+            name: "Biological FOG Management",
+            desc: "Biological treatment option for suitable grease-trap applications",
+            icon: FlaskConical,
+            path: "/solutions/biowish-aqua-fog",
           },
         ],
       },

@@ -30,6 +30,7 @@ import IntegratedWaterSystem from "../solutions/IntegratedWaterSystem";
 import AquaCulture from "../solutions/AquaCulture";
 import Rejuvenation from "../solutions/Rejuvenation";
 import WaterBodyRestoration from "../solutions/WetlandPreservation";
+import BiowishAquaFOG from "../solutions/BiowishAquaFOG";
 
 // ======================================================
 // PRODUCTS
@@ -194,6 +195,10 @@ export const router = createBrowserRouter([
       {
         path: "solutions/water-body-restoration",
         element: <WaterBodyRestoration />,
+      },
+      {
+        path: "solutions/biowish-aqua-fog",
+        element: <BiowishAquaFOG />,
       },
 
       // ======================================================

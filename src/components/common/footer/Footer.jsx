@@ -606,7 +606,7 @@ const Footer = () => {
 
             {/* Email */}
             <a
-              href="mailto:info@wastelyaqua.com"
+              href="mailto:info@wastelyindia.com"
               className="group flex items-start gap-3"
             >
               <div
@@ -650,7 +650,7 @@ const Footer = () => {
                     group-hover:text-white
                   "
                 >
-                  info@wastelyaqua.com
+                  info@wastelyindia.com
                 </p>
               </div>
             </a>

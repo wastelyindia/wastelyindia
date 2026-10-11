@@ -19,6 +19,13 @@ import SummerWeek1 from "../assets/images/case-studies/case-summer-palace-week1.
 import SummerDay10 from "../assets/images/case-studies/case-summer-palace-day10.jpg";
 import SummerWeek2 from "../assets/images/case-studies/case-summer-palace-week2.jpg";
 
+import PowaiBarge from "../assets/images/case-studies/powai-lake-barge.jpg";
+import PowaiAeration from "../assets/images/case-studies/powai-lake-aeration-system.png";
+import PowaiMaintenance from "../assets/images/case-studies/powai-lake-maintenance.png";
+import PowaiDusk from "../assets/images/case-studies/powai-lake-aeration-at-dusk.jpg";
+import PowaiDOMonitoring from "../assets/images/case-studies/powai-lake-do-monitoring.jpg";
+import PowaiSolarMonitoring from "../assets/images/case-studies/powai-lake-solar-monitoring.png";
+
 
 /* =========================================================
    SMALL COMPONENTS
@@ -178,86 +185,92 @@ const CaseStudies = () => {
 
 
             {/* RIGHT — CASE INDEX */}
+{/* RIGHT — CASE INDEX */}
 
-            <div className="border border-wastely-line bg-white">
+<div className="border border-wastely-line bg-white">
+  <div className="border-b border-wastely-line bg-wastely-deep p-6">
+    <div className="text-[10px] font-bold uppercase tracking-[0.15em] text-wastely-cyan">
+      Reference Index
+    </div>
 
-              <div className="border-b border-wastely-line bg-wastely-deep p-6">
+    <div className="mt-2 text-xl font-bold text-white">
+      Three documented applications
+    </div>
+  </div>
 
-                <div className="text-[10px] font-bold uppercase tracking-[0.15em] text-wastely-cyan">
-                  Reference Index
-                </div>
+  <div className="grid sm:grid-cols-2 lg:grid-cols-1">
 
-                <div className="mt-2 text-xl font-bold text-white">
-                  Two documented applications
-                </div>
+    {/* CASE 01 — POWAI LAKE */}
+    <div className="border-b border-wastely-line p-6">
+      <div className="flex items-start gap-4">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-wastely-line bg-wastely-bg-soft">
+          <Waves size={20} className="text-wastely-blue" />
+        </div>
 
-              </div>
+        <div>
+          <div className="text-[10px] font-bold tracking-[0.14em] text-wastely-cyan">
+            01
+          </div>
 
+          <h3 className="mt-1 font-bold text-wastely-deep">
+            Powai Lake
+          </h3>
 
-              <div className="grid sm:grid-cols-2 lg:grid-cols-1">
+          <p className="mt-1 text-sm leading-5 text-wastely-sub">
+            Lake aeration & dissolved oxygen monitoring
+          </p>
+        </div>
+      </div>
+    </div>
 
-                <div className="border-b border-wastely-line p-6">
+    {/* CASE 02 — BHIMA SSK */}
+    <div className="border-b border-wastely-line p-6">
+      <div className="flex items-start gap-4">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-wastely-line bg-wastely-bg-soft">
+          <Factory size={20} className="text-wastely-blue" />
+        </div>
 
-                  <div className="flex items-start gap-4">
+        <div>
+          <div className="text-[10px] font-bold tracking-[0.14em] text-wastely-cyan">
+            02
+          </div>
 
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-wastely-line bg-wastely-bg-soft">
-                      <Factory
-                        size={20}
-                        className="text-wastely-blue"
-                      />
-                    </div>
+          <h3 className="mt-1 font-bold text-wastely-deep">
+            Bhima SSK
+          </h3>
 
-                    <div>
-                      <div className="text-[10px] font-bold tracking-[0.14em] text-wastely-cyan">
-                        01
-                      </div>
+          <p className="mt-1 text-sm leading-5 text-wastely-sub">
+            Industrial wastewater / ETP
+          </p>
+        </div>
+      </div>
+    </div>
 
-                      <h3 className="mt-1 font-bold text-wastely-deep">
-                        Bhima SSK
-                      </h3>
+    {/* CASE 03 — SUMMER PALACE */}
+    <div className="p-6">
+      <div className="flex items-start gap-4">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-wastely-line bg-wastely-bg-soft">
+          <Droplets size={20} className="text-wastely-blue" />
+        </div>
 
-                      <p className="mt-1 text-sm text-wastely-sub">
-                        Industrial wastewater / ETP
-                      </p>
-                    </div>
+        <div>
+          <div className="text-[10px] font-bold tracking-[0.14em] text-wastely-cyan">
+            03
+          </div>
 
-                  </div>
+          <h3 className="mt-1 font-bold text-wastely-deep">
+            Summer Palace
+          </h3>
 
-                </div>
+          <p className="mt-1 text-sm leading-5 text-wastely-sub">
+            Waterbody restoration
+          </p>
+        </div>
+      </div>
+    </div>
 
-
-                <div className="p-6">
-
-                  <div className="flex items-start gap-4">
-
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-wastely-line bg-wastely-bg-soft">
-                      <Waves
-                        size={20}
-                        className="text-wastely-blue"
-                      />
-                    </div>
-
-                    <div>
-                      <div className="text-[10px] font-bold tracking-[0.14em] text-wastely-cyan">
-                        02
-                      </div>
-
-                      <h3 className="mt-1 font-bold text-wastely-deep">
-                        Summer Palace
-                      </h3>
-
-                      <p className="mt-1 text-sm text-wastely-sub">
-                        Waterbody restoration
-                      </p>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
+  </div>
+</div>
 
           </div>
 
@@ -302,7 +315,295 @@ const CaseStudies = () => {
 
 
       {/* =====================================================
-          CASE 01 — BHIMA
+          CASE 01 — POWAI LAKE
+      ====================================================== */}
+
+      <section className="wastely-section bg-white">
+        <div className="wastely-container">
+          {/* Case-study heading and main image */}
+          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
+            <div className="relative">
+              <div className="overflow-hidden border border-wastely-line bg-wastely-bg-soft">
+                <img
+                  src={PowaiBarge}
+                  alt="Barge-mounted aeration infrastructure operating on Powai Lake"
+                  loading="eager"
+                  decoding="async"
+                  className="h-[300px] w-full object-cover sm:h-[420px] lg:h-[470px]"
+                />
+              </div>
+
+              <div className="mt-3 flex flex-wrap items-center justify-between gap-3 border-b border-wastely-line pb-3">
+                <div className="flex items-center gap-2 text-xs font-semibold text-wastely-sub">
+                  <MapPin size={14} className="text-wastely-cyan" />
+                  Powai Lake, S Ward, Mumbai
+                </div>
+
+                <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-wastely-blue">
+                  Lake Aeration & Monitoring
+                </span>
+              </div>
+            </div>
+
+            <div>
+              <div className="text-[10px] font-bold uppercase tracking-[0.15em] text-wastely-cyan">
+                Case Study 01
+              </div>
+
+              <h2 className="mt-3 text-3xl font-bold leading-tight text-wastely-deep sm:text-4xl">
+                Powai Lake: Aeration and Dissolved Oxygen Monitoring
+              </h2>
+
+              <p className="mt-5 text-base leading-7 text-wastely-sub">
+                Maintaining lake aeration infrastructure requires coordinated
+                operation, equipment maintenance and water-quality monitoring.
+                The supplied project presentation documents an aeration and
+                dissolved oxygen (DO) monitoring system installed at Powai Lake
+                in Mumbai&apos;s S Ward.
+              </p>
+
+              <p className="mt-4 text-sm leading-7 text-wastely-sub">
+                The documented maintenance scope covers the barge-mounted
+                aeration system and its associated dissolved oxygen monitoring
+                infrastructure.
+              </p>
+
+              {/* Project information */}
+              <div className="mt-8 grid grid-cols-2 border-l border-t border-wastely-line sm:grid-cols-2">
+                <DataCell
+                  number="01"
+                  label="Application"
+                  value="Lake Aeration"
+                />
+
+                <DataCell
+                  number="02"
+                  label="Monitoring"
+                  value="Dissolved Oxygen"
+                />
+
+                <DataCell
+                  number="03"
+                  label="Infrastructure"
+                  value="Barge-Mounted System"
+                />
+
+                <DataCell
+                  number="04"
+                  label="Support Scope"
+                  value="Operation & Maintenance"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Technical system */}
+          <div className="mt-16 border-t border-wastely-line pt-10">
+            <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-14">
+              <div>
+                <div className="wastely-section-eyebrow">
+                  System Overview
+                </div>
+
+                <h3 className="text-2xl font-bold leading-tight text-wastely-deep sm:text-3xl">
+                  Aeration and mixing designed around lake conditions.
+                </h3>
+
+                <p className="mt-4 text-sm leading-7 text-wastely-sub">
+                  The supplied technical presentation describes two operating
+                  modes: aeration using a regenerative blower and diffuser,
+                  and mixing using the propeller without introducing air.
+                </p>
+              </div>
+
+              <div className="grid gap-0 border-l border-t border-wastely-line sm:grid-cols-2">
+                <article className="border-b border-r border-wastely-line p-6 sm:p-7">
+                  <div className="flex h-11 w-11 items-center justify-center border border-wastely-line bg-wastely-bg-soft text-wastely-blue">
+                    <Waves size={21} strokeWidth={1.7} />
+                  </div>
+
+                  <h4 className="mt-5 text-lg font-bold text-wastely-deep">
+                    Aeration Mode
+                  </h4>
+
+                  <p className="mt-3 text-sm leading-6 text-wastely-sub">
+                    A regenerative blower pressurises air and directs it through
+                    the hollow shaft to the diffuser. Fine bubbles and propeller
+                    mixing support air–water contact and oxygen transfer.
+                  </p>
+
+                  <div className="mt-5 border-t border-wastely-line pt-4 text-xs leading-5 text-wastely-sub">
+                    Components: blower, diffuser and mixing propeller.
+                  </div>
+                </article>
+
+                <article className="border-b border-r border-wastely-line p-6 sm:p-7">
+                  <div className="flex h-11 w-11 items-center justify-center border border-wastely-line bg-wastely-bg-soft text-wastely-blue">
+                    <Droplets size={21} strokeWidth={1.7} />
+                  </div>
+
+                  <h4 className="mt-5 text-lg font-bold text-wastely-deep">
+                    Mixing Mode
+                  </h4>
+
+                  <p className="mt-3 text-sm leading-6 text-wastely-sub">
+                    With the blower switched off, the mixing propeller maintains
+                    water movement without introducing air. The presentation
+                    describes this mode as supporting operating flexibility
+                    under suitable conditions.
+                  </p>
+
+                  <div className="mt-5 border-t border-wastely-line pt-4 text-xs leading-5 text-wastely-sub">
+                    Function: water circulation and solids suspension.
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          {/* Dissolved oxygen monitoring */}
+          <div className="mt-16 grid gap-8 border-t border-wastely-line pt-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+            <div className="order-2 lg:order-1">
+              <div className="overflow-hidden border border-wastely-line bg-wastely-bg-soft">
+                <img
+                  src={PowaiDOMonitoring}
+                  alt="Dissolved oxygen monitoring display from the supplied Powai Lake presentation"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-[260px] w-full object-cover sm:h-[360px]"
+                />
+              </div>
+
+              <p className="mt-3 text-xs leading-5 text-wastely-sub">
+                Monitoring display shown in the supplied project presentation.
+              </p>
+            </div>
+
+            <div className="order-1 lg:order-2">
+              <div className="wastely-section-eyebrow">
+                Water Quality Monitoring
+              </div>
+
+              <h3 className="text-2xl font-bold leading-tight text-wastely-deep sm:text-3xl">
+                Dissolved oxygen monitoring for operational visibility.
+              </h3>
+
+              <p className="mt-4 text-sm leading-7 text-wastely-sub">
+                Dissolved oxygen monitoring provides information about oxygen
+                conditions in the lake. The supplied presentation describes a
+                monitoring arrangement with static-IP wireless communication,
+                along with inspection, cleaning and maintenance procedures.
+              </p>
+
+              <div className="mt-6 space-y-4">
+                {[
+                  "Dissolved oxygen measurement",
+                  "Wireless communication infrastructure",
+                  "Regular inspection and sensor cleaning",
+                  "Monitoring-system maintenance",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <CheckCircle2
+                      size={18}
+                      className="mt-0.5 shrink-0 text-wastely-blue"
+                      strokeWidth={1.8}
+                    />
+
+                    <p className="text-sm leading-6 text-wastely-sub">
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Maintenance and operating infrastructure */}
+          <div className="mt-16 border-t border-wastely-line pt-10">
+            <div className="max-w-3xl">
+              <div className="wastely-section-eyebrow">
+                Operation & Maintenance
+              </div>
+
+              <h3 className="text-2xl font-bold leading-tight text-wastely-deep sm:text-3xl">
+                Keeping the aeration and monitoring systems serviceable.
+              </h3>
+
+              <p className="mt-4 text-sm leading-7 text-wastely-sub">
+                The presentation identifies regular maintenance, inspection
+                and cleaning as important parts of keeping the aeration and
+                dissolved oxygen monitoring infrastructure operational.
+                It also discusses maintenance strategies for monitoring
+                equipment exposed to organic matter and algae.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <CaseImage
+                src={PowaiAeration}
+                label="Barge-mounted aeration system operating on the lake"
+              />
+
+              <CaseImage
+                src={PowaiMaintenance}
+                label="Technician inspecting equipment on the installation"
+              />
+
+              <CaseImage
+                src={PowaiSolarMonitoring}
+                label="Solar-powered monitoring installation shown in the presentation"
+              />
+            </div>
+          </div>
+
+          {/* Additional site imagery */}
+          <div className="mt-10 grid gap-4 md:grid-cols-[1.4fr_1fr]">
+            <div className="overflow-hidden border border-wastely-line bg-wastely-bg-soft">
+              <img
+                src={PowaiDusk}
+                alt="Aeration infrastructure on Powai Lake at dusk"
+                loading="lazy"
+                decoding="async"
+                className="h-[230px] w-full object-cover sm:h-[320px]"
+              />
+            </div>
+
+            <div className="flex flex-col justify-center border border-wastely-line bg-wastely-bg-soft p-6 sm:p-8">
+              <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-wastely-cyan">
+                Project Focus
+              </div>
+
+              <h4 className="mt-3 text-xl font-bold text-wastely-deep">
+                Aeration. Monitoring. Maintenance.
+              </h4>
+
+              <p className="mt-3 text-sm leading-6 text-wastely-sub">
+                The documented system brings together aeration equipment,
+                water movement, dissolved oxygen monitoring and planned
+                maintenance in a lake-management application.
+              </p>
+            </div>
+          </div>
+
+          {/* Documentation note */}
+          <div className="mt-10 border-l-2 border-wastely-cyan bg-wastely-bg-soft p-5 sm:p-6">
+            <p className="text-sm leading-6 text-wastely-sub">
+              <span className="font-semibold text-wastely-deep">
+                Documentation note:
+              </span>{" "}
+              This case study is based on the supplied Powai Lake project
+              presentation. No numerical improvement in dissolved oxygen,
+              pollutant removal or overall lake-water quality is claimed
+              because measured before-and-after results were not included
+              in that presentation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+      {/* =====================================================
+          CASE 02 — BHIMA
       ====================================================== */}
 
       <section className="wastely-section bg-white">
@@ -568,7 +869,7 @@ const CaseStudies = () => {
 
 
       {/* =====================================================
-          CASE 02 — SUMMER PALACE
+          CASE 03 — SUMMER PALACE
       ====================================================== */}
 
       <section className="wastely-section bg-wastely-bg-soft">

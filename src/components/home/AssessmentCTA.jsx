@@ -126,7 +126,7 @@ const AssessmentCTA = () => {
               </a>
 
               <a
-                href="mailto:info@wastelyaqua.com"
+                href="mailto:info@wastelyindia.com"
                 className="
                   flex
                   items-start
@@ -144,7 +144,7 @@ const AssessmentCTA = () => {
                   className="mt-0.5 shrink-0 text-wastely-blue"
                 />
 
-                <span>info@wastelyaqua.com</span>
+                <span>info@wastelyindia.com</span>
               </a>
 
               <div className="flex items-start gap-4 text-sm text-wastely-sub">
